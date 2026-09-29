@@ -4,7 +4,7 @@
 %     p2: analog front-end           (rhombus bridge + mid-bias divider)
 %
 %  ADS1220 symbol order (as on the module):
-%     left : DRDY, MISO, MOSI, SCLK, CS, CLK, DVDD, DGND, AGND
+%     left : DRDY, MISO, MOSI, SCLK, CS, CLK, DVDD, DGND
 %     right: AIN0, AIN1, AIN2, AIN3, REFN0, REFP0, AVDD, AGND
 %
 %  Build:
@@ -48,13 +48,13 @@
   \node[anchor=south,pname] at (1.8,0.7) {\textbf{ADS1220}};
   % left column
   \foreach \y/\t/\n in {-0.9/DRDY/14,-1.9/MISO/15,-2.9/MOSI/16,-3.9/SCLK/1,
-                        -4.9/CS/2,-5.9/CLK/3,-6.9/DVDD/13,-7.9/DGND/4,-8.9/AGND/5} {
+                        -4.9/CS/2,-5.9/CLK/3,-6.9/DVDD/13,-7.9/DGND/4} {
     \node[pname,anchor=west] at (0.15,\y) {\t};
     \node[pnum,anchor=south east] at (-0.06,\y+0.03) {\n};
   }
   % right column
   \foreach \y/\t/\n in {-0.9/AIN0/11,-1.9/AIN1/10,-2.9/AIN2/7,-3.9/AIN3/6,
-                        -4.9/REFN0/8,-5.9/REFP0/9,-6.9/AVDD/12,-7.9/AGND/5} {
+                        -4.9/REFN0/8,-5.9/REFP0/9,-6.9/AVDD/12,-8.3/AGND/5} {
     \node[pname,anchor=east] at (3.45,\y) {\t};
     \node[pnum,anchor=south west] at (3.66,\y+0.03) {\n};
     \draw (3.6,\y) -- (4.5,\y);
@@ -66,7 +66,7 @@
   \node[note,anchor=west] at (4.7,-4.9) {b \;(to GND)};
   \node[note,anchor=west] at (4.7,-5.9) {a \;(IDAC1 in)};
   \node[note,anchor=west] at (4.7,-6.9) {3V3};
-  \node[ground] at (4.5,-7.9) {};
+  \node[ground] at (4.5,-8.3) {};
 
   % ---------------- SPI + 3V3 ----------------
   \draw (-7.2,-0.9) -- (0,-0.9);
@@ -74,28 +74,29 @@
   \draw (-7.2,-2.9) -- (0,-2.9);
   \draw (-7.2,-3.9) -- (0,-3.9);
   \draw (-7.2,-6.9) -- (0,-6.9);
-  \draw (-6.0,-6.9) to[C, l={$C_1$ 100\,nF}] (-6.0,-10.3);
-  \fill (-6.0,-6.9) circle (1.3pt);
-  \fill (-6.0,-10.3) circle (1.3pt);
-  \draw (-3.0,-6.9) to[C, l={$C_2$ 100\,nF}] (-3.0,-10.3);
-  \fill (-3.0,-6.9) circle (1.3pt);
-  \fill (-3.0,-10.3) circle (1.3pt);
+  \draw (-4.4,-6.9) to[C, l={$C_2$ 100\,nF}] (-4.4,-10.3);
+  \fill (-4.4,-6.9) circle (1.3pt);
+  \fill (-4.4,-10.3) circle (1.3pt);
+  % C1 sits across AVDD / AGND, as on the board
+  \draw (4.05,-6.9) to[C] (4.05,-8.3);
+  \fill (4.05,-6.9) circle (1.3pt);
+  \fill (4.05,-8.3) circle (1.3pt);
+  \node[note,anchor=west] at (4.7,-7.7) {$C_1$ 100\,nF};
 
   % ---------------- GND ----------------
   \draw (-7.2,-10.3) -- (-0.8,-10.3);
   \node[ground] at (-0.8,-10.3) {};
   \draw (0,-4.9) -- (-0.8,-4.9) -- (-0.8,-5.9) -- (0,-5.9);   % CS, CLK low
   \node[ground] at (-0.8,-5.9) {};
-  \draw (0,-7.9) -- (-0.8,-7.9) -- (-0.8,-8.9) -- (0,-8.9);   % DGND, AGND
-  \draw (-0.8,-8.9) -- (-0.8,-10.3);
+  \draw (0,-7.9) -- (-0.8,-7.9) -- (-0.8,-10.3);              % DGND
   \fill (-0.8,-7.9) circle (1.3pt);
-  \fill (-0.8,-8.9) circle (1.3pt);
 
   \node[note,anchor=north] at (1.8,-11.7)
-    {pin order as on the module; AGND $=$ AVSS (pin 5), one net, drawn on both sides;
-     MISO $=$ DOUT (15), MOSI $=$ DIN (16).\\
-     SPI mode 1; CS and CLK tied to GND (internal oscillator, no \texttt{cs-gpios} in
-     devicetree); $C_1$/$C_2$ $=100$\,nF on 3V3;\\sensor-side nets
+    {pin order as on the module: left DRDY, MISO, MOSI, SCLK, CS, CLK, DVDD, DGND;
+     right AIN0--AIN3, REFN0, REFP0, AVDD, AGND.\\
+     AGND $=$ AVSS (pin 5); MISO $=$ DOUT (15), MOSI $=$ DIN (16).
+     SPI mode 1; CS and CLK tied to GND (internal oscillator,\\no \texttt{cs-gpios}
+     in devicetree); $C_1$ on AVDD, $C_2$ on DVDD (100\,nF each); sensor-side nets
      (x, y, a/2, a, b) in figure 2};
 
 \end{circuitikz}
@@ -155,9 +156,9 @@
   \node[note] at (10.2,-5.8) {$R_1$};
 
   \node[note,anchor=north] at (8.0,-9.9)
-    {right-side pins in module order; left column in figure 1. Symbols join by
-     matching labels.\\Two half-bridges share a/b; x, y $=$ taps; AIN3 must float.
-     Excitation IDAC1 enters at a, returns via b to GND.\\
+    {right-side pins in module order; left column (DRDY \dots\ DGND) in figure 1.
+     Symbols join by matching labels.\\Two half-bridges share a/b; x, y $=$ taps;
+     AIN3 must float. Excitation IDAC1 enters at a, returns via b to GND.\\
      $R_1=R_2=10$\,k matched $\Rightarrow$ AIN2 $=$ a/2 $\Rightarrow$ differential
      input $\approx0$ at rest.};
 
