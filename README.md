@@ -15,16 +15,16 @@ Parts: 1× ADS1220, 1× 4-wire TrackPoint (controller removed), 1× nice!nano,
 |---|----------|--------|--------|
 | D1 | Sensor interface | Analog 4-wire `[x][y][a][b]`, original TP controller removed | Confirmed by owner; T440 4-wire variant |
 | D2 | ADC | ADS1220, badjeff module (`main`) | Chosen by owner |
-| D3 | Bridge excitation | **IDAC1 → REFP0**, 250–500 µA (tune per §6.2) | No extra parts; matches `example-tpoint_idac.dtsi` |
+| D3 | Bridge excitation | **IDAC1 → REFP0**, 250–500 µA (tune per §7.2) | No extra parts; matches `example-tpoint_idac.dtsi` |
 | D4 | ADC reference | `REFP0/REFN0` (`ADC_REF_EXTERNAL0`) = bridge excitation | Ratiometric: IDAC tolerance cancels |
-| D5 | Mid-bias | R1 = R2 = 2 × 1.2 kΩ in series (2.4 kΩ branch) → AIN2 (= a/2), + **C3 = 100 nF** AIN2↔GND | 0 V differential at rest; low AIN2 source impedance (1.2 kΩ) keeps the ADC's input-current error small (§3) |
+| D5 | Mid-bias | R1 = R2 = 2 × 1.2 kΩ in series (2.4 kΩ branch) → AIN2 (= a/2), + **C3 = 100 nF** AIN2↔GND | 0 V differential at rest; low AIN2 source impedance (1.2 kΩ) keeps the ADC's input-current error small (§4) |
 | D6 | CS | Tied to GND; **no `cs-gpios` in DTS** | Datasheet-allowed; single SPI device; saves a pin |
 | D7 | CLK | Tied to GND | Selects internal oscillator |
 | D8 | AIN3 / REFN1 | Floating | Internal low-side switch lives on this pin |
 | D9 | SPI | `&spi2`, 1 MHz, mode 1 (driver sets CPHA itself) | Matches module example |
 | D10 | DRDY | P1.06 (`gpio1 6`) | Needed: DOUT cannot signal DRDY when CS is low |
 | D11 | Channel config | AIN0−AIN2 (X), AIN1−AIN2 (Y); gain 64 @ 330 SPS | Matches `example-tpoint_idac.dtsi` |
-| D12 | Power strategy | IDAC gated per conversion; poll downshift 8 → 100 → 1300 ms | Lowest average draw without a external wake hook (§5) |
+| D12 | Power strategy | IDAC gated per conversion; poll downshift 8 → 100 → 1300 ms | Lowest average draw without a external wake hook (§6) |
 
 ---
 
@@ -67,7 +67,41 @@ digital + power, page 2 = analog front-end (rhombus).
 
 ---
 
-## 3. Key facts behind the choices
+## 3. Perfboard layout (16 x 8 holes)
+
+Generated layout + build guide: [`layout/board.md`](layout/board.md) (hole map,
+solder/pass-over lists, wire list, build order, checklist) and
+`layout/board.pdf` / `.tex` (1:1 print template). Regenerate both with
+`python layout/gen.py` after editing the data in that script.
+
+Facts that drove the layout:
+
+| Item | Value on 0.1" grid |
+|---|---|
+| Board | 16 x 8 holes = **38.1 x 17.78 mm** (dotted, no strips) |
+| nice!nano (Pro Micro footprint) | 12 pins per row, rows 0.6" apart = **12 x 7 holes** |
+| ADS1220 breakout | 2 x 8 pins, rows 0.6" apart = **8 x 7 holes** |
+| 1/4 W resistor | leads bent to 3 pitches (7.62 mm) |
+
+The nice!nano needs 12 of the 16 columns and the module 8 more: **12 + 8 > 16**,
+so they cannot share this board. It carries the analog front-end only (module +
+4 resistors + 3 caps + the wire landings); the nice!nano stays on the keyboard.
+
+Two consequences of the module's 0.6" body:
+
+- the module is **socketed** (2 x 8 female header) - one ground wire has to pass
+  underneath it (E7-F7-G7-H7);
+- the digital and analog halves can only be joined through the nice!nano's
+  ground and 3V3 pins (13 off-board wires). That is textbook star grounding:
+  the analog return current shares no wire with the digital one.
+
+`layout/gen.py` checks the layout before writing it: one net per hole, no wire
+running over a hole of another net, no component body over a foreign hole, every
+module pin reachable, AIN3 left floating. Current status: 0 errors, 0 warnings.
+
+---
+
+## 4. Key facts behind the choices
 
 - **Excitation is mandatory.** REFP0/REFN0 are buffered *sense* inputs (ref input
   current ±10 nA). They cannot power the bridge. Without a current source the
@@ -106,7 +140,7 @@ digital + power, page 2 = analog front-end (rhombus).
 
 ---
 
-## 4. Configuration
+## 5. Configuration
 
 `config/west.yml`:
 
@@ -156,7 +190,7 @@ Overlay (adapt node names to the target shield):
         #address-cells = <1>;
         #size-cells = <0>;
         drdy-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        idac-ua = <500>;   /* tune so V(a) >= 0.75 V, see README §6.2 */
+        idac-ua = <500>;   /* tune so V(a) >= 0.75 V, see README §7.2 */
 
         adc_ads1220_ch0: channel@0 {
             reg = <0>;
@@ -254,7 +288,7 @@ Rules:
 
 ---
 
-## 5. Power budget
+## 6. Power budget
 
 | State | Estimate | Basis |
 |---|---|---|
@@ -268,7 +302,7 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
 
 ---
 
-## 6. Bring-up checklist
+## 7. Bring-up checklist
 
 1. **Pad verification (unpowered).** All gauges ≈ R:
    `a↔b = R`, `x↔y = R`, and `a↔x = a↔y = b↔x = b↔y = 0.75 R`.
@@ -297,19 +331,19 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
 
 ---
 
-## 7. Open items
+## 8. Open items
 
 - [ ] AliExpress ADS1220 board: does it carry its own 3.3 V regulator?
       If yes → feed its regulator input, not DVDD/AVDD from VCC.
       If chip + caps only → wiring as in §2.
-- [ ] Measured `R_ab` → final `idac-ua` (see §6.2).
+- [ ] Measured `R_ab` → final `idac-ua` (see §7.2).
 - [ ] Sensor pad order confirmation `[x][y][a][b]` (bottom view).
 - [ ] Optional later: EN pin + final period 0 for true POWERDOWN
       (needs an external `ANALOG_AXIS_HIRES_ATTR_RESUME` caller).
 
 ---
 
-## 8. References
+## 9. References
 
 - TI ADS1220 datasheet SBAS501: §8.3.2.1 (PGA common mode), §8.3.9 (low-side
   switch), §8.5.1 (SPI, CS tied low, SPI timeout, DRDY), §9.1.2 (analog input
