@@ -1,0 +1,148 @@
+% ---------------------------------------------------------------------
+%  ADS1220 + 4-wire TrackPoint on nice!nano  (2 figures)
+%     p1: digital + power view
+%     p2: analog front-end (half-bridges, excitation, reference)
+%
+%  Build:
+%    pwsh -NoProfile -File "<skill-dir>\scripts\build.ps1" `
+%         -Tex ".\ads1220-tpoint\ads1220-tpoint.tex" `
+%         -Names digital-power,analog-frontend -Clean
+% ---------------------------------------------------------------------
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{circuitikz}
+\usepackage[active,tightpage]{preview}
+\usepackage{xcolor}
+
+\setlength{\PreviewBorder}{12pt}
+\PreviewEnvironment{circuitikz}
+\pagestyle{empty}
+\setlength{\textwidth}{40cm}
+\setlength{\hsize}{40cm}
+
+\tikzset{
+  pnum/.style  = {font=\scriptsize, text=gray!80},
+  pname/.style = {font=\small},
+  ic/.style    = {draw, thick, rounded corners=2pt},
+  note/.style  = {font=\scriptsize, align=center, text=black!75},
+}
+
+\begin{document}
+
+% ===================== Figure 1: digital + power =====================
+\begin{circuitikz}[line width=0.9pt]
+
+  % ---------------- nice!nano ----------------
+  \draw[ic] (-9.8,0.6) rectangle (-6.8,-8.6);
+  \node[anchor=south,pname] at (-8.3,0.7) {\textbf{nice!nano}};
+  \foreach \y/\t in {-0.8/P0.08,-1.8/P0.17,-2.8/P0.20,-3.8/P1.06,
+                     -5.4/3V3,-7.8/GND}
+    \node[pname,anchor=east] at (-6.95,\y) {\t};
+
+  % ---------------- ADS1220 ----------------
+  \draw[ic] (0,0.6) rectangle (3.6,-9.6);
+  \node[anchor=south,pname] at (1.8,0.7) {\textbf{ADS1220}};
+  \foreach \y/\t/\n in {-0.8/SCLK/1,-1.8/DIN/16,-2.8/DOUT/15,-3.8/DRDY/14,
+                        -5.4/AVDD/12,-6.6/DVDD/13,-7.8/AVSS/5,-9.0/DGND/4} {
+    \node[pname,anchor=west] at (0.15,\y) {\t};
+    \node[pnum,anchor=south east] at (-0.06,\y+0.03) {\n};
+  }
+  \foreach \y/\t/\n in {-1.3/CS/2,-2.5/CLK/3} {
+    \node[pname,anchor=east] at (3.45,\y) {\t};
+    \node[pnum,anchor=south west] at (3.66,\y+0.03) {\n};
+    \draw (3.6,\y) -- (4.4,\y);
+  }
+  \draw (4.4,-1.3) -- (4.4,-2.5);
+  \node[ground] at (4.4,-2.5) {};
+  \node[note,anchor=north] at (4.4,-3.2) {tied\\low};
+
+  % ---------------- SPI ----------------
+  \draw (-6.8,-0.8) -- (0,-0.8) node[midway,above,note]{SCLK};
+  \draw (-6.8,-1.8) -- (0,-1.8) node[midway,above,note]{MOSI};
+  \draw (-6.8,-2.8) -- (0,-2.8) node[midway,above,note]{MISO};
+  \draw (-6.8,-3.8) -- (0,-3.8) node[midway,above,note]{DRDY};
+
+  % ---------------- 3V3 ----------------
+  \draw (-6.8,-5.4) -- (0,-5.4);
+  \draw (-3.9,-5.4) -- (-3.9,-6.6) -- (0,-6.6);
+  \fill (-3.9,-5.4) circle (1.3pt);
+  \draw (-4.6,-7.8) to[C, l={$C_1$ 100\,nF}] (-4.6,-5.4);
+  \fill (-4.6,-5.4) circle (1.3pt);
+  \fill (-4.6,-7.8) circle (1.3pt);
+
+  % ---------------- GND ----------------
+  \draw (-6.8,-7.8) -- (0,-7.8);
+  \draw (-1.0,-7.8) -- (-1.0,-9.0) -- (0,-9.0);
+  \fill (-1.0,-7.8) circle (1.3pt);
+  \draw (-3.4,-6.6) to[C, l={$C_2$ 100\,nF}] (-3.4,-7.8);
+  \fill (-3.4,-6.6) circle (1.3pt);
+  \fill (-3.4,-7.8) circle (1.3pt);
+
+  \node[note,anchor=north] at (1.8,-10.4)
+    {digital \& power view --- SPI mode 1; CS and CLK tied to GND (internal
+     oscillator; no \texttt{cs-gpios} in devicetree);\\$C_1$ on AVDD, $C_2$ on
+     DVDD (100\,nF each); analog pins in figure 2};
+
+\end{circuitikz}
+
+% ===================== Figure 2: analog front-end =====================
+\begin{circuitikz}[line width=0.9pt]
+
+  % ---------------- ADS1220 (analog pins) ----------------
+  \draw[ic] (0,0.9) rectangle (3.6,-8.1);
+  \node[anchor=south,pname] at (1.8,1.0) {\textbf{ADS1220}};
+  \foreach \y/\t/\n in {-1.4/AIN0/11,-2.6/AIN1/10,-3.8/AIN2/7,
+                        -5.0/AIN3/6,-6.2/REFN0/8,-7.4/REFP0/9} {
+    \node[pname,anchor=east] at (3.45,\y) {\t};
+    \node[pnum,anchor=south west] at (3.66,\y+0.03) {\n};
+    \draw (3.6,\y) -- (4.5,\y);
+  }
+  \node[note,anchor=west] at (4.7,-1.4) {x};
+  \node[note,anchor=west] at (4.7,-2.6) {y};
+  \node[note,anchor=west] at (4.7,-3.8) {a/2};
+  \node[note,anchor=west] at (4.7,-5.0) {n/c --- leave float};
+  \node[note,anchor=west] at (4.7,-6.2) {b \;(to GND)};
+  \node[note,anchor=west] at (4.7,-7.4) {a \;(IDAC1 in)};
+
+  % ---------------- TrackPoint: half-bridge rhombus ----------------
+  \node[pname] at (10.8,-0.4) {\textbf{TrackPoint (4-wire)}};
+  % edges: a-x = G4, x-b = G2, b-y = G3, y-a = G1
+  \draw (10.8,-2.0) to[R] (8.0,-4.6);
+  \draw (8.0,-4.6) to[R] (10.8,-7.2);
+  \draw (10.8,-7.2) to[R] (13.6,-4.6);
+  \draw (13.6,-4.6) to[R] (10.8,-2.0);
+  % corners
+  \draw (10.8,-2.0) -- (10.8,-1.3);
+  \node[note,above] at (10.8,-1.3) {a};
+  \draw (10.8,-7.2) -- (10.8,-7.9);
+  \node[ground] at (10.8,-7.9) {};
+  \node[note,anchor=east] at (10.4,-7.45) {b};
+  \draw (8.0,-4.6) -- (7.1,-4.6);
+  \node[note,anchor=east] at (7.0,-4.6) {x};
+  \draw (13.6,-4.6) -- (14.5,-4.6);
+  \node[note,anchor=west] at (14.6,-4.6) {y};
+  % mid-bias divider across a-b
+  \draw (10.8,-2.0) to[R] (10.8,-4.6) to[R] (10.8,-7.2);
+  \draw (10.8,-4.6) -- (9.9,-4.6);
+  \node[note,anchor=east] at (9.8,-4.6) {a/2};
+  % junctions
+  \foreach \p in {(10.8,-2.0),(10.8,-7.2),(8.0,-4.6),(13.6,-4.6),(10.8,-4.6)}
+    \fill \p circle (1.3pt);
+
+  % gauge / resistor names
+  \node[note] at (9.0,-3.0) {$G_4$};
+  \node[note] at (9.0,-6.2) {$G_2$};
+  \node[note] at (12.6,-6.2) {$G_3$};
+  \node[note] at (12.6,-3.0) {$G_1$};
+  \node[note] at (10.2,-3.2) {$R_2$};
+  \node[note] at (10.2,-5.8) {$R_1$};
+
+  \node[note,anchor=north] at (8.0,-8.9)
+    {symbols join by matching labels. Two half-bridges share a/b; x, y = taps;
+     AIN3 must float.\\Excitation IDAC1 enters at a, returns via b to GND.
+     $R_1=R_2=10$\,k matched $\Rightarrow$ AIN2 $=$ a/2 $\Rightarrow$ differential
+     input $\approx0$ at rest.};
+
+\end{circuitikz}
+
+\end{document}
