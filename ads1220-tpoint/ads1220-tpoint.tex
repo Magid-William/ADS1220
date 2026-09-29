@@ -61,12 +61,18 @@
   }
   \node[note,anchor=west] at (4.7,-0.9) {x};
   \node[note,anchor=west] at (4.7,-1.9) {y};
-  \node[note,anchor=west] at (4.7,-2.9) {a/2};
-  \node[note,anchor=west] at (4.7,-3.9) {n/c --- leave float};
+  \node[note,anchor=west] at (4.7,-3.9) {n/c};
   \node[note,anchor=west] at (4.7,-4.9) {b \;(to GND)};
   \node[note,anchor=west] at (4.7,-5.9) {a \;(IDAC1 in)};
   \node[note,anchor=west] at (4.7,-6.9) {3V3};
   \node[ground] at (4.5,-8.3) {};
+
+  % AIN2 stub + C3 to GND (as on the board)
+  \draw (4.5,-2.9) -- (5.4,-2.9);
+  \fill (5.4,-2.9) circle (1.3pt);
+  \node[note,above] at (4.55,-2.9) {a/2};
+  \draw (5.4,-2.9) to[C, l={$C_3$ 100\,nF}] (5.4,-4.1);
+  \node[ground] at (5.4,-4.1) {};
 
   % ---------------- SPI + 3V3 ----------------
   \draw (-7.2,-0.9) -- (0,-0.9);
@@ -96,8 +102,8 @@
      right AIN0--AIN3, REFN0, REFP0, AVDD, AGND.\\
      AGND $=$ AVSS (pin 5); MISO $=$ DOUT (15), MOSI $=$ DIN (16).
      SPI mode 1; CS and CLK tied to GND (internal oscillator,\\no \texttt{cs-gpios}
-     in devicetree); $C_1$ on AVDD, $C_2$ on DVDD (100\,nF each); sensor-side nets
-     (x, y, a/2, a, b) in figure 2};
+     in devicetree); $C_1$ on AVDD, $C_2$ on DVDD, $C_3$ at AIN2 (100\,nF each);
+     AIN3 floats; sensor-side nets (x, y, a/2, a, b) in figure 2};
 
 \end{circuitikz}
 
@@ -115,12 +121,18 @@
   }
   \node[note,anchor=west] at (4.7,-1.2) {x};
   \node[note,anchor=west] at (4.7,-2.2) {y};
-  \node[note,anchor=west] at (4.7,-3.2) {a/2};
   \node[note,anchor=west] at (4.7,-4.2) {n/c};
   \node[note,anchor=west] at (4.7,-5.2) {b \;(to GND)};
   \node[note,anchor=west] at (4.7,-6.2) {a \;(IDAC1 in)};
   \node[note,anchor=west] at (4.7,-7.2) {3V3};
   \node[ground] at (4.5,-8.2) {};
+
+  % AIN2 stub + C3 to GND
+  \draw (4.5,-3.2) -- (5.4,-3.2);
+  \fill (5.4,-3.2) circle (1.3pt);
+  \node[note,above] at (4.55,-3.2) {a/2};
+  \draw (5.4,-3.2) to[C, l={$C_3$ 100\,nF}] (5.4,-4.4);
+  \node[ground] at (5.4,-4.4) {};
 
   % ---------------- TrackPoint: half-bridge rhombus ----------------
   \node[pname] at (10.8,-0.4) {\textbf{TrackPoint (4-wire)}};
@@ -139,8 +151,9 @@
   \node[note,anchor=east] at (7.0,-4.6) {x};
   \draw (13.6,-4.6) -- (14.5,-4.6);
   \node[note,anchor=west] at (14.6,-4.6) {y};
-  % mid-bias divider across a-b
-  \draw (10.8,-2.0) to[R] (10.8,-4.6) to[R] (10.8,-7.2);
+  % mid-bias divider across a-b: 2 x 1.2k in series each side (= 2.4k)
+  \draw (10.8,-2.0) to[R] (10.8,-3.3) to[R] (10.8,-4.6)
+        to[R] (10.8,-5.9) to[R] (10.8,-7.2);
   \draw (10.8,-4.6) -- (9.9,-4.6);
   \node[note,anchor=east] at (9.8,-4.6) {a/2};
   % junctions
@@ -152,15 +165,17 @@
   \node[note] at (9.0,-6.2) {$G_2$};
   \node[note] at (12.6,-6.2) {$G_3$};
   \node[note] at (12.6,-3.0) {$G_1$};
-  \node[note] at (10.2,-3.2) {$R_2$};
-  \node[note] at (10.2,-5.8) {$R_1$};
+  \node[note] at (10.05,-2.65) {1.2\,k};
+  \node[note] at (10.05,-3.95) {1.2\,k};
+  \node[note] at (10.05,-5.25) {1.2\,k};
+  \node[note] at (10.05,-6.55) {1.2\,k};
 
   \node[note,anchor=north] at (8.0,-9.9)
     {right-side pins in module order; left column (DRDY \dots\ DGND) in figure 1.
      Symbols join by matching labels.\\Two half-bridges share a/b; x, y $=$ taps;
      AIN3 must float. Excitation IDAC1 enters at a, returns via b to GND.\\
-     $R_1=R_2=10$\,k matched $\Rightarrow$ AIN2 $=$ a/2 $\Rightarrow$ differential
-     input $\approx0$ at rest.};
+     $R_2=R_1=2\times1.2$\,k $=2.4$\,k matched $\Rightarrow$ AIN2 $=$ a/2;
+     $C_3=100$\,nF at AIN2 $\Rightarrow$ differential input $\approx0$ at rest.};
 
 \end{circuitikz}
 

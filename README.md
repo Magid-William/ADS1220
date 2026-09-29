@@ -5,7 +5,7 @@ Scope: wiring + firmware for reading a 4-wire TrackPoint strain-gauge sensor
 directly with an ADS1220, using the `badjeff/ads1220-zephyr-module`.
 
 Parts: 1× ADS1220, 1× 4-wire TrackPoint (controller removed), 1× nice!nano,
-2× matched divider resistors, 2× 100 nF, 8×16 dotted perfboard.
+4× 1.2 kΩ (divider: 2 in series per branch = 2.4 kΩ), 3× 100 nF, 8×16 dotted perfboard.
 
 ---
 
@@ -15,9 +15,9 @@ Parts: 1× ADS1220, 1× 4-wire TrackPoint (controller removed), 1× nice!nano,
 |---|----------|--------|--------|
 | D1 | Sensor interface | Analog 4-wire `[x][y][a][b]`, original TP controller removed | Confirmed by owner; T440 4-wire variant |
 | D2 | ADC | ADS1220, badjeff module (`main`) | Chosen by owner |
-| D3 | Bridge excitation | **IDAC1 → REFP0**, 250 µA (tune per §6) | No extra parts; matches `example-tpoint_idac.dtsi` |
+| D3 | Bridge excitation | **IDAC1 → REFP0**, 250–500 µA (tune per §6.2) | No extra parts; matches `example-tpoint_idac.dtsi` |
 | D4 | ADC reference | `REFP0/REFN0` (`ADC_REF_EXTERNAL0`) = bridge excitation | Ratiometric: IDAC tolerance cancels |
-| D5 | Mid-bias | R1 = R2 divider → AIN2 (= a/2), 10 k each | Gives 0 V differential at rest; allows gain > 1 |
+| D5 | Mid-bias | R1 = R2 = 2 × 1.2 kΩ in series (2.4 kΩ branch) → AIN2 (= a/2), + **C3 = 100 nF** AIN2↔GND | 0 V differential at rest; low AIN2 source impedance (1.2 kΩ) keeps the ADC's input-current error small (§3) |
 | D6 | CS | Tied to GND; **no `cs-gpios` in DTS** | Datasheet-allowed; single SPI device; saves a pin |
 | D7 | CLK | Tied to GND | Selects internal oscillator |
 | D8 | AIN3 / REFN1 | Floating | Internal low-side switch lives on this pin |
@@ -55,10 +55,15 @@ Sensor is two half-bridges sharing [a] (top) and [b] (bottom):
 | DRDY (14) | nice!nano **P1.06** | active low |
 | DOUT/DRDY (15) | nice!nano **P0.20** (MISO) | |
 | DIN (16) | nice!nano **P0.17** (MOSI) | |
-| — | R1: **AIN2 ↔ GND** ([b]) | 10 k, must match R2 |
-| — | R2: **AIN2 ↔ [a]** (REFP0) | 10 k, must match R1 |
+| — | R1: **AIN2 ↔ GND** ([b]) | 2 × 1.2 kΩ in series = 2.4 kΩ, matched to R2 |
+| — | R2: **AIN2 ↔ [a]** (REFP0) | 2 × 1.2 kΩ in series = 2.4 kΩ, matched to R1 |
+| — | C3: **AIN2 ↔ GND** | 100 nF, settles the ADC's switched-cap input |
 
-Owners's original drawing is **correct as-is**; the IDAC needs no extra wire.
+Owners's original drawing is correct as-is; the IDAC needs no extra wire. Only the
+divider values changed (2.4 kΩ branches) plus **C3 = 100 nF** at AIN2.
+
+Diagrams: `ads1220-tpoint/` (`.tex`, `.pdf`, `.png`, `.svg`) — page 1 = pinout +
+digital + power, page 2 = analog front-end (rhombus).
 
 ---
 
@@ -83,6 +88,18 @@ Owners's original drawing is **correct as-is**; the IDAC needs no extra wire.
 - **AIN3:** "Leave the AIN3/REFN1 pin floating when not used" — it connects to
   AVSS through the internal low-side switch. Corollary: never enable
   `low-side-power-switch` with this wiring.
+- **Divider value (R1 = R2 = 2.4 kΩ).** AIN2's source impedance is R1 ∥ R2. The
+  ADC inputs draw nA-level bias/sampling current and TI warns that "the input
+  currents flowing into and out of the device cause a voltage drop across the
+  resistors". With 47 kΩ (23.5 kΩ at AIN2) that mismatch against the ~2 kΩ x/y
+  taps is worth hundreds of µV — several percent of the ±19 mV full scale at
+  gain 64 — and it drifts with temperature. TI's own input-filter example uses
+  1 kΩ. 2.2–4.7 kΩ is the usable window; **2.4 kΩ chosen** (1.2 kΩ at AIN2).
+  The divider is *not* in the reference path, so its tolerance does not affect
+  the scale factor — it only sets the a/2 bias.
+- **C3 = 100 nF from AIN2 to GND** settles the switched-capacitor input charge
+  and filters the bias node; it also makes the divider's DC error irrelevant at
+  the modulator rate. Sits at the AIN2 pin.
 - **Driver behaviour (verified in source):** SPI mode 1; single-shot conversions
   (START/SYNC per read, `CONFIG1.MODE = 1`); PM suspend = `POWERDOWN` (400 nA);
   `idac-ua` sets the current, `zephyr,current-source-pin` routes it.
@@ -139,7 +156,7 @@ Overlay (adapt node names to the target shield):
         #address-cells = <1>;
         #size-cells = <0>;
         drdy-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        idac-ua = <250>;   /* smallest step keeping V(a) >= 0.75 V, see §6 */
+        idac-ua = <500>;   /* tune so V(a) >= 0.75 V, see README §6.2 */
 
         adc_ads1220_ch0: channel@0 {
             reg = <0>;
@@ -173,7 +190,7 @@ Overlay (adapt node names to the target shield):
         gpio-controller;
         #gpio-cells = <2>;
         dev-reg = <0>;
-        idac-ua-high = <250>;  /* keep equal to idac-ua above */
+        idac-ua-high = <500>;  /* keep equal to idac-ua above */
         idac-ua-low = <0>;
     };
 };
@@ -242,7 +259,7 @@ Rules:
 | State | Estimate | Basis |
 |---|---|---|
 | Idle, poll 1300 ms | IDAC ~0.5 % duty ≈ **1–2 µA** avg; ADC in single-shot idle | 2 conversions × ~3 ms per 1300 ms |
-| Active, poll 8 ms | IDAC ~75 % duty ≈ **190 µA** avg @ 250 µA | 2 conversions × ~3 ms per 8 ms |
+| Active, poll 8 ms | IDAC ~75 % duty (e.g. 500 µA → **~375 µA** avg) | 2 conversions × ~3 ms per 8 ms |
 | ADS1220 itself | ~120 µA duty-cycle mode; **400 nA** in POWERDOWN | Datasheet |
 | vs. `[a]` → 3.3 V | bridge always powered, `3.3 V / R_ab` (hundreds of µA–1 mA) | rejected (D3) |
 
@@ -257,18 +274,19 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
    `a↔b = R`, `x↔y = R`, and `a↔x = a↔y = b↔x = b↔y = 0.75 R`.
    Any near-0 Ω or open → wrong pads / 6-wire variant.
 2. **Measure `R_ab`.** Pick the IDAC step from this table
-   (`R_par = R_ab ∥ 20 k`, V(a) target ≥ 0.75 V, compliance ≤ 2.4 V):
+   (`R_par = R_ab ∥ 4.8 k` for the 2.4 kΩ branches, V(a) target ≥ 0.75 V,
+   compliance ≤ 2.4 V):
 
    | R_ab | R_par | step | resulting V(a) |
    |------|-------|------|----------------|
-   | 1 k  | 0.95 k | 1000 µA | 0.95 V |
-   | 2 k  | 1.82 k | 500 µA  | 0.91 V |
-   | 3 k  | 2.61 k | 500 µA  | 1.30 V |
-   | 4 k  | 3.33 k | 250 µA  | 0.83 V |
-   | 6 k  | 4.62 k | 250 µA  | 1.16 V |
-   | 10 k | 6.67 k | 250 µA  | 1.67 V |
-   | 15 k | 8.57 k | 100 µA  | 0.86 V |
-   | 20 k | 10.0 k | 100 µA  | 1.00 V |
+   | 1 k  | 0.83 k | 1000 µA | 0.83 V |
+   | 2 k  | 1.41 k | 1000 µA | 1.41 V |
+   | 3 k  | 1.85 k | 500 µA  | 0.92 V |
+   | 4 k  | 2.18 k | 500 µA  | 1.09 V |
+   | 6 k  | 2.67 k | 500 µA  | 1.33 V |
+   | 10 k | 3.24 k | 250 µA  | 0.81 V |
+   | 15 k | 3.62 k | 250 µA  | 0.90 V |
+   | 20 k | 3.87 k | 250 µA  | 0.97 V |
 
 3. **Power-up:** DVDD = AVDD = 3.3 V, no shorts, AIN3 untouched.
 4. **Static voltages (driver polling):** V(a)−V(b) ≥ 0.75 V and
@@ -294,8 +312,9 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
 ## 8. References
 
 - TI ADS1220 datasheet SBAS501: §8.3.2.1 (PGA common mode), §8.3.9 (low-side
-  switch), §8.5.1 (SPI, CS tied low, SPI timeout, DRDY), §9.1.4 (common mode),
-  ref/IDAC electrical tables.
+  switch), §8.5.1 (SPI, CS tied low, SPI timeout, DRDY), §9.1.2 (analog input
+  filtering — filter-resistor warning, 1 kΩ example), §9.1.3 (external reference),
+  §9.1.4 (common mode), §9.1.5 (unused inputs), ref/IDAC electrical tables.
 - `badjeff/ads1220-zephyr-module`: `README.md`, `example-tpoint_idac.dtsi`,
   `example-tpoint_avdd.dtsi`, `drivers/adc/adc_ads1220.c`,
   `drivers/input/input_analog_axis_hires.c`.
