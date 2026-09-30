@@ -339,7 +339,11 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
 - [ ] Measured `R_ab` → final `idac-ua` (see §7.2).
 - [ ] Sensor pad order confirmation `[x][y][a][b]` (bottom view).
 - [ ] Optional later: EN pin + final period 0 for true POWERDOWN
-      (needs an external `ANALOG_AXIS_HIRES_ATTR_RESUME` caller).
+      (needs an external `ANALOG_AXIS_HIRES_ATTR_RESUME` caller)
+- [ ] **D6 (CS tied to GND, no `cs-gpios`) is outside the module's examples** —
+      `example-tpoint_idac.dtsi` / `example-tpoint_avdd.dtsi` /
+      `example-load-cell.overlay` all drive CS from a GPIO (`cs-gpios`). Validate
+      on the bench that SPI reads work with no `cs-gpios`; if not, rework D6..
 
 ---
 

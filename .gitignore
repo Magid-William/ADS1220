@@ -1,0 +1,4 @@
+# Local clones of external reference projects (untracked third-party code).
+# Keep only the manifest tracked; ignore the clones themselves.
+refs/*
+!refs/README.md

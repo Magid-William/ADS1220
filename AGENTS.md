@@ -3,7 +3,44 @@
 ## What this repo is
 TrackPoint 4-wire strain gauge -> ADS1220 (SPI) -> nice!nano (ZMK).
 `README.md` is the design of record; `layout/board.md` is the perfboard layout.
+`ads1220-tpoint/` is the circuit diagram (source `.tex`; exports `.pdf`/`.svg`/`.png`):
+page 1 = pinout + digital + power, page 2 = analog front-end.
 Changes are gated through numbered Experiments.
+
+![ADS1220 + TrackPoint — page 1: pinout, digital, power](ads1220-tpoint/ads1220-tpoint-digital-power.png)
+![ADS1220 + TrackPoint — page 2: analog front-end](ads1220-tpoint/ads1220-tpoint-analog-frontend.png)
+
+## Reference projects
+Two external projects are cloned locally (shallow, untracked) under `refs/` for
+offline reading; `refs/README.md` holds the URLs, commit SHAs and licenses.
+(Added at the user's request — a deliberate exception to "no change without an
+experiment".)
+
+### `Magid-William/Articles` → `TrackPoint/README.md`
+The only public guide that takes the TrackPoint → ZMK analog route.
+1. **The 24-bit-ADC approach is unshipped upstream.** §5.3 is "coming soon" — no
+   wiring or firmware — and names `badjeff/ads1220-zephyr-module` as its planned
+   driver. There is no analog reference build to copy; this repo is ahead of it.
+2. **The drift is the reason to go analog.** The random cursor drift is shared by
+   both shipping digital approaches (PS/2 software-only and the AVR co-processor),
+   i.e. it lives in the PS/2 decode path. The co-processor costs ~3× software-only
+   (3–4 %/day vs 1 %/day on 1050 mAh).
+3. **Bench facts.** The USB controller is a separate PCB de-soldered from the
+   sensor (delicate); GPIO-PS/2 decode is fragile (one late CLK edge → bogus
+   full-scale delta); UART backends at 9600/14400/19200 all failed on this module.
+
+### `badjeff/ads1220-zephyr-module`
+The driver module this build depends on (Apache-2.0).
+1. **Three drivers, not one.** `ti,ads1220` ADC; `ti,ads1220-gpio` (runtime IDAC
+   switch + suspend/resume); `analog-axis-hires` (Zephyr `analog-axis` widened to
+   int32 for 24-bit). This design uses all three; the module `select`s
+   `ADC_CONFIGURABLE_EXCITATION_CURRENT_SOURCE_PIN` itself, so no extra `.conf`.
+2. **Power is pure devicetree.** `poll-period-downshift-ms` + `poll-period-en-gpios`;
+   a final period of `0` suspends the sensor but then needs an external
+   `ANALOG_AXIS_HIRES_ATTR_RESUME` call — this is why D12 stops at a 1300 ms floor.
+3. **CS deviation to validate.** Every module example wires the ADC with
+   `cs-gpios = <&gpio0 6 …>`; D6 ties CS to GND and omits `cs-gpios`, a case the
+   module does not demonstrate. Tracked in README §8.
 
 ## Experiment workflow
 Experiments are numbered EXP01, EXP02, ... One git branch per experiment,
