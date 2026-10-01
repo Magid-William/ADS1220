@@ -1,0 +1,16 @@
+# Copyright (c) 2026 Magid-William
+# SPDX-License-Identifier: MIT
+#
+# EXP02: ADS1220 TrackPoint bring-up logging helpers.
+# See experiments/EXP02/README.md and boards/shields/ads1220_tpoint/.
+
+config EXP02_LOGGING
+	bool "ADS1220 TrackPoint EXP02 logging helpers (tpoint shell + raw callback)"
+	default n
+	depends on INPUT_ANALOG_AXIS_HIRES
+	depends on SHELL
+	depends on ADC
+	help
+	  Build exp02_logging.c: a `tpoint` shell command and a raw-data callback
+	  that logs every ADS1220 sample for bench bring-up. Experimental; not for
+	  a shipping configuration.

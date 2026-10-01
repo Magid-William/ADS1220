@@ -3,3 +3,4 @@
 | experiment | status | title |
 |---|---|---|
 | EXP01 | success | Minimal ZMK shield for the ADS1220 TrackPoint, built on GitHub Actions |
+| EXP02 | inProg | Full-path ADS1220 logging: handshake to readings and errors |

@@ -40,14 +40,39 @@ to it, it exists only because ZMK wants a kscan and a physical layout.
 The build uses the `zmk-usb-logging` snippet, which routes the Zephyr console and
 `zephyr,shell-uart` to a USB CDC-ACM device. On top of that the shield enables:
 
-- `CONFIG_{ZMK,ADC,GPIO,INPUT}_LOG_LEVEL_DBG`
+- `CONFIG_{ZMK,ADC,GPIO,INPUT,SPI}_LOG_LEVEL_DBG` — SPI DBG shows the status of
+  every driver SPI transaction (the wire-level handshake)
 - `CONFIG_SHELL` + `CONFIG_SHELL_BACKEND_SERIAL` (init priority 51) + `CONFIG_LOG_CMDS`
-- `CONFIG_GPIO_SHELL` (`gpio get/set`, useful for poking the IDAC line)
+- `CONFIG_GPIO_SHELL`, `CONFIG_KERNEL_SHELL`, `CONFIG_DEVICE_SHELL`, `CONFIG_SPI_SHELL`
+- Deferred logging with `CONFIG_LOG_BUFFER_SIZE=32768`
 - `CONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=3000`
+- `CONFIG_EXP02_LOGGING` — the `tpoint` command and a raw-sample callback
 
 There is **no ZMK-specific shell** — this is the stock Zephyr shell on the ZMK USB
-console. Connect to the CDC-ACM port (`tio /dev/ttyACM0`, or a serial terminal on
-Windows), then raise/lower levels at runtime with `log enable dbg <module>`.
+console. Run `capture-serial.ps1` (repo root) to log a session to a file, or
+connect with a serial terminal on the CDC-ACM port.
+
+### Bring-up sequence
+
+```
+device list                       # is adc_ads1220 / gpio_ads1220 ready?
+spi conf adc_ads1220 1000000 h    # mode 1 (CPHA)
+spi transceive 06                 # RESET
+spi transceive 20 00              # read CONFIG0
+spi transceive 23 00 00 00 00     # read CONFIG0..3
+gpio get gpio1 6                  # DRDY level (active low)
+tpoint status
+tpoint sample 8                   # capture 8 raw samples through the driver path
+tpoint stream on                  # log EVERY raw sample (RAW chN=val); 'off' to stop
+tpoint calib
+tpoint idac 500                   # set IDAC excitation current (uA)
+log enable dbg <module>           # adjust a module's level at runtime
+```
+
+`CONFIG_SPI_SHELL` reads the ADS1220 registers directly, so the handshake register
+values are visible even though the upstream driver's register-value DBG lines are
+compiled out. `CONFIG_ADC_SHELL` is **not** usable here: its device list omits
+`ti,ads1220` and it reads with a 2-byte buffer.
 
 Quickest liveness check at boot — the driver logs the neutral raw value:
 
