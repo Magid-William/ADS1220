@@ -32,7 +32,7 @@
 LOG_MODULE_REGISTER(exp02_logging, CONFIG_LOG_DEFAULT_LEVEL);
 
 /* Node labels from boards/shields/ads1220_tpoint/ads1220_tpoint.dtsi */
-#define EXP02_AXH_NODE DT_NODELABEL(analog_axis_hires_0)
+#define EXP02_AXH_NODE DT_NODELABEL(anin0)
 #define EXP02_ADC_NODE DT_NODELABEL(adc_ads1220)
 
 /* The ADC's `reg`/`dev-reg` value; both nodes use 0 in this shield. */
