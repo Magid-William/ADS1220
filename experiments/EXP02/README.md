@@ -61,6 +61,19 @@ are dropped/overflowed.
 _Pending._
 
 ## Learnings
+- **Boot log (2026-10-01, `exp02-boot.log`) shows a hardware fault, not a firmware
+  one.** Firmware is correct: driver init, `DRDY GPIO configured, using hardware
+  interrupt`, timer at 8 ms, thread started, and channel setup computed the right
+  `CONFIG0 = 0x1C` (AIN0-AIN2, gain 64). But the very first readback returned
+  `config0 mismatch! 0x1C != 0xFF` and `Could not setup channel #0 (-5)`: the
+  ADS1220 does **not drive MISO** (P0.20 reads 0xFF, floating). No samples → no
+  calibration (`tpoint sample` times out, `tpoint calib` shows untouched DT
+  values, deadzone 0) → no pointer. Check ADC power (AVDD/DVDD/GND), the
+  DOUT/DRDY pin 15 → P0.20 wire, and the breakout's supply (README §8).
+- **Don't run `spi` shell commands while the analog-axis driver is polling.** The
+  shell `spi transceive` collides with the driver's transactions and produces a
+  spurious `config0 mismatch` / `spi_transceive returned -5`. Capture the boot log
+  instead (`capture-serial.ps1 -Reset`).
 - **SPI DBG floods the USB CDC-ACM TX ring.** `CONFIG_SPI_LOG_LEVEL_DBG` emits ~5
   `spi_context_*` lines per transaction; the boot/calibration burst overflows the
   1024 B `CONFIG_USB_CDC_ACM_RINGBUF_SIZE` and cuts log lines mid-message. Leave

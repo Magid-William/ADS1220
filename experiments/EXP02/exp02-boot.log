@@ -1,0 +1,54 @@
+# EXP02 capture  port=COM8  start=2026-10-01T16:55:13.5007491+03:00
+
+### sent: kernel reboot cold
+
+### port error, reconnecting: Exception calling "ReadExisting" with "0" argument(s): "The port is closed."
+### reconnected 2026-10-01T16:55:18.0864043+03:00
+[m
+[1;32muart:~$ [m[00:00:00.253,814] [0m<inf> gpio_ads1220: ADS1220 GPIO initialized[0m
+[00:00:00.254,272] [0m<inf> ads1220: DRDY GPIO configured, using hardware interrupt[0m
+[00:00:00.254,302] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x2000ce20 - rx_bufs 0x2000ce30 - 1[0m
+[00:00:00.254,333] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x2000ce18 (1), current_rx 0x2000ce28 (1), tx buf/len 0x2000ce50/1, rx buf/len 0x2000ce54/1[0m
+[00:00:00.254,394] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:00:00.254,394] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:00:00.254,425] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+[00:00:00.255,554] [0m<inf> ads1220: Initialised (DRDY: yes)[0m
+[00:00:00.256,072] [0m<inf> analog_axis_hires: analog_axis_hires_init: START[0m
+[00:00:00.256,225] [0m<inf> analog_axis_hires: Thread created successfully, name=analog_axis_hires_0[0m
+[00:00:00.256,225] [0m<inf> analog_axis_hires: Starting timer with period 8 ms[0m
+[00:00:00.256,256] [0m<inf> analog_axis_hires: Analog-axis-hires Initialised[0m
+[00:00:00.256,317] [0m<dbg> zmk: kscan_matrix_init_input_inst: Configured pin 31 on gpio@50000000 for input[0m
+[00:00:00.256,378] [0m<dbg> zmk: kscan_matrix_init_output_inst: Configured pin 2 on gpio@50000000 for output[0m
+*** Booting Zephyr OS build 10ba6d0cb38b ***
+[00:00:00.256,500] [0m<dbg> zmk: get_selected_transport: No endpoint transport selected[0m
+[00:00:00.256,805] [0m<inf> zmk: Welcome to ZMK!
+[0m
+[00:00:00.256,835] [0m<inf> analog_axis_hires: Analog-axis-hires thread started[0m
+[00:00:00.256,835] [0m<inf> analog_axis_hires: Checking if all channels use same ADC[0m
+[00:00:00.256,896] [0m<inf> analog_axis_hires: All channels use same ADC: no[0m
+[00:00:00.256,896] [0m<inf> analog_axis_hires: Setting up channel 0, ADC channel 0[0m
+[00:00:00.256,927] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x20009250 - rx_bufs 0x20009260 - 1[0m
+[00:00:00.256,958] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x20009248 (1), current_rx 0x20009258 (1), tx buf/len 0x20009278/2, rx buf/len 0x2000927c/2[0m
+[00:00:00.257,019] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:00:00.257,019] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:00:00.257,049] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+[00:00:00.257,080] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x20009250 - rx_bufs 0x20009260 - 1[0m
+[00:00:00.257,110] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x20009248 (1), current_rx 0x20009258 (1), tx buf/len 0x20009278/2, rx buf/len 0x2000927c/2[0m
+[00:00:00.257,171] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:00:00.257,171] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:00:00.257,202] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+[00:00:00.257,232] [1;31m<err> ads1220: config0 mismatch! 0x1C != 0xFF[0m
+[00:00:00.257,232] [1;31m<err> analog_axis_hires: Could not setup channel #0 (-5)[0m
+[00:00:00.257,659] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 2[0m
+[00:00:00.257,690] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 2[0m
+[00:00:00.260,772] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.260,803] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.358,398] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.358,428] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.358,459] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.449,279] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.449,310] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.660,400] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 3[0m
+[00:00:00.660,491] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 3[0m
+
+# end=2026-10-01T16:55:33.5132470+03:00
