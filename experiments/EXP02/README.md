@@ -61,6 +61,11 @@ are dropped/overflowed.
 _Pending._
 
 ## Learnings
+- **SPI DBG floods the USB CDC-ACM TX ring.** `CONFIG_SPI_LOG_LEVEL_DBG` emits ~5
+  `spi_context_*` lines per transaction; the boot/calibration burst overflows the
+  1024 B `CONFIG_USB_CDC_ACM_RINGBUF_SIZE` and cuts log lines mid-message. Leave
+  SPI at INF and/or raise the ring buffer (`8192` here). Register-level handshake
+  comes from the `spi` shell on demand.
 - **Enabling the serial shell kills the log backend.** Zephyr's
   `LOG_BACKEND_UART` is `default y if !SHELL_BACKEND_SERIAL`, so with
   `CONFIG_SHELL_BACKEND_SERIAL=y` the only backend left is the shell backend and

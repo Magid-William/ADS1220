@@ -40,8 +40,11 @@ to it, it exists only because ZMK wants a kscan and a physical layout.
 The build uses the `zmk-usb-logging` snippet, which routes the Zephyr console and
 `zephyr,shell-uart` to a USB CDC-ACM device. On top of that the shield enables:
 
-- `CONFIG_{ZMK,ADC,GPIO,INPUT,SPI}_LOG_LEVEL_DBG` — SPI DBG shows the status of
-  every driver SPI transaction (the wire-level handshake)
+- `CONFIG_{ZMK,ADC,GPIO,INPUT}_LOG_LEVEL_DBG`. `CONFIG_SPI_LOG_LEVEL_DBG` is
+  **off** by default: at DBG the SPI context logs ~5 lines per transaction and the
+  calibration burst overflows the USB CDC-ACM TX ring; register-level handshake
+  comes from the `spi` shell instead (SPI errors still show at INF)
+- `CONFIG_USB_CDC_ACM_RINGBUF_SIZE=8192` so the boot log burst is not truncated
 - `CONFIG_SHELL` + `CONFIG_SHELL_BACKEND_SERIAL` (init priority 51) + `CONFIG_LOG_CMDS`
 - `CONFIG_GPIO_SHELL`, `CONFIG_KERNEL_SHELL`, `CONFIG_DEVICE_SHELL`, `CONFIG_SPI_SHELL`
 - `CONFIG_LOG_BACKEND_UART=y` with `CONFIG_SHELL_LOG_BACKEND=n`: enabling
