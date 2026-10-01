@@ -61,4 +61,17 @@ are dropped/overflowed.
 _Pending._
 
 ## Learnings
-- `<command that worked>` - use when <condition>
+- **`analog_axis_hires_0` is the node *name*, not a label.** In the shield dtsi
+  it is `anin0: analog_axis_hires_0 { ... }`, so `DT_NODELABEL(analog_axis_hires_0)`
+  fails to compile (`__device_dts_ord_DT_N_NODELABEL_..._ORD undeclared`); use
+  `DT_NODELABEL(anin0)`. The ADC node is `adc_ads1220: adc_ads1220@0`, so
+  `DT_NODELABEL(adc_ads1220)` is correct (label == prefix).
+- Green run: `gh run watch <id> --repo Magid-William/ADS1220 --exit-status`.
+  Confirmed in `.config`: `CONFIG_EXP02_LOGGING=y`, `CONFIG_{KERNEL,DEVICE,SPI}_SHELL=y`,
+  `CONFIG_SPI_LOG_LEVEL_DBG=y`, `CONFIG_LOG_BUFFER_SIZE=32768`. FLASH 15.66%,
+  RAM 22.50%. Our source compiles clean; the same upstream-module warnings as
+  EXP01 remain (`gpio_ads1220.c` implicit declarations, `adc_ads1220.c`
+  `-Wmaybe-uninitialized gain`).
+- `git push` of the EXP02 branch triggers `.github/workflows/build.yml`; artifact
+  `ads1220_tpoint-nice_nano@2.0.0-zmk.uf2` via
+  `gh run download <id> -D <dir>`.
