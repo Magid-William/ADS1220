@@ -44,7 +44,56 @@ not the read timing).
 - [ ] Analyzer - proposed default: reuse `experiments/EXP04/analyze_xy.py`.
 
 ## Conclusion (findings)
-_Pending._
+_(Provisional - awaiting the operator's status declaration. The hypothesis is
+not confirmed, so this is a candidate for **failed**.)_
+
+**H1 (read-path settling) is falsified: leaving the IDAC on continuously did not
+change the picture.** The problem is the front-end, not the IDAC gating.
+
+The decisive comparison is hands-off vs hand-on, all on the same EXP05 firmware:
+
+| capture | nub | x off-plateau |
+|---|---|---|
+| `exp05-probe.log` (6 s, right after flash) | hands off | **0%** - one value, `-8355840`, the whole time |
+| hands-off baseline (8 s) | hands off | **0%** - still one value |
+| `exp05-circle.log` (20 s, rest + 10 s circle) | hand on the nub | **~40% in every 0.5 s bin**, rest and motion alike |
+
+Inside the circle capture the off-plateau fraction is flat at ~40% from start to
+finish (39-50%), and the per-bin peak is essentially constant (~`-600000`,
+range `-197587 .. -921304`) whether you were holding still or circling. The
+off-plateau values fall on a **small fixed set of levels** spaced ~`2^16`
+(about `-197600, -394900, -460600, -526500, -592200, -658100, -723900, -789700,
+-855400, -921300`).
+
+So: touching the nub switches the ADC from the rail into a fixed, position-
+*independent* pattern. The nub currently reads like a **contact**, not a
+position sensor - any contact saturates the front-end and the position is lost.
+
+This matches README §8 / EXP03 ("analog front-end is railed") and points at:
+- the IDAC compliance bound `V(a) <= AVDD - 0.9 V = 2.4 V` being exceeded
+  (`V(a) = I_IDAC x (R_ab || 4.4k)`), and/or
+- the neutral sitting outside the +/-`Vref/64` (~16 mV) input window at gain 64.
+
+Artifacts: `exp05-circle.log`, `exp05-circle-xy.csv`, `exp05-circle-{xy-scatter,
+xy-live,x,y}.svg`. Analysis reused `experiments/EXP04/analyze_xy.py`.
+
+Next experiment candidates (in order):
+1. Bench-measure `R_ab`, `V(a)-V(b)`, `V(a)`, `V(x)`, `V(y)`, `V(AIN2)` with the
+   driver polling; pick `idac-ua` so `V(a)` is inside 0.75-2.4 V.
+2. Same capture at **gain 16** (then 8) so the neutral offset fits the window.
+3. Only then a full circle capture to test X/Y independence.
 
 ## Learnings
-- (pending)
+- **Hands-off vs hand-on is the discriminator.** With the nub untouched the ADC
+  sits at one value forever (0% off-plateau); the moment a hand is on the nub it
+  jumps to ~40% off-plateau *regardless of position*. Capture a hands-off
+  baseline before blaming firmware or the read path.
+- **Removing `avdd-gpios` leaves the IDAC on continuously** (`has_gpio_avdd` is
+  false; `data->idac_ua` stays at the ADC node's `idac-ua` and each channel
+  setup re-programs it). It builds and runs fine - but it did **not** change the
+  EXP04 picture, so the poll-rate sawtooth was not IDAC gating.
+- **Off-plateau values came in a fixed ladder spaced ~`2^16`** - a useful tell
+  that the reading is a saturated/quantised artefact rather than real signal.
+- **A second `capture-serial.ps1` run right after a capture is a cheap
+  hands-off baseline** and needs no operator, so ask for the baseline separately
+  from the circle run.
