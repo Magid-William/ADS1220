@@ -1,0 +1,6 @@
+if SHIELD_ADS1220_TPOINT
+
+config ZMK_KEYBOARD_NAME
+    default "TP-ADS1220"
+
+endif

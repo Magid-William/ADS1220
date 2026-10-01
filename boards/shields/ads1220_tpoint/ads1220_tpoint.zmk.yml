@@ -1,0 +1,10 @@
+file_format: "1"
+id: ads1220_tpoint
+name: ADS1220 TrackPoint
+type: shield
+url: https://github.com/Magid-William/ADS1220
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
+  - pointer

@@ -1,0 +1,42 @@
+/*
+ * EXP01 shield: ADS1220 TrackPoint on nice!nano.
+ *
+ * The keyboard bits are a placeholder - nothing is wired to the 1x1 kscan,
+ * it exists only because ZMK requires a kscan + physical layout.
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "ads1220_tpoint.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    /* Dummy 1x1 matrix (pro_micro 19/21 = P0.02/P0.31, unused by the ADC). */
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios = <&pro_micro 19 GPIO_ACTIVE_HIGH>;
+        row-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <1>;
+        rows = <1>;
+        map = < RC(0,0) >;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+        kscan = <&kscan0>;
+        transform = <&default_transform>;
+    };
+};

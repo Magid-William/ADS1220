@@ -1,0 +1,6 @@
+# This file generates the GitHub Actions build matrix.
+---
+include:
+  - board: nice_nano@2.0.0
+    shield: ads1220_tpoint
+    snippet: zmk-usb-logging

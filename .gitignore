@@ -2,3 +2,9 @@
 # Keep only the manifest tracked; ignore the clones themselves.
 refs/*
 !refs/README.md
+
+# ZMK / west build output
+build/
+*.uf2
+*.bin
+.venv/

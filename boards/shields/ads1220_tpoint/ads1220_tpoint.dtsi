@@ -1,0 +1,135 @@
+/*
+ * ADS1220 + 4-wire TrackPoint analog front-end (nice!nano / nRF52840).
+ *
+ * Wiring = README "2 (design of record):
+ *   SCLK  P0.08 | MISO P0.20 | MOSI P0.17 | DRDY P1.06
+ *   CS tied to GND (D6) -> no cs-gpios; CLK tied to GND (D7, internal osc).
+ *
+ * Divider is 2.2 kOhm per leg (one resistor + a bridge), not 2.4 kOhm:
+ *   R1 = R2 = 2.2k, C3 = 100nF at AIN2 -> AIN2 source impedance 1.1k,
+ *   divider load 4.4k. Ratiometric, so gain/scale are unaffected.
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+&pinctrl {
+    spi2_default: spi2_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 20)>;
+        };
+    };
+    spi2_sleep: spi2_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi2 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-names = "default", "sleep";
+    /* no cs-gpios: CS is tied to GND (D6) */
+
+    adc_ads1220: adc_ads1220@0 {
+        compatible = "ti,ads1220";
+        status = "okay";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        #io-channel-cells = <1>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+        drdy-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        idac-ua = <500>;   /* tune so V(a) >= 0.75 V: V(a) = I * (R_ab || 4.4k) */
+
+        adc_ads1220_ch0: channel@0 {
+            reg = <0>;
+            zephyr,resolution = <24>;
+            zephyr,gain = "ADC_GAIN_64";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <330>;
+            zephyr,input-positive = <0>;          /* AIN0 = x */
+            zephyr,input-negative = <2>;          /* AIN2 = a/2 */
+            zephyr,current-source-pin = [05 00];  /* IDAC1 -> REFP0 */
+        };
+        adc_ads1220_ch1: channel@1 {
+            reg = <1>;
+            zephyr,resolution = <24>;
+            zephyr,gain = "ADC_GAIN_64";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <330>;
+            zephyr,input-positive = <1>;          /* AIN1 = y */
+            zephyr,input-negative = <2>;          /* AIN2 = a/2 */
+            zephyr,current-source-pin = [05 00];  /* IDAC1 -> REFP0 */
+        };
+    };
+};
+
+#include <zephyr/dt-bindings/gpio/gpio_ads1220.h>
+
+/ {
+    /* IDAC as a GPIO: gated high only while a channel is being sampled. */
+    gpio_ads1220: gpio_ads1220 {
+        compatible = "ti,ads1220-gpio";
+        status = "okay";
+        gpio-controller;
+        #gpio-cells = <2>;
+        dev-reg = <0>;
+        idac-ua-high = <500>;  /* keep equal to idac-ua above */
+        idac-ua-low = <0>;
+    };
+};
+
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    /*
+     * badjeff's analog-axis fork: int32 buffers so 24-bit samples survive.
+     * 8 ms while active -> 100 ms after 5 s idle -> 1300 ms after 7 s more
+     * (never 0: a 0 period suspends and needs an external RESUME call, D12).
+     */
+    anin0: analog_axis_hires_0 {
+        compatible = "analog-axis-hires";
+        status = "okay";
+
+        poll-period-downshift-ms = <8 5000 100 7000 1300>;
+
+        axis-x {
+            io-channels = <&adc_ads1220 0>;
+            avdd-gpios = <&gpio_ads1220 ADS1220_GPIO_PIN_IDAC GPIO_ACTIVE_HIGH>;
+            in-min = <( 131622 - 655300 )>;
+            in-max = <( 131622 + 655300 )>;
+            in-calib-cycle = <100>;
+            in-deadzone-calib-scale-pctg = <110>;
+            out-min = <( -127 )>;
+            out-max = <( 127 )>;
+            zephyr,axis-type = <INPUT_EV_REL>;
+            zephyr,axis = <INPUT_REL_X>;
+        };
+        axis-y {
+            io-channels = <&adc_ads1220 1>;
+            avdd-gpios = <&gpio_ads1220 ADS1220_GPIO_PIN_IDAC GPIO_ACTIVE_HIGH>;
+            in-min = <( -21 - 655300 )>;
+            in-max = <( -21 + 655300 )>;
+            in-calib-cycle = <100>;
+            in-deadzone-calib-scale-pctg = <110>;
+            out-min = <( -127 )>;
+            out-max = <( 127 )>;
+            zephyr,axis-type = <INPUT_EV_REL>;
+            zephyr,axis = <INPUT_REL_Y>;
+        };
+    };
+
+    /* Forward the analog-axis input events to ZMK's HID pointer. */
+    anin0_listener: anin0_listener {
+        compatible = "zmk,input-listener";
+        device = <&anin0>;
+    };
+};
