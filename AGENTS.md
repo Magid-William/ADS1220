@@ -43,6 +43,10 @@ The driver module this build depends on (Apache-2.0).
    module does not demonstrate. Tracked in README §8.
 
 ## Bench notes
+- **Ask the operator before any operator-dependent step — never assume they are
+  at the bench.** Circular motion or hands-off captures, double-tap reset,
+  holding the nub still, or watching a run all need them. State exactly what you
+  need, then wait for them to confirm they are ready before starting.
 - **COM8 is the likely nice!nano USB serial port** (the default in
   `flash-nicenano.ps1`). COM numbers are assigned per USB port, so confirm before
   use: `Get-PnpDevice -Class Ports -Status OK`. A stale-but-listed COM8 is
