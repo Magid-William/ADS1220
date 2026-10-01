@@ -1,0 +1,72 @@
+# EXP02 capture  port=COM8  start=2026-10-01T18:42:55.9569547+03:00
+[00:00:00.377,807] [0m<inf> gpio_ads1220: ADS1220 GPIO initialized[0m
+[00:00:00.378,387] [0m<inf> ads1220: DRDY GPIO configured, using hardware interrupt[0m
+[00:00:00.379,577] [0m<inf> ads1220: Initialised (DRDY: yes)[0m
+[00:00:00.380,218] [0m<inf> analog_axis_hires: analog_axis_hires_init: START[0m
+[00:00:00.380,401] [0m<inf> analog_axis_hires: Thread created successfully, name=analog_axis_hires_0[0m
+[00:00:00.380,401] [0m<inf> analog_axis_hires: Starting timer with period 8 ms[0m
+[00:00:00.380,432] [0m<inf> analog_axis_hires: Analog-axis-hires Initialised[0m
+[00:00:00.380,493] [0m<dbg> zmk: kscan_matrix_init_input_inst: Configured pin 31 on gpio@50000000 for input[0m
+[00:00:00.380,554] [0m<dbg> zmk: kscan_matrix_init_output_inst: Configured pin 2 on gpio@50000000 for output[0m
+*** Booting Zephyr OS build 10ba6d0cb38b ***
+[00:00:00.380,676] [0m<dbg> zmk: get_selected_transport: No endpoint transport selected[0m
+[00:00:00.380,981] [0m<inf> zmk: Welcome to ZMK!
+[0m
+[00:00:00.381,011] [0m<inf> analog_axis_hires: Analog-axis-hires thread started[0m
+[00:00:00.381,011] [0m<inf> analog_axis_hires: Checking if all channels use same ADC[0m
+[00:00:00.381,072] [0m<inf> analog_axis_hires: All channels use same ADC: no[0m
+[00:00:00.381,072] [0m<inf> analog_axis_hires: Setting up channel 0, ADC channel 0[0m
+[00:00:00.381,225] [1;31m<err> ads1220: config0 mismatch! 0x1C != 0xFF[0m
+[00:00:00.381,225] [1;31m<err> analog_axis_hires: Could not setup channel #0 (-5)[0m
+[00:00:00.381,835] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 2[0m
+[00:00:00.381,866] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.381,896] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.381,927] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.384,979] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.385,009] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.482,635] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.482,666] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.482,666] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.572,814] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.572,845] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.741,882] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 3[0m
+[00:00:00.741,973] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 3[0m
+[m
+[1;32muart:~$ [m
+### sent: kernel reboot cold
+
+### port error, reconnecting: Exception calling "ReadExisting" with "0" argument(s): "The port is closed."
+### reconnected 2026-10-01T18:43:00.5135219+03:00
+[m
+[1;32muart:~$ [m[00:00:00.253,509] [0m<inf> gpio_ads1220: ADS1220 GPIO initialized[0m
+[00:00:00.254,089] [0m<inf> ads1220: DRDY GPIO configured, using hardware interrupt[0m
+[00:00:00.255,279] [0m<inf> ads1220: Initialised (DRDY: yes)[0m
+[00:00:00.255,920] [0m<inf> analog_axis_hires: analog_axis_hires_init: START[0m
+[00:00:00.256,103] [0m<inf> analog_axis_hires: Thread created successfully, name=analog_axis_hires_0[0m
+[00:00:00.256,103] [0m<inf> analog_axis_hires: Starting timer with period 8 ms[0m
+[00:00:00.256,134] [0m<inf> analog_axis_hires: Analog-axis-hires Initialised[0m
+[00:00:00.256,195] [0m<dbg> zmk: kscan_matrix_init_input_inst: Configured pin 31 on gpio@50000000 for input[0m
+[00:00:00.256,256] [0m<dbg> zmk: kscan_matrix_init_output_inst: Configured pin 2 on gpio@50000000 for output[0m
+*** Booting Zephyr OS build 10ba6d0cb38b ***
+[00:00:00.256,378] [0m<dbg> zmk: get_selected_transport: No endpoint transport selected[0m
+[00:00:00.256,744] [0m<inf> zmk: Welcome to ZMK!
+[0m
+[00:00:00.256,744] [0m<inf> analog_axis_hires: Analog-axis-hires thread started[0m
+[00:00:00.256,774] [0m<inf> analog_axis_hires: Checking if all channels use same ADC[0m
+[00:00:00.256,805] [0m<inf> analog_axis_hires: All channels use same ADC: no[0m
+[00:00:00.256,835] [0m<inf> analog_axis_hires: Setting up channel 0, ADC channel 0[0m
+[00:00:00.256,988] [1;31m<err> ads1220: config0 mismatch! 0x1C != 0xFF[0m
+[00:00:00.256,988] [1;31m<err> analog_axis_hires: Could not setup channel #0 (-5)[0m
+[00:00:00.257,537] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 2[0m
+[00:00:00.257,568] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 2[0m
+[00:00:00.260,650] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.260,681] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 5[0m
+[00:00:00.358,062] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.358,093] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.358,123] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 6[0m
+[00:00:00.448,303] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.448,333] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 1[0m
+[00:00:00.656,341] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 3[0m
+[00:00:00.656,433] [0m<dbg> zmk: zmk_usb_get_conn_state: state: 3[0m
+
+# end=2026-10-01T18:43:26.0167961+03:00

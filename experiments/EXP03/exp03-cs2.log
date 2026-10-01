@@ -1,0 +1,42 @@
+# EXP02 capture  port=COM8  start=2026-10-01T18:57:40.1628122+03:00
+
+### sent: spi conf spi@40023000 1000000 h
+spi conf spi@40023000 1000000 h
+[1;32muart:~$ [m
+### sent: spi cs spi@40023000 gpio0 10
+spi cs spi@40023000 gpio0 10
+[1;31minvalid pin number: gpio0
+[m[1;32muart:~$ [m
+### sent: spi transceive 23 00 00 00 00
+spi transceive 23 00 00 00 00
+TX:
+00000000: 23 00 00 00 00                                   |#....            |
+RX:
+00000000: ff ff ff ff ff                                   |.....            |
+[1;32muart:~$ [m
+### sent: spi cs spi@40023000 gpio0 10 1
+spi cs spi@40023000 gpio0 10 1
+[1;31mcs: wrong parameter count
+[mcs - Assign CS GPIO to SPI device
+[5CUsage: spi cs <gpio-device> <pin> [<gpio flags>]example: spi conf gpio1 3
+[5C0x01
+Subcommands:
+  spi@40023000
+[1;32muart:~$ [m
+### sent: spi transceive 23 00 00 00 00
+spi transceive 23 00 00 00 00
+TX:
+00000000: 23 00 00 00 00                                   |#....            |
+RX:
+00000000: ff ff ff ff ff                                   |.....            |
+[1;32muart:~$ [m
+### sent: spi cs spi@40023000 gpio0 10 0
+spi cs spi@40023000 gpio0 10 0
+[1;31mcs: wrong parameter count
+[mcs - Assign CS GPIO to SPI device
+[5CUsage: spi cs <gpio-device> <pin> [<gpio flags>]example: spi conf gpio1 3
+[5C0x01
+Subcommands:
+  spi@40023000
+[1;32muart:~$ [m
+# end=2026-10-01T18:58:10.2061659+03:00

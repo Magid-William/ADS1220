@@ -87,6 +87,10 @@ proper CS framing without the rework.
 | 15 | Continuity MOSI (16) -> P0.17 | beeps | |
 | 16 | Continuity SCLK (1) -> P0.08 | beeps | |
 | 17 | Continuity CS (2) -> GND, CLK (3) -> GND | **not measured** | current leading suspect |
+| 17a | CS moved to P0.10, `cs-gpios`, GPIO_ACTIVE_LOW | `config0 0x1C != 0xFF` | chip deselected: CS not driven low |
+| 17b | `+ CONFIG_NFCT_PINS_AS_GPIOS=y` (P0.10 is an NFC pin) | still `0xFF` | not the blocker (nice!nano likely already sets it) |
+| 18 | CS wired correctly to P0.10 + `cs-gpios` | setup succeeds, **0 mismatches**, calib runs, samples stream | **root cause fixed** |
+| 19 | post-fix calibration / live | ch0 & ch1 `avg:-8355840` (constant), dt_range 1310600, deadzone 0 | analog front-end railed - a new (analog) problem |
 | 18 | Boot with `drdy-gpios = <&gpio0 6>` (P0.06) | `config0 mismatch! 0x1C != 0x00` | readback now the ADS1220 reset default, not floating |
 | 19 | Poll loop after failure | ~127 `mismatch`/s, channel retried every 8 ms | thread keeps polling; log flood is expected |
 | 20 | ch0 write `0x1C` -> read `0x00`; ch1 write `0x3C` -> read `0x1C` | one-transaction lag | write lands, readback returns previous value -> framing |
@@ -168,6 +172,13 @@ _Pending._
 - **Zephyr `spi` shell option letters** (`spi_shell.c`): `o`=CPOL, `h`=CPHA,
   `l`=LSB, `T`=TI frame - a *sequence* of letters (e.g. `oh` = mode 3). `c` is
   not a valid setting. `h` alone = mode 1 = what the ADS1220 needs.
-- **`spi cs <spi-dev> <gpio-dev> <pin> [flags]`** lets the shell drive a CS
-  GPIO, so the cs-gpios path can be exercised from the shell without a rebuild -
-  but only if CS is not soldered to GND.
+- **`spi cs` needs the SPI device as a subcommand** and takes the pin only
+  (`spi cs spi@40023000 <pin> [flags]`); `spi cs spi@40023000 gpio0 10` fails with
+  "invalid pin number: gpio0". Without a CS the shell's `transceive` on the
+  controller reads `0xFF` once the ADS1220 CS is no longer tied low.
+- **nRF52840 P0.09/P0.10 are the NFC antenna pins (NFC1/NFC2).** They are not
+  GPIO unless `CONFIG_NFCT_PINS_AS_GPIOS=y` (nice!nano/ZMK likely already sets
+  it, since D10/D16 are P0.09/P0.10). Worth knowing before choosing a CS pin.
+- **The result of the fix:** with `cs-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW |
+  GPIO_PULL_UP)>` both channels set up, calibration runs and samples stream with
+  zero register mismatches. CS tied to GND is the wrong answer for this driver.

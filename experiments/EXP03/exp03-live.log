@@ -1,0 +1,36 @@
+# EXP02 capture  port=COM8  start=2026-10-01T19:08:00.3033587+03:00
+
+### sent: tpoint status
+tpoint status
+adc_ads1220 ready : yes
+analog-axis ready : yes
+axes              : 2
+stream            : off
+[1;32muart:~$ [m
+### sent: tpoint calib
+tpoint calib
+ch 0: in_min=-9011140 in_max=-7700540 deadzone=0
+ch 1: in_min=-9011140 in_max=-7700540 deadzone=0
+[1;32muart:~$ [m
+### sent: tpoint sample 8
+tpoint sample 8
+capturing 8 sample(s)...
+[00:01:12.866,516] [0m<inf> exp02_logging: SAMPLE ch0=-8355840[0m
+[00:01:12.866,546] [0m<inf> exp02_logging: SAMPLE ch1=-8355840[0m
+[00:01:14.166,534] [0m<inf> exp02_logging: SAMPLE ch0=-8355840[0m
+[00:01:14.166,564] [0m<inf> exp02_logging: SAMPLE ch1=-8355840[0m
+
+### sent: tpoint idac 500
+[00:01:15.466,552] [0m<inf> exp02_logging: SAMPLE ch0=-8355840[0m
+[00:01:15.466,583] [0m<inf> exp02_logging: SAMPLE ch1=-8355840[0m
+[1;32muart:~$ [mtpoint idac 500
+idac = 500 uA (ret 0)
+[1;32muart:~$ [m[00:01:16.766,571] [0m<inf> exp02_logging: SAMPLE ch0=-8355840[0m
+[00:01:16.766,601] [0m<inf> exp02_logging: SAMPLE ch1=-8355840[0m
+
+### sent: tpoint calib
+tpoint calib
+ch 0: in_min=-9011140 in_max=-7700540 deadzone=0
+ch 1: in_min=-9011140 in_max=-7700540 deadzone=0
+[1;32muart:~$ [m
+# end=2026-10-01T19:08:30.3167636+03:00
