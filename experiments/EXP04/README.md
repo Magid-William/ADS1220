@@ -47,17 +47,74 @@ correlated (crosstalk / shared node - EXP03 had ch0 == ch1 *identical*).
   (user-owned, untracked).
 
 ## Open questions (known unknowns)
-- [ ] Where the `xy` logger lives - proposed default: extend `exp02_logging.c`.
-- [ ] Mouse output during the test - proposed default: keep the input-listener
-      wired but silenced; no pointer claims in this experiment.
-- [ ] Rate pinning - proposed default: single-level `poll-period-downshift-ms = <8>`.
-- [ ] Circle protocol - proposed default: 5 s rest / ~20 s circling / 5 s rest.
-- [ ] Analysis dependencies - proposed default: stdlib-only Python + SVG/CSV.
-- [ ] Start trigger - proposed default: the operator is asked (via a question) when
-      to circle, rather than assuming they are at the bench.
+- [x] Logger lives in `exp02_logging.c` (`tpoint xy on|off`); auto-enabled by
+      `CONFIG_EXP04_XY_LOG`.
+- [x] Mouse output: input-listener left wired but its logs silenced; no pointer
+      claims in this experiment.
+- [x] Rate pinned: `poll-period-downshift-ms = <8>` (single level = no downshift).
+      Measured 124.6 Hz over 48 s, zero dropped lines - the pin worked.
+- [x] Protocol: rest / circle / rest, 48 s, cued by `capture-serial.ps1`.
+- [x] Analysis: stdlib-only Python + SVG/CSV.
+- [x] Start trigger: the operator was asked via a question before the capture.
 
 ## Conclusion (findings)
-_Pending._
+_(Provisional - awaiting the operator's status declaration. The goal was
+"is the capture sufficient to read X/Y and drive the mouse?"; the finding
+contradicts it, so this is a candidate for **failed**.)_
+
+**No - the raw X/Y signal is not yet usable.** 48 s captured at 124.6 Hz
+(5979 samples, no dropped lines); 4243 in the motion window.
+
+Observed:
+1. **Rest is pinned to the negative rail.** With the nub untouched both channels
+   read exactly `-8355840` (`0x808000`) and never move (also seen in the 7 s
+   pre-test probe). So the neutral point is not mid-scale; it is saturated.
+2. **The signal is one-sided.** Over the whole motion window x spans
+   `-8355840 .. +207` and y `-8355840 .. +60` - it swings only *away from* the
+   rail, never past the rest value, so any opposite deflection would be clipped.
+3. **~68% of samples sit on the plateau.** x modal `-8355840` = 2831/4243 (67%),
+   y = 2918/4243 (69%). The time trace shows a repeating settle-then-reset
+   pattern with a period of a few polls, not a continuously readable bridge.
+4. **The axes are not independent.** Off-plateau samples (n=1340) have
+   `r(x,y) = -0.52` and PCA minor/major `0.56`; the X-Y cloud is a filled
+   diagonal blob, not a ring (ASCII density + `exp04-circle.trimmed-xy-live.svg`).
+5. Rest "noise" std (2.37 M) >= motion signal std (2.22 M): SNR ~1.
+
+Interpretation (hypotheses for the next experiment, not yet tested):
+- **H1 - neutral outside the input window.** At gain 64 the full-scale
+  differential is only `Vref/64` (~16 mV for Vref~1 V), so a static offset of
+  that size rails the reading. The nub then only pushes it back toward 0.
+  Fix candidates: measure the statics (README §7), lower gain 64 -> 16, and/or
+  correct the AIN2 bias.
+- **H2 - read-path settling.** The driver starts each conversion immediately
+  after the MUX/IDAC change (the upstream `k_usleep(150)` is commented out), so
+  most conversions may sample an unsettled reference/input; the periodic plateau
+  is then an artefact, not the bridge. Needs a settling test.
+
+Artifacts: `exp04-circle.trimmed.log` (XY + phase lines), `exp04-circle.trimmed-xy.csv`
+(t, x, y, phase), `exp04-circle.trimmed-{xy-scatter,xy-live,x,y}.svg`.
+The untrimmed 1.9 MB console log stays local (untracked).
+
+Next experiment candidates: bench-measure `R_ab`, `V(a)-V(b)`, `V(x)`, `V(y)`,
+`V(a)/2` with the driver polling; confirm the `[x][y][a][b]` pad order; re-run
+the circle capture at a lower gain (16).
 
 ## Learnings
-- (pending)
+- **`capture-serial.ps1` can hand you a stale USB pre-buffer.** The first ~215
+  XY lines of the capture were from a console session ~46 min earlier (uptime
+  ~29 s), then the clock jumped to ~2.8 M ms. Drop any inter-sample gap
+  `> 1000 ms` and keep the longest contiguous segment (in `analyze_xy.py`).
+- **Pin the poll rate for a capture with a single-level
+  `poll-period-downshift-ms = <N>`.** `num_downshift_levels` becomes 0, so the
+  driver never downshifts; measured 124.6 Hz with zero dropped lines over 48 s.
+- **`CONFIG_{ZMK,ADC,GPIO,INPUT}_LOG_LEVEL_ERR` + `CONFIG_EXP04_XY_LOG` leaves
+  exactly one line per poll** (`<inf> exp02_logging: XY <ms> <x> <y>`); everything
+  else in the ADS1220 path goes quiet. A lone `<dbg> zmk: kscan_matrix_init...`
+  still appears at boot (different module level) - harmless.
+- **The nub at rest rails the ADC** (`-8355840`, `0x808000`) on both channels;
+  touching moves it only toward 0. Treat the exact rail value as "saturated",
+  not as a valid sample, when analysing.
+- **`flash-nicenano.ps1` must run under pwsh, not Windows PowerShell 5.1**
+  (5.1 fails to parse `($size bytes)` inside the string). Use `& .\flash-nicenano.ps1`.
+- **The nice!nano is COM8** (VID_1D50&PID_615E, sole MI_00); COM22/COM21 are a
+  different ZMK device (has a shell but no `tpoint`) - leave it alone.
