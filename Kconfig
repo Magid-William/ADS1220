@@ -14,3 +14,12 @@ config EXP02_LOGGING
 	  Build exp02_logging.c: a `tpoint` shell command and a raw-data callback
 	  that logs every ADS1220 sample for bench bring-up. Experimental; not for
 	  a shipping configuration.
+
+config EXP04_XY_LOG
+	bool "EXP04: auto-enable paired raw X/Y logging at boot"
+	default n
+	depends on EXP02_LOGGING
+	help
+	  When set, exp02_logging.c enables the `tpoint xy` paired raw logger at
+	  boot: one compact 'XY <ms> <x> <y>' line per poll. Test-time only
+	  (EXP04 circle-motion capture); too noisy for a shipping configuration.

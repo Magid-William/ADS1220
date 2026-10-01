@@ -30,7 +30,12 @@ param(
     [int]$SettleSeconds = 3,
     [int]$CommandIntervalSeconds = 2,
     [switch]$Reset,
-    [int]$ResetAfterSeconds = 3
+    [int]$ResetAfterSeconds = 3,
+    # --- EXP04 motion capture: cue the operator and mark capture phases --------
+    [int]$CueAfterSeconds = 0,
+    [string]$CueText = "CIRCLE THE NUB NOW",
+    [int]$StopAfterSeconds = 0,
+    [string]$StopText = "STOP - hold still"
 )
 
 $ErrorActionPreference = "Stop"
@@ -63,6 +68,10 @@ $cmdIndex = 0
 $nextCmdAt = (Get-Date).AddSeconds($SettleSeconds)
 $resetSent = $false
 $resetAt = (Get-Date).AddSeconds($ResetAfterSeconds)
+$cueSent = $false
+$cueAt = (Get-Date).AddSeconds($CueAfterSeconds)
+$stopSent = $false
+$stopAt = (Get-Date).AddSeconds($StopAfterSeconds)
 
 while ((Get-Date) -lt $deadline) {
     try {
@@ -103,6 +112,22 @@ while ((Get-Date) -lt $deadline) {
         Write-Host "`n>>> kernel reboot cold"
         try { $port.WriteLine("kernel reboot cold") } catch {}
         $resetSent = $true
+    }
+
+    if (-not $cueSent -and $CueAfterSeconds -gt 0 -and (Get-Date) -ge $cueAt) {
+        $writer.WriteLine()
+        $writer.WriteLine("### phase: cue '$CueText' at $(Get-Date -Format o)")
+        $writer.Flush()
+        Write-Host "`n>>> $CueText"
+        $cueSent = $true
+    }
+
+    if (-not $stopSent -and $StopAfterSeconds -gt 0 -and (Get-Date) -ge $stopAt) {
+        $writer.WriteLine()
+        $writer.WriteLine("### phase: stop '$StopText' at $(Get-Date -Format o)")
+        $writer.Flush()
+        Write-Host "`n>>> $StopText"
+        $stopSent = $true
     }
 
     if ($cmdIndex -lt $Commands.Count -and (Get-Date) -ge $nextCmdAt) {

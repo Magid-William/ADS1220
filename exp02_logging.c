@@ -6,6 +6,7 @@
  * a small bench-only surface on top of the module's public API:
  *
  *   tpoint stream on|off   log EVERY raw sample (both channels)
+ *   tpoint xy on|off       log one paired line per poll: XY <ms> <x> <y>  (EXP04)
  *   tpoint sample [n]      capture the next n samples (default 2) and print them
  *   tpoint status          device readiness + axis count
  *   tpoint calib           per-channel calibration (in_min/in_max/deadzone)
@@ -23,6 +24,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/devicetree.h>
+#include <zephyr/init.h>
 #include <zephyr/shell/shell.h>
 #include <zephyr/logging/log.h>
 
@@ -45,12 +47,28 @@ static bool exp02_stream_on;
 static atomic_t exp02_capture_remaining;
 K_SEM_DEFINE(exp02_capture_done, 0, 1);
 
+/*
+ * EXP04: one compact paired line per poll (both channels are read in one poll,
+ * ch0 then ch1). ch0 is buffered; the line is emitted when ch1 arrives.
+ */
+static bool exp04_xy_on;
+static int32_t exp04_raw_x;
+
 static void exp02_raw_cb(const struct device *dev, int channel, int32_t raw_val)
 {
 	ARG_UNUSED(dev);
 
 	if (exp02_stream_on) {
 		LOG_INF("RAW ch%d=%d", channel, raw_val);
+	}
+
+	if (exp04_xy_on) {
+		if (channel == 0) {
+			exp04_raw_x = raw_val;
+		} else {
+			LOG_INF("XY %u %d %d", (uint32_t)k_uptime_get(),
+				exp04_raw_x, raw_val);
+		}
 	}
 
 	if (atomic_get(&exp02_capture_remaining) > 0) {
@@ -86,6 +104,29 @@ static int cmd_tpoint_stream(const struct shell *sh, size_t argc, char **argv)
 	} else if (!strcmp(argv[1], "off")) {
 		exp02_stream_on = false;
 		shell_print(sh, "tpoint stream: OFF");
+	} else {
+		shell_error(sh, "expected 'on' or 'off', got '%s'", argv[1]);
+		return -EINVAL;
+	}
+
+	return 0;
+}
+
+static int cmd_tpoint_xy(const struct shell *sh, size_t argc, char **argv)
+{
+	if (argc < 2) {
+		shell_error(sh, "usage: tpoint xy on|off");
+		return -EINVAL;
+	}
+
+	exp02_ensure_cb();
+
+	if (!strcmp(argv[1], "on")) {
+		exp04_xy_on = true;
+		shell_print(sh, "tpoint xy: ON (per-poll line 'XY <ms> <x> <y>')");
+	} else if (!strcmp(argv[1], "off")) {
+		exp04_xy_on = false;
+		shell_print(sh, "tpoint xy: OFF");
 	} else {
 		shell_error(sh, "expected 'on' or 'off', got '%s'", argv[1]);
 		return -EINVAL;
@@ -179,6 +220,8 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 	sub_tpoint_cmds,
 	SHELL_CMD_ARG(stream, NULL, "Log every raw sample: tpoint stream on|off",
 		      cmd_tpoint_stream, 2, 0),
+	SHELL_CMD_ARG(xy, NULL, "Log paired raw XY per poll: tpoint xy on|off (EXP04)",
+		      cmd_tpoint_xy, 2, 0),
 	SHELL_CMD_ARG(sample, NULL, "Capture the next n samples (default 2)",
 		      cmd_tpoint_sample, 1, 1),
 	SHELL_CMD_ARG(status, NULL, "Device readiness and axis count",
@@ -190,3 +233,20 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 	SHELL_SUBCMD_SET_END);
 
 SHELL_CMD_REGISTER(tpoint, &sub_tpoint_cmds, "ADS1220 TrackPoint bring-up (EXP02)", NULL);
+
+/*
+ * EXP04: auto-enable the paired XY logger at boot so a capture does not depend
+ * on typing a shell command at the right moment. APPLICATION runs after all
+ * device init, so the driver's cal_lock is already initialised.
+ */
+static int exp02_logging_init(void)
+{
+#if defined(CONFIG_EXP04_XY_LOG)
+	exp02_ensure_cb();
+	exp04_xy_on = true;
+	LOG_INF("EXP04: XY logging auto-enabled ('XY <ms> <x> <y>')");
+#endif
+	return 0;
+}
+
+SYS_INIT(exp02_logging_init, APPLICATION, 0);

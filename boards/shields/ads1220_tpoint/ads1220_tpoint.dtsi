@@ -97,14 +97,20 @@
 / {
     /*
      * badjeff's analog-axis fork: int32 buffers so 24-bit samples survive.
-     * 8 ms while active -> 100 ms after 5 s idle -> 1300 ms after 7 s more
-     * (never 0: a 0 period suspends and needs an external RESUME call, D12).
+     * Shipping intent: 8 ms while active -> 100 ms after 5 s idle -> 1300 ms
+     * after 7 s more (never 0: a 0 period suspends and needs an external
+     * RESUME call, D12).
+     *
+     * EXP04 override (test-time, revert after the experiment): a SINGLE level,
+     * <8>, pins the poll rate to a constant 8 ms for the whole capture. With
+     * one entry num_downshift_levels == 0, so the driver never downshifts.
+     * Shipping value: <8 5000 100 7000 1300>.
      */
     anin0: analog_axis_hires_0 {
         compatible = "analog-axis-hires";
         status = "okay";
 
-        poll-period-downshift-ms = <8 5000 100 7000 1300>;
+        poll-period-downshift-ms = <8>;
 
         axis-x {
             io-channels = <&adc_ads1220 0>;
