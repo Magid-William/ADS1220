@@ -84,3 +84,26 @@ _Pending._
 ## Learnings
 - `gh search code "<symbol>" --repo <owner>/<repo>` — use to confirm an upstream
   Kconfig/API exists before committing to a ZMK/Zephyr revision.
+- ZMK module at the *repo root*: the reusable `build-user-config.yml` detects
+  `zephyr/module.yml` and then (a) runs the build in a temp dir with `config/`
+  copied there and (b) adds the workspace via `-DZMK_EXTRA_MODULES`. So a repo can
+  hold `config/`, `zephyr/`, `build.yaml` and `boards/shields/<x>/` at the root
+  alongside unrelated files. Push `master` before `EXP01`: a commit without
+  `.github/workflows/` starts no run, which avoids a red build on the base branch.
+- `gh auth status` printed the account as `Maged-William` but the real login is
+  `Magid-William`; `gh api user --jq .login` is authoritative.
+- Board string `nice_nano@2.0.0` resolves fine for `zmkfirmware/zmk@main`
+  (its `zephyr` export is `v4.1.0+zmk-fixes`); no `//zmk` qualifier needed.
+- **`CONFIG_INPUT_ANALOG_AXIS_HIRES_SETTINGS` is inert unless `CONFIG_SETTINGS=y`**
+  (the module's Kconfig has `depends on SETTINGS`). README §5 lists it, but with
+  SETTINGS=n Kconfig only warns "assigned 'y' but got 'n'". Dropped from the
+  shield .conf for EXP01.
+- **D6 confirmed in the resolved devicetree**: the generated DT contains zero
+  `cs-gpios`, and `zephyr/drivers/spi/spi_nrfx_spim.c` `configure()` never sets
+  `ss_pin`, so SPI runs with no CS toggling — exactly what the hard-wired CS needs.
+- Module-side build warnings (upstream, not ours; nothing to patch here):
+  `gpio_ads1220.c` calls `ads1220_device_{resume,suspend}_by_reg` without a
+  prototype (defined in `adc_ads1220.c`, not in `ads1220.h`), and
+  `adc_ads1220.c` has a `-Wmaybe-uninitialized` on `gain`. `Deprecated symbol
+  KSCAN is enabled` is ZMK/Zephyr-wide (any `zmk,kscan-gpio-matrix` shield).
+
