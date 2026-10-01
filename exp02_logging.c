@@ -11,9 +11,13 @@
  *   tpoint status          device readiness + axis count
  *   tpoint calib           per-channel calibration (in_min/in_max/deadzone)
  *   tpoint idac <ua>       live IDAC excitation current (0/10/50/100/250/500/1000/1500)
- *   tpoint raw [mode] [n] [khz]   EXP08: raw RDATA probe; hexdump n received
- *                          bytes at SPI mode 0..3 and a chosen clock (default
- *                          mode 1, 3 bytes, 1000 kHz - the driver's own setup)
+ *   tpoint raw [mode] [n] [khz] [cmd] [split]
+ *                          EXP08: raw byte probe; hexdump n received bytes at
+ *                          SPI mode 0..3, a chosen clock, any command byte
+ *                          (default 0x10 = RDATA) and an optional split read
+ *                          (command alone with CS held, then the data bytes).
+ *                          Defaults are the driver's own setup: mode 1, 3
+ *                          bytes, 1000 kHz, RDATA, single transaction.
  *
  * Nothing here touches the analog front-end directly; every sample goes
  * through the driver's normal IDAC-gated path.
@@ -232,6 +236,8 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
 	int mode = 1;   /* the driver's mode: CPOL = 0, CPHA = 1 */
 	int nbytes = 3; /* the driver reads 3 bytes */
 	int khz = 1000; /* spi-max-frequency in ads1220_tpoint.dtsi */
+	int cmd = 0x10; /* ADS1220_RDATA_CMD; 0x20|addr<<2 = RREG */
+	int split = 0;  /* 1 = issue the command alone, hold CS, then clock data */
 
 	if (argc >= 2) {
 		mode = (int)strtol(argv[1], NULL, 10);
@@ -241,6 +247,12 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
 	}
 	if (argc >= 4) {
 		khz = (int)strtol(argv[3], NULL, 10);
+	}
+	if (argc >= 5) {
+		cmd = (int)strtol(argv[4], NULL, 0);
+	}
+	if (argc >= 6) {
+		split = (int)strtol(argv[5], NULL, 10);
 	}
 	if (mode < 0 || mode > 3) {
 		shell_error(sh, "mode must be 0..3");
@@ -254,6 +266,10 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
 	}
 	if (khz < 10) {
 		khz = 10;
+	}
+	if (cmd < 0 || cmd > 0xFF) {
+		shell_error(sh, "cmd must be 0..255");
+		return -EINVAL;
 	}
 
 	struct spi_dt_spec spec = SPI_DT_SPEC_GET(EXP02_ADC_NODE, 0, 0);
@@ -274,18 +290,48 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
 	spec.config.operation = op;
 	spec.config.frequency = (uint32_t)khz * 1000U;
 
-	uint8_t tx[6] = { 0x10, 0, 0, 0, 0, 0 }; /* RDATA, then padding */
+	uint8_t tx[6] = { 0 }; /* in split mode the command goes out separately */
 	uint8_t rx[6] = { 0 };
+	uint8_t txc = (uint8_t)cmd;
+	uint8_t rxc = 0;
+
+	tx[0] = split ? 0 : (uint8_t)cmd;
+
 	struct spi_buf txb = { .buf = tx, .len = (size_t)nbytes };
 	struct spi_buf rxb = { .buf = rx, .len = (size_t)nbytes };
 	struct spi_buf_set txs = { .buffers = &txb, .count = 1 };
 	struct spi_buf_set rxs = { .buffers = &rxb, .count = 1 };
 
-	shell_print(sh, "raw RDATA: mode %d (CPOL=%d CPHA=%d), %d byte(s), %d kHz",
-		    mode, (mode >> 1) & 1, mode & 1, nbytes, khz);
+	/*
+	 * Split read: send the command byte on its own transaction with CS held
+	 * low, then clock the data in a second transaction. This is what the
+	 * ADS1220 datasheet describes - data starts on the first SCLK edge AFTER
+	 * the command byte - and it is exactly what a single 3-byte transaction
+	 * cannot do (8 clocks for the command + only 16 left for data).
+	 */
+	struct spi_buf t1 = { .buf = &txc, .len = 1 };
+	struct spi_buf r1 = { .buf = &rxc, .len = 1 };
+	struct spi_buf_set t1s = { .buffers = &t1, .count = 1 };
+	struct spi_buf_set r1s = { .buffers = &r1, .count = 1 };
+
+	shell_print(sh, "raw: cmd=0x%02X mode %d (CPOL=%d CPHA=%d), %d byte(s), %d kHz%s",
+		    cmd, mode, (mode >> 1) & 1, mode & 1, nbytes, khz,
+		    split ? ", split" : "");
 
 	for (int i = 0; i < 4; i++) {
-		int ret = spi_transceive_dt(&spec, &txs, &rxs);
+		int ret;
+
+		if (split) {
+			spec.config.operation = op | SPI_HOLD_ON_CS;
+			ret = spi_transceive_dt(&spec, &t1s, &r1s);
+			if (ret == 0) {
+				memset(rx, 0, sizeof(rx));
+				spec.config.operation = op;
+				ret = spi_transceive_dt(&spec, &txs, &rxs);
+			}
+		} else {
+			ret = spi_transceive_dt(&spec, &txs, &rxs);
+		}
 
 		if (ret != 0) {
 			shell_error(sh, "[%d] spi_transceive ret %d", i, ret);
@@ -308,6 +354,16 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
 				      "   be24=%d hi==mid=%s", v,
 				      (rx[0] == rx[1]) ? "yes" : "no");
 		}
+		if (nbytes >= 4) {
+			/* skip the duplicated first byte: rx = [b0, b0, b1, b2] */
+			int32_t a = (int32_t)(((uint32_t)rx[1] << 16) |
+					      ((uint32_t)rx[2] << 8) | rx[3]);
+
+			if (a & 0x00800000) {
+				a |= (int32_t)0xFF000000;
+			}
+			shell_fprintf(sh, SHELL_NORMAL, "   alt=%d", a);
+		}
 		shell_fprintf(sh, SHELL_NORMAL, "\n");
 		k_msleep(10);
 	}
@@ -329,8 +385,8 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 		      cmd_tpoint_calib, 1, 0),
 	SHELL_CMD_ARG(idac, NULL, "Set IDAC excitation current (uA)",
 		      cmd_tpoint_idac, 2, 0),
-	SHELL_CMD_ARG(raw, NULL, "EXP08 raw RDATA byte probe: tpoint raw [mode] [n] [khz]",
-		      cmd_tpoint_raw, 1, 3),
+	SHELL_CMD_ARG(raw, NULL, "EXP08 raw byte probe: tpoint raw [mode] [n] [khz] [cmd] [split]",
+		      cmd_tpoint_raw, 1, 5),
 	SHELL_SUBCMD_SET_END);
 
 SHELL_CMD_REGISTER(tpoint, &sub_tpoint_cmds, "ADS1220 TrackPoint bring-up (EXP02)", NULL);
