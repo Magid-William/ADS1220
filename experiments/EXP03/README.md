@@ -87,6 +87,21 @@ proper CS framing without the rework.
 | 15 | Continuity MOSI (16) -> P0.17 | beeps | |
 | 16 | Continuity SCLK (1) -> P0.08 | beeps | |
 | 17 | Continuity CS (2) -> GND, CLK (3) -> GND | **not measured** | current leading suspect |
+| 18 | Boot with `drdy-gpios = <&gpio0 6>` (P0.06) | `config0 mismatch! 0x1C != 0x00` | readback now the ADS1220 reset default, not floating |
+| 19 | Poll loop after failure | ~127 `mismatch`/s, channel retried every 8 ms | thread keeps polling; log flood is expected |
+| 20 | ch0 write `0x1C` -> read `0x00`; ch1 write `0x3C` -> read `0x1C` | one-transaction lag | write lands, readback returns previous value -> framing |
+
+### Root cause (provisional)
+**D6 (CS tied to GND) breaks the register handshake.** With CS low, the ADS1220
+commits a WREG only at a frame boundary - a CS edge or the ~55 ms SPI timeout.
+The driver writes CONFIGn and reads it back microseconds later, so the readback
+always returns the *previous* value (measured: ch0 write `0x1C` read `0x00`;
+ch1 write `0x3C` read `0x1C`; CONFIG2 read `0x00`) and `channel_setup` returns
+`-EIO` forever. The same applies to the `gpio_ads1220` IDAC writes. The chip,
+MISO and the wiring are all good: spaced shell frames (gap >> timeout) read back
+correctly. Every working module example delimits frames with CS edges
+(`cs-gpios = <&gpio0 6 ...>`). Fix options: CS on a GPIO (stock driver), or a
+driver patch that waits > timeout between a write and its readback.
 
 ### Correction
 The bullet below ("DRDY low with a pull-up configured = ...") is **wrong**: DRDY
@@ -130,10 +145,17 @@ fine and the MISO crosstalk stands on its own.
 _Pending._
 
 ## Learnings
-- **A failed channel setup kills the poll thread.** `input_analog_axis_hires.c`
-  `return`s from the setup loop on `adc_channel_setup_dt` failure, so the thread
-  exits and the SPI bus is idle afterwards - the `spi` shell is then safe to use.
-  (EXP02's "collision" caveat only applies while the driver is actually polling.)
+- **A failed channel setup does NOT kill the poll thread.** (Corrects an earlier
+  claim in this file.) `input_analog_axis_hires.c:228` calls
+  `adc_channel_setup_dt` inside the per-poll read path and only `return`s from
+  that one read on failure; the poll loop keeps firing. At the 8 ms active period
+  this is ~127 failures/s, which is what floods the log after a failure. EXP02's
+  "shell collides with the poller" caveat therefore always applies.
+- **The ADS1220 SPI timeout is ~55 ms.** 14000 x tMOD, tMOD = 1/256 kHz (internal
+  osc) = 3.906 us -> **54.7 ms**. With CS tied low, a WREG is only committed at a
+  frame boundary: a CS rising edge *or* the SPI timeout. The driver writes then
+  immediately reads back (microseconds apart), so it always reads the *previous*
+  value. This is the root cause (see Conclusion).
 - **ADS1220 command bytes** (`adc_ads1220.c`): RESET `0x06`, START/SYNC `0x08`,
   POWERDOWN `0x02`, RDATA `0x10`, RREG `0x20 | (addr<<2)`, WREG `0x40 | (addr<<2)`;
   RREG/WREG send 2 command bytes, so `spi transceive 20 00` reads CONFIG0 and

@@ -1,0 +1,1709 @@
+# EXP02 capture  port=COM8  start=2026-10-01T18:21:18.8797939+03:00
+[00:04:26.842,956] [1;31m<err> ads1220: config2 mismatch! 0x10  Could not setup channel #1 (-5)[0m
+[00:04:28s1220: config2 mismatch! 0x15 != 0x20[0m
+[00:04:26.843,231] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:26.843,261] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:26.893,188] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBB[0m
+[00:04:26.893,341] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBB[0m
+[00:04:26.893,493] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:26.893,493] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:26.943,450] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7B[0m
+[00:04:26.943,572] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7B[0m
+[00:04:26.943,725] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:26.943,756] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:26.993,682] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBB[0m
+[00:04:26.993,835] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBB[0m
+[00:04:26.993,988] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:26.993,988] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.043,945] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:04:27.044,097] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:04:27.044,250] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.044,250] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.094,207] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE1[0m
+[00:04:27.094,329] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE1[0m
+[00:04:27.094,482] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.094,482] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.144,439] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:04:27.144,561] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:04:27.144,714] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.144,714] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.194,671] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x58[0m
+[00:04:27.194,824] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x58[0m
+[00:04:27.194,946] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.194,976] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.244,903] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC0[0m
+[00:04:27.245,056] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC0[0m
+[00:04:27.245,208] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.245,208] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.295,166] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xEA[0m
+[00:04:27.295,288] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xEA[0m
+[00:04:27.295,440] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.295,471] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.345,397] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xFC[0m
+[00:04:27.345,550] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xFC[0m
+[00:04:27.345,703] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.345,703] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.395,660] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x41[0m
+[00:04:27.395,812] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x41[0m
+[00:04:27.395,965] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.395,965] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.445,922] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x43[0m
+[00:04:27.446,075] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x43[0m
+[00:04:27.446,228] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.446,258] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.496,185] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6E[0m
+[00:04:27.496,337] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6E[0m
+[00:04:27.496,490] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.496,490] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.546,447] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2A[0m
+[00:04:27.546,600] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2A[0m
+[00:04:27.546,752] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.546,752] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.596,710] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x79[0m
+[00:04:27.596,832] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x79[0m
+[00:04:27.596,984] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.597,015] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.646,942] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x0D[0m
+[00:04:27.647,094] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x0D[0m
+[00:04:27.647,247] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.647,247] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.697,204] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1A[0m
+[00:04:27.697,357] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1A[0m
+[00:04:27.697,509] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.697,509] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.747,467] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5D[0m
+[00:04:27.747,589] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5D[0m
+[00:04:27.747,741] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.747,772] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.797,698] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x33[0m
+[00:04:27.797,851] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x33[0m
+[00:04:27.798,004] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.798,004] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.847,961] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x57[0m
+[00:04:27.848,114] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x57[0m
+[00:04:27.848,266] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.848,266] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.898,223] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x99[0m
+[00:04:27.898,345] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x99[0m
+[00:04:27.898,498] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.898,529] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.948,455] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDA[0m
+[00:04:27.948,608] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDA[0m
+[00:04:27.948,760] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.948,760] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:27.998,718] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x13[0m
+[00:04:27.998,870] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x13[0m
+[00:04:27.999,023] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:27.999,023] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:28.048,980] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6D[0m
+[00:04:28.049,102] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6D[0m
+[00:04:28.049,255] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:28.049,285] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:28.099,212] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x56[0m
+[00:04:28.099,365] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x56[0m
+[00:04:28.099,517] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:04:28.099,517] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:04:28[00:05:04.934,020] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAE[0m
+[00:05:04.934,173] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAE[0m
+[00:05:04.934,326] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:04.934,326] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:04.984,283] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6D[0m
+[00:05:04.984,436] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6D[0m
+[00:05:04.984,588] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:04.984,588] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.034,545] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBB[0m
+[00:05:05.034,698] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBB[0m
+[00:05:05.034,851] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.034,851] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.084,808] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA5[0m
+[00:05:05.084,960] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA5[0m
+[00:05:05.085,083] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.085,083] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.135,040] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x73[0m
+[00:05:05.135,192] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x73[0m
+[00:05:05.135,314] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.135,345] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.185,272] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE1[0m
+[00:05:05.185,424] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE1[0m
+[00:05:05.185,577] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.185,577] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.235,534] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD4[0m
+[00:05:05.235,656] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD4[0m
+[00:05:05.235,809] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.235,809] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.285,766] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBA[0m
+[00:05:05.285,919] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBA[0m
+[00:05:05.286,071] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.286,071] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.336,029] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x32[0m
+[00:05:05.336,151] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x32[0m
+[00:05:05.336,303] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.336,334] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.386,260] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x50[0m
+[00:05:05.386,413] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x50[0m
+[00:05:05.386,566] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.386,566] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.436,523] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6B[0m
+[00:05:05.436,676] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6B[0m
+[00:05:05.436,828] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.436,828] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.486,785] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7A[0m
+[00:05:05.486,938] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7A[0m
+[00:05:05.487,091] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.487,091] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.537,048] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1D[0m
+[00:05:05.537,170] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1D[0m
+[00:05:05.537,322] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.537,353] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.587,280] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA5[0m
+[00:05:05.587,432] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA5[0m
+[00:05:05.587,585] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.587,585] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.637,542] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:05.637,695] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:05.637,847] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.637,847] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.687,805] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5C[0m
+[00:05:05.687,957] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5C[0m
+[00:05:05.688,110] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.688,110] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.738,067] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x65[0m
+[00:05:05.738,189] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x65[0m
+[00:05:05.738,342] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.738,372] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.788,330] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8A[0m
+[00:05:05.788,482] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8A[0m
+[00:05:05.788,635] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.788,635] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.838,592] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB2[0m
+[00:05:05.838,745] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB2[0m
+[00:05:05.838,897] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.838,897] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.888,854] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x37[0m
+[00:05:05.888,977] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x37[0m
+[00:05:05.889,129] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.889,160] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.939,086] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xCB[0m
+[00:05:05.939,239] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xCB[0m
+[00:05:05.939,392] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.939,422] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:05.989,379] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x46[0m
+[00:05:05.989,501] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x46[0m
+[00:05:05.989,654] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:05.989,685] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.039,611] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x58[0m
+[00:05:06.039,764] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x58[0m
+[00:05:06.039,916] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.039,916] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.089,874] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF9[0m
+[00:05:06.090,026] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF9[0m
+[00:05:06.090,148] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.090,179] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.140,136] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBD[0m
+[00:05:06.140,258] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBD[0m
+[00:05:06.140,411] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.140,411] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.190,368] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB2[0m
+[00:05:06.190,490] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB2[0m
+[00:05:06.190,643] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.190,643] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.240,600] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x07[0m
+[00:05:06.240,753] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x07[0m
+[00:05:06.240,875] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.240,905] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.290,832] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF0[0m
+[00:05:06.290,985] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF0[0m
+[00:05:06.291,137] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.291,137] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.341,094] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB6[0m
+[00:05:06.341,247] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB6[0m
+[00:05:06.341,400] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.341,400] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.391,357] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF3[0m
+[00:05:06.391,479] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF3[0m
+[00:05:06.391,632] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.391,662] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.441,589] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1B[0m
+[00:05:06.441,741] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1B[0m
+[00:05:06.441,894] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.441,894] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.491,851] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x35[0m
+[00:05:06.492,004] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x35[0m
+[00:05:06.492,156] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.492,156] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.542,114] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x38[0m
+[00:05:06.542,266] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x38[0m
+[00:05:06.542,419] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.542,419] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.592,376] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xCD[0m
+[00:05:06.592,498] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xCD[0m
+[00:05:06.592,651] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.592,681] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.642,608] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE1[0m
+[00:05:06.642,761] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE1[0m
+[00:05:06.642,913] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.642,913] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.692,871] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF4[0m
+[00:05:06.693,023] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF4[0m
+[00:05:06.693,176] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.693,176] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.743,133] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x87[0m
+[00:05:06.743,286] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x87[0m
+[00:05:06.743,438] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.743,438] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.793,395] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB2[0m
+[00:05:06.793,518] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB2[0m
+[00:05:06.793,670] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.793,701] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.843,627] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9B[0m
+[00:05:06.843,780] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9B[0m
+[00:05:06.843,933] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.843,933] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.893,890] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB8[0m
+[00:05:06.894,042] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB8[0m
+[00:05:06.894,195] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.894,195] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.944,183] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC6[0m
+[00:05:06.944,305] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC6[0m
+[00:05:06.944,458] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.944,488] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:06.994,415] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5B[0m
+[00:05:06.994,567] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5B[0m
+[00:05:06.994,720] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:06.994,720] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.044,677] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x91[0m
+[00:05:07.044,830] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x91[0m
+[00:05:07.044,982] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.044,982] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.094,940] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9F[0m
+[00:05:07.095,092] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9F[0m
+[00:05:07.095,245] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.095,245] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.145,202] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x50[0m
+[00:05:07.145,355] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x50[0m
+[00:05:07.145,477] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.145,507] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.195,434] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA5[0m
+[00:05:07.195,587] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA5[0m
+[00:05:07.195,739] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.195,739] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.245,697] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x95[0m
+[00:05:07.245,819] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x95[0m
+[00:05:07.245,971] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.245,971] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.295,928] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF7[0m
+[00:05:07.296,081] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF7[0m
+[00:05:07.296,234] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.296,234] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.346,191] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3D[0m
+[00:05:07.346,313] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3D[0m
+[00:05:07.346,466] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.346,496] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.396,423] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7F[0m
+[00:05:07.396,575] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7F[0m
+[00:05:07.396,728] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.396,728] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.446,685] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x86[0m
+[00:05:07.446,838] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x86[0m
+[00:05:07.446,990] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.446,990] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.496,948] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9D[0m
+[00:05:07.497,070] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9D[0m
+[00:05:07.497,222] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.497,253] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.547,180] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB3[0m
+[00:05:07.547,332] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB3[0m
+[00:05:07.547,485] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.547,485] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.597,442] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAA[0m
+[00:05:07.597,595] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAA[0m
+[00:05:07.597,747] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.597,747] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.647,705] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9A[0m
+[00:05:07.647,827] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9A[0m
+[00:05:07.647,979] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.648,010] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.697,937] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC3[0m
+[00:05:07.698,089] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC3[0m
+[00:05:07.698,242] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.698,242] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.748,199] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBD[0m
+[00:05:07.748,352] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBD[0m
+[00:05:07.748,504] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.748,504] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.798,461] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3B[0m
+[00:05:07.798,614] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3B[0m
+[00:05:07.798,767] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.798,767] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.848,724] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x00[0m
+[00:05:07.848,846] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x00[0m
+[00:05:07.848,999] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.849,029] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.898,956] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDB[0m
+[00:05:07.899,108] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDB[0m
+[00:05:07.899,261] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.899,261] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:07.949,218] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xFF[0m
+[00:05:07.949,340] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xFF[0m
+[00:05:07.949,493] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.949,523] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+
+### sent: spi conf spi@40023000 1000000 h
+spi conf spi@40023000 1000000 h
+[1;32muart:~$ [m[00:05:07.999,450] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6A[0m
+[00:05:07.999,603] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6A[0m
+[00:05:07.999,755] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:07.999,755] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.049,713] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBF[0m
+[00:05:08.049,865] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBF[0m
+[00:05:08.050,018] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.050,018] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.099,975] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5A[0m
+[00:05:08.100,128] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5A[0m
+[00:05:08.100,280] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.100,280] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.150,207] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD9[0m
+[00:05:08.150,360] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD9[0m
+[00:05:08.150,512] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.150,512] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.200,469] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA2[0m
+[00:05:08.200,592] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA2[0m
+[00:05:08.200,744] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.200,744] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.250,701] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x13[0m
+[00:05:08.250,885] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x13[0m
+[00:05:08.251,007] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.251,037] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.300,964] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2F[0m
+[00:05:08.301,116] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2F[0m
+[00:05:08.301,269] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.301,269] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.351,226] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF7[0m
+[00:05:08.351,379] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF7[0m
+[00:05:08.351,531] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.351,531] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.401,489] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:08.401,611] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:08.401,763] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.401,794] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.451,721] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3E[0m
+[00:05:08.451,873] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3E[0m
+[00:05:08.452,026] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.452,026] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.501,983] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x76[0m
+[00:05:08.502,136] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x76[0m
+[00:05:08.502,288] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.502,288] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.552,246] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC6[0m
+[00:05:08.552,398] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC6[0m
+[00:05:08.552,551] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.552,551] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.602,508] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x45[0m
+[00:05:08.602,630] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x45[0m
+[00:05:08.602,783] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.602,813] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.652,740] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA4[0m
+[00:05:08.652,893] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA4[0m
+[00:05:08.653,045] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.653,045] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.703,002] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xEB[0m
+[00:05:08.703,125] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xEB[0m
+[00:05:08.703,277] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.703,308] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.753,234] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD1[0m
+[00:05:08.753,387] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD1[0m
+[00:05:08.753,540] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.753,540] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.803,497] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:05:08.803,649] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:05:08.803,802] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.803,802] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.853,759] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7F[0m
+[00:05:08.853,881] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7F[0m
+[00:05:08.854,034] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.854,064] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.903,991] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB9[0m
+[00:05:08.904,144] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB9[0m
+[00:05:08.904,296] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.904,296] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:08.954,254] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x52[0m
+[00:05:08.954,406] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x52[0m
+[00:05:08.954,559] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:08.954,559] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.004,516] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7F[0m
+[00:05:09.004,638] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7F[0m
+[00:05:09.004,791] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.004,821] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.054,748] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xEC[0m
+[00:05:09.054,901] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xEC[0m
+[00:05:09.055,053] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.055,053] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.105,010] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6F[0m
+[00:05:09.105,163] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6F[0m
+[00:05:09.105,285] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.105,316] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.155,242] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:05:09.155,395] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:05:09.155,548] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.155,548] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.205,505] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA6[0m
+[00:05:09.205,627] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA6[0m
+[00:05:09.205,780] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.205,780] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.255,767] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE7[0m
+[00:05:09.255,889] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE7[0m
+[00:05:09.256,042] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.256,042] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.305,999] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x92[0m
+[00:05:09.306,121] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x92[0m
+[00:05:09.306,274] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.306,304] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.356,231] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBC[0m
+[00:05:09.356,384] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBC[0m
+[00:05:09.356,536] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.356,536] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.406,524] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE4[0m
+[00:05:09.406,677] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE4[0m
+[00:05:09.406,829] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.406,829] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.456,787] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x29[0m
+[00:05:09.456,909] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x29[0m
+[00:05:09.457,061] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.457,092] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.507,019] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3B[0m
+[00:05:09.507,171] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3B[0m
+[00:05:09.507,324] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.507,324] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.557,281] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB8[0m
+[00:05:09.557,434] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB8[0m
+[00:05:09.557,586] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.557,586] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.607,543] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x0A[0m
+[00:05:09.607,666] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x0A[0m
+[00:05:09.607,818] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.607,849] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.657,775] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x31[0m
+[00:05:09.657,928] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x31[0m
+[00:05:09.658,081] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.658,081] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.708,038] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x05[0m
+[00:05:09.708,190] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x05[0m
+[00:05:09.708,343] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.708,343] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.758,300] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x93[0m
+[00:05:09.758,422] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x93[0m
+[00:05:09.758,575] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.758,605] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.808,532] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x06[0m
+[00:05:09.808,685] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x06[0m
+[00:05:09.808,837] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.808,837] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.858,795] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x17[0m
+[00:05:09.858,947] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x17[0m
+[00:05:09.859,100] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.859,100] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.909,027] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDB[0m
+[00:05:09.909,179] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDB[0m
+[00:05:09.909,332] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.909,332] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:09.959,289] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x20[0m
+[00:05:09.959,442] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x20[0m
+[00:05:09.959,594] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:09.959,594] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.009,552] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB0[0m
+[00:05:10.009,674] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB0[0m
+[00:05:10.009,826] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.009,857] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.059,783] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x71[0m
+[00:05:10.059,936] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x71[0m
+[00:05:10.060,089] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.060,089] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.110,046] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8D[0m
+[00:05:10.110,168] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8D[0m
+[00:05:10.110,321] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.110,321] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.160,278] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9F[0m
+[00:05:10.160,430] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9F[0m
+[00:05:10.160,552] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.160,583] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.210,510] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4D[0m
+[00:05:10.210,662] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4D[0m
+[00:05:10.210,815] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.210,815] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.260,772] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x96[0m
+[00:05:10.260,894] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x96[0m
+[00:05:10.261,047] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.261,077] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.311,035] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x77[0m
+[00:05:10.311,157] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x77[0m
+[00:05:10.311,309] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.311,340] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.361,267] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x83[0m
+[00:05:10.361,419] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x83[0m
+[00:05:10.361,572] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.361,572] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.411,560] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x77[0m
+[00:05:10.411,712] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x77[0m
+[00:05:10.411,865] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.411,865] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.461,822] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:05:10.461,944] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:05:10.462,097] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.462,127] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.512,054] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBD[0m
+[00:05:10.512,207] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBD[0m
+[00:05:10.512,359] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.512,359] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.562,347] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5A[0m
+[00:05:10.562,469] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5A[0m
+[00:05:10.562,622] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.562,652] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.612,579] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x74[0m
+[00:05:10.612,731] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x74[0m
+[00:05:10.612,884] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.612,884] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.662,841] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB6[0m
+[00:05:10.662,994] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB6[0m
+[00:05:10.663,146] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.663,146] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.713,104] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x03[0m
+[00:05:10.713,226] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x03[0m
+[00:05:10.713,378] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.713,409] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.763,336] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF9[0m
+[00:05:10.763,488] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF9[0m
+[00:05:10.763,641] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.763,641] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.813,598] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:10.813,751] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:10.813,903] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.813,903] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.863,830] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x49[0m
+[00:05:10.863,983] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x49[0m
+[00:05:10.864,135] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.864,135] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.914,093] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8F[0m
+[00:05:10.914,245] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8F[0m
+[00:05:10.914,398] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.914,398] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:10.964,355] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6F[0m
+[00:05:10.964,477] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6F[0m
+[00:05:10.964,630] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:10.964,660] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.014,587] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x81[0m
+[00:05:11.014,739] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x81[0m
+[00:05:11.014,892] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.014,892] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.064,849] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x95[0m
+[00:05:11.065,002] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x95[0m
+[00:05:11.065,124] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.065,155] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.115,081] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3F[0m
+[00:05:11.115,234] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3F[0m
+[00:05:11.115,356] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.115,386] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.165,313] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD7[0m
+[00:05:11.165,466] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD7[0m
+[00:05:11.165,618] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.165,618] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.215,576] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9B[0m
+[00:05:11.215,698] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9B[0m
+[00:05:11.215,850] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.215,850] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.265,808] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC6[0m
+[00:05:11.265,960] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC6[0m
+[00:05:11.266,113] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.266,113] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.316,070] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x27[0m
+[00:05:11.316,192] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x27[0m
+[00:05:11.316,345] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.316,375] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.366,302] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x04[0m
+[00:05:11.366,455] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x04[0m
+[00:05:11.366,607] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.366,607] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.416,564] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6D[0m
+[00:05:11.416,687] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6D[0m
+[00:05:11.416,839] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.416,870] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.466,796] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x17[0m
+[00:05:11.466,949] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x17[0m
+[00:05:11.467,102] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.467,102] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.517,059] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x11[0m
+[00:05:11.517,211] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x11[0m
+[00:05:11.517,395] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.517,395] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.567,352] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB1[0m
+[00:05:11.567,474] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB1[0m
+[00:05:11.567,626] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.567,657] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.617,584] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x86[0m
+[00:05:11.617,736] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x86[0m
+[00:05:11.617,889] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.617,889] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.667,846] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xCE[0m
+[00:05:11.667,999] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xCE[0m
+[00:05:11.668,151] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.668,151] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.718,109] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x30[0m
+[00:05:11.718,261] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x30[0m
+[00:05:11.718,414] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.718,414] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.768,371] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5E[0m
+[00:05:11.768,524] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5E[0m
+[00:05:11.768,676] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.768,676] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.818,634] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x63[0m
+[00:05:11.818,756] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x63[0m
+[00:05:11.818,908] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.818,939] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.868,865] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x17[0m
+[00:05:11.869,018] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x17[0m
+[00:05:11.869,171] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.869,171] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.919,128] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBF[0m
+[00:05:11.919,281] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBF[0m
+[00:05:11.919,433] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.919,433] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:11.969,390] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:11.969,512] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:11.969,665] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:11.969,696] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.019,622] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB5[0m
+[00:05:12.019,775] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB5[0m
+[00:05:12.019,927] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.019,927] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+
+### sent: spi transceive 40 1C 23 00 00 00 00
+spi transceive 40 1C 23 00 00 00 00
+TX:
+00000000: 40 1c 23 00 00 00 00                             |@.#....          |
+RX:
+00000000: b5 d4 d2 1c 00 15 00                             |.......          |
+[1;32muart:~$ [m[00:05:12.117,095] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3F[0m
+[00:05:12.117,218] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3F[0m
+[00:05:12.117,370] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.117,370] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.167,327] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA9[0m
+[00:05:12.167,510] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA9[0m
+[00:05:12.167,633] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.167,663] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.217,590] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4E[0m
+[00:05:12.217,742] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4E[0m
+[00:05:12.217,895] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.217,895] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.267,852] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:05:12.267,974] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:05:12.268,127] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.268,157] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.318,084] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x91[0m
+[00:05:12.318,237] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x91[0m
+[00:05:12.318,389] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.318,389] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.368,377] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAA[0m
+[00:05:12.368,530] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAA[0m
+[00:05:12.368,682] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.368,682] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.418,640] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x58[0m
+[00:05:12.418,762] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x58[0m
+[00:05:12.418,914] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.418,945] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.468,872] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x52[0m
+[00:05:12.469,024] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x52[0m
+[00:05:12.469,177] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.469,177] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.519,134] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB9[0m
+[00:05:12.519,256] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB9[0m
+[00:05:12.519,409] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.519,439] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.569,366] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC2[0m
+[00:05:12.569,519] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC2[0m
+[00:05:12.569,671] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.569,671] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.619,628] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x92[0m
+[00:05:12.619,781] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x92[0m
+[00:05:12.619,934] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.619,934] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.669,891] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x33[0m
+[00:05:12.670,013] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x33[0m
+[00:05:12.670,166] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.670,196] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.720,123] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x57[0m
+[00:05:12.720,275] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x57[0m
+[00:05:12.720,428] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.720,428] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.770,385] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x58[0m
+[00:05:12.770,538] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x58[0m
+[00:05:12.770,690] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.770,690] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.820,648] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC1[0m
+[00:05:12.820,770] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC1[0m
+[00:05:12.820,922] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.820,953] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.870,880] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1A[0m
+[00:05:12.871,032] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1A[0m
+[00:05:12.871,185] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.871,185] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.921,142] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x21[0m
+[00:05:12.921,295] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x21[0m
+[00:05:12.921,447] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.921,447] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:12.971,405] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3D[0m
+[00:05:12.971,527] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3D[0m
+[00:05:12.971,679] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:12.971,710] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.021,636] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x46[0m
+[00:05:13.021,789] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x46[0m
+[00:05:13.021,942] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.021,942] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.072,021] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x10[0m
+[00:05:13.072,174] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.072,204] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.122,131] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x60[0m
+[00:05:13.122,283] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x60[0m
+[00:05:13.122,436] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.122,436] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.172,393] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF5[0m
+[00:05:13.172,546] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF5[0m
+[00:05:13.172,698] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.172,698] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.222,656] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x95[0m
+[00:05:13.222,778] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x95[0m
+[00:05:13.222,930] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.222,930] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.272,888] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x56[0m
+[00:05:13.273,040] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x56[0m
+[00:05:13.273,193] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.273,193] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.323,150] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x91[0m
+[00:05:13.323,303] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x91[0m
+[00:05:13.323,455] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.323,486] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.373,443] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6B[0m
+[00:05:13.373,565] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6B[0m
+[00:05:13.373,718] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.373,748] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.423,675] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBD[0m
+[00:05:13.423,828] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBD[0m
+[00:05:13.423,980] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.423,980] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.473,937] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDA[0m
+[00:05:13.474,090] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDA[0m
+[00:05:13.474,243] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.474,243] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.524,200] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDC[0m
+[00:05:13.524,353] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDC[0m
+[00:05:13.524,505] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.524,505] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.574,462] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x94[0m
+[00:05:13.574,615] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x94[0m
+[00:05:13.574,768] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.574,768] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.624,725] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD7[0m
+[00:05:13.624,847] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD7[0m
+[00:05:13.625,000] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.625,030] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.674,957] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x63[0m
+[00:05:13.675,109] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x63[0m
+[00:05:13.675,262] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.675,262] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.725,219] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB8[0m
+[00:05:13.725,372] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB8[0m
+[00:05:13.725,524] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.725,524] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.775,451] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:13.775,604] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:13.775,756] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.775,756] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.825,714] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x14[0m
+[00:05:13.825,866] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x14[0m
+[00:05:13.826,019] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.826,019] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.875,946] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x15[0m
+[00:05:13.876,251] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.876,251] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.926,177] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAE[0m
+[00:05:13.926,330] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAE[0m
+[00:05:13.926,483] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.926,483] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:13.976,440] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE4[0m
+[00:05:13.976,593] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE4[0m
+[00:05:13.976,745] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:13.976,745] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.026,672] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA5[0m
+[00:05:14.026,824] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA5[0m
+[00:05:14.026,977] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.026,977] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.076,934] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xEC[0m
+[00:05:14.077,056] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xEC[0m
+[00:05:14.077,209] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.077,209] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.127,166] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAC[0m
+[00:05:14.127,288] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAC[0m
+[00:05:14.127,441] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.127,441] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.177,398] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD8[0m
+[00:05:14.177,520] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD8[0m
+[00:05:14.177,673] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.177,673] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.227,630] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:14.227,752] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:14.227,905] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.227,905] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.277,862] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x99[0m
+[00:05:14.278,015] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x99[0m
+[00:05:14.278,167] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.278,167] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.328,125] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAA[0m
+[00:05:14.328,277] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAA[0m
+[00:05:14.328,430] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.328,430] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.378,356] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:14.378,509] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:14.378,662] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.378,662] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.428,619] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x50[0m
+[00:05:14.428,741] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x50[0m
+[00:05:14.428,894] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.428,924] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.478,851] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4C[0m
+[00:05:14.479,034] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4C[0m
+[00:05:14.479,187] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.479,187] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.529,113] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x59[0m
+[00:05:14.529,266] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x59[0m
+[00:05:14.529,418] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.529,418] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.579,376] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x69[0m
+[00:05:14.579,528] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x69[0m
+[00:05:14.579,681] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.579,681] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.629,608] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5F[0m
+[00:05:14.629,760] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5F[0m
+[00:05:14.629,913] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.629,913] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.679,901] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAA[0m
+[00:05:14.680,023] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAA[0m
+[00:05:14.680,175] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.680,206] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.730,133] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8A[0m
+[00:05:14.730,285] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8A[0m
+[00:05:14.730,438] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.730,438] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.780,395] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC6[0m
+[00:05:14.780,517] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC6[0m
+[00:05:14.780,670] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.780,700] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.830,627] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xCD[0m
+[00:05:14.830,780] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xCD[0m
+[00:05:14.830,932] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.830,932] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.880,889] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB6[0m
+[00:05:14.881,011] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB6[0m
+[00:05:14.881,164] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.881,195] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.931,121] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x75[0m
+[00:05:14.931,274] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x75[0m
+[00:05:14.931,427] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.931,427] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:14.981,384] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDD[0m
+[00:05:14.981,506] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDD[0m
+[00:05:14.981,658] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:14.981,689] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.031,616] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1A[0m
+[00:05:15.031,768] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1A[0m
+[00:05:15.031,921] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.031,921] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.081,878] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF1[0m
+[00:05:15.082,000] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF1[0m
+[00:05:15.082,153] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.082,153] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.132,110] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3B[0m
+[00:05:15.132,263] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3B[0m
+[00:05:15.132,385] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.132,385] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.182,342] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x17[0m
+[00:05:15.182,495] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x17[0m
+[00:05:15.182,617] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.182,647] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.232,574] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD2[0m
+[00:05:15.232,727] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD2[0m
+[00:05:15.232,849] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.232,879] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.282,806] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x45[0m
+[00:05:15.282,958] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x45[0m
+[00:05:15.283,111] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.283,111] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.333,068] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x44[0m
+[00:05:15.333,190] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x44[0m
+[00:05:15.333,343] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.333,374] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.383,300] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE5[0m
+[00:05:15.383,453] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE5[0m
+[00:05:15.383,605] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.383,605] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.433,563] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9D[0m
+[00:05:15.433,685] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9D[0m
+[00:05:15.433,837] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.433,868] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.483,825] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBE[0m
+[00:05:15.483,978] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBE[0m
+[00:05:15.484,130] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.484,130] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.534,057] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x47[0m
+[00:05:15.534,210] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x47[0m
+[00:05:15.534,362] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.534,362] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.584,320] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x11[0m
+[00:05:15.584,442] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x11[0m
+[00:05:15.584,594] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.584,625] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.634,552] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:15.634,704] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:15.634,857] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.634,887] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.684,814] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB1[0m
+[00:05:15.684,967] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB1[0m
+[00:05:15.685,119] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.685,119] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.735,046] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x78[0m
+[00:05:15.735,198] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x78[0m
+[00:05:15.735,351] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.735,351] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.785,308] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8C[0m
+[00:05:15.785,461] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8C[0m
+[00:05:15.785,614] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.785,614] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.835,571] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF2[0m
+[00:05:15.835,723] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF2[0m
+[00:05:15.835,876] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.835,876] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.885,833] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x15[0m
+[00:05:15.886,108] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.886,108] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.936,065] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAC[0m
+[00:05:15.936,187] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAC[0m
+[00:05:15.936,340] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.936,370] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:15.986,297] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xFF[0m
+[00:05:15.986,450] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xFF[0m
+[00:05:15.986,602] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:15.986,602] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.036,560] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x66[0m
+[00:05:16.036,682] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x66[0m
+[00:05:16.036,834] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.036,865] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+
+### sent: spi transceive 23 00 00 00 00
+spi transceive 23 00 00 00 00
+[00:05:16.086,791] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x79[0m
+[00:05:16.086,944] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x79[0m
+[00:05:16.087,066] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.087,097] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+TX:
+00000000: 23 00 00 00 00                                   |#....            |
+RX:
+00000000: 79 1c 00 15 00                                   |y....            |
+[1;32muart:~$ [m[00:05:16.137,451] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:16.137,603] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:16.137,756] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.137,756] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.187,713] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:16.187,835] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:16.187,988] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.187,988] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.237,945] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x94[0m
+[00:05:16.238,067] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x94[0m
+[00:05:16.238,220] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.238,220] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.288,177] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD2[0m
+[00:05:16.288,299] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD2[0m
+[00:05:16.288,452] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.288,482] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.338,409] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5E[0m
+[00:05:16.338,562] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5E[0m
+[00:05:16.338,714] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.338,714] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.388,671] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x01[0m
+[00:05:16.388,793] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x01[0m
+[00:05:16.388,946] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.388,977] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.438,934] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x0C[0m
+[00:05:16.439,086] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x0C[0m
+[00:05:16.439,239] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.439,239] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.489,166] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDB[0m
+[00:05:16.489,318] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDB[0m
+[00:05:16.489,471] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.489,471] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.539,428] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4D[0m
+[00:05:16.539,550] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4D[0m
+[00:05:16.539,703] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.539,733] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.589,660] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x89[0m
+[00:05:16.589,813] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x89[0m
+[00:05:16.589,965] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.589,996] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.639,923] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6E[0m
+[00:05:16.640,075] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6E[0m
+[00:05:16.640,228] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.640,228] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.690,155] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x40[0m
+[00:05:16.690,307] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x40[0m
+[00:05:16.690,460] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.690,460] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.740,417] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9F[0m
+[00:05:16.740,539] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9F[0m
+[00:05:16.740,692] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.740,722] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.790,679] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xFD[0m
+[00:05:16.790,832] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xFD[0m
+[00:05:16.790,985] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.790,985] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.840,911] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB1[0m
+[00:05:16.841,064] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB1[0m
+[00:05:16.841,217] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.841,217] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.891,174] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x0B[0m
+[00:05:16.891,296] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x0B[0m
+[00:05:16.891,448] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.891,479] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.941,406] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x32[0m
+[00:05:16.941,558] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x32[0m
+[00:05:16.941,711] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.941,711] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:16.991,668] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x54[0m
+[00:05:16.991,821] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x54[0m
+[00:05:16.991,973] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:16.991,973] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.041,931] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE5[0m
+[00:05:17.042,053] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE5[0m
+[00:05:17.042,205] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.042,236] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.092,163] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC0[0m
+[00:05:17.092,315] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC0[0m
+[00:05:17.092,468] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.092,468] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.142,425] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAC[0m
+[00:05:17.142,547] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAC[0m
+[00:05:17.142,700] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.142,700] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.192,657] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x19[0m
+[00:05:17.192,779] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x19[0m
+[00:05:17.192,932] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.192,932] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.242,889] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC3[0m
+[00:05:17.243,041] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC3[0m
+[00:05:17.243,164] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.243,194] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.293,121] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x70[0m
+[00:05:17.293,273] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x70[0m
+[00:05:17.293,426] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.293,426] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.343,383] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3F[0m
+[00:05:17.343,536] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3F[0m
+[00:05:17.343,688] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.343,688] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.393,646] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD0[0m
+[00:05:17.393,768] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD0[0m
+[00:05:17.393,920] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.393,951] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.443,878] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x84[0m
+[00:05:17.444,030] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x84[0m
+[00:05:17.444,183] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.444,183] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.494,140] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA3[0m
+[00:05:17.494,293] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA3[0m
+[00:05:17.494,445] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.494,445] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.544,403] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2D[0m
+[00:05:17.544,525] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2D[0m
+[00:05:17.544,677] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.544,708] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.594,665] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7C[0m
+[00:05:17.594,818] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7C[0m
+[00:05:17.594,970] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.594,970] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.644,927] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8B[0m
+[00:05:17.645,050] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8B[0m
+[00:05:17.645,202] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.645,233] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.695,159] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:17.695,312] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:17.695,465] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.695,465] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.745,422] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x87[0m
+[00:05:17.745,574] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x87[0m
+[00:05:17.745,727] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.745,758] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.795,684] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4C[0m
+[00:05:17.795,837] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4C[0m
+[00:05:17.795,989] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.795,989] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.845,947] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7B[0m
+[00:05:17.846,099] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7B[0m
+[00:05:17.846,252] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.846,252] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.896,209] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x24[0m
+[00:05:17.896,331] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x24[0m
+[00:05:17.896,484] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.896,514] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.946,472] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2B[0m
+[00:05:17.946,624] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2B[0m
+[00:05:17.946,777] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.946,777] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:17.996,734] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x34[0m
+[00:05:17.996,856] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x34[0m
+[00:05:17.997,009] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:17.997,039] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.046,966] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x43[0m
+[00:05:18.047,119] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x43[0m
+[00:05:18.047,271] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.047,271] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.097,229] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA8[0m
+[00:05:18.097,381] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA8[0m
+[00:05:18.097,503] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.097,534] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.147,460] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBD[0m
+[00:05:18.147,613] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBD[0m
+[00:05:18.147,735] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.147,766] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.197,692] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:05:18.197,845] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:05:18.197,998] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.197,998] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.247,955] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x50[0m
+[00:05:18.248,077] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x50[0m
+[00:05:18.248,229] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.248,229] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.298,187] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xEF[0m
+[00:05:18.298,339] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xEF[0m
+[00:05:18.298,492] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.298,492] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.348,419] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x27[0m
+[00:05:18.348,571] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x27[0m
+[00:05:18.348,724] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.348,724] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.398,681] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE0[0m
+[00:05:18.398,834] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE0[0m
+[00:05:18.398,986] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.398,986] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.448,944] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x91[0m
+[00:05:18.449,066] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x91[0m
+[00:05:18.449,218] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.449,249] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.499,176] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB9[0m
+[00:05:18.499,328] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB9[0m
+[00:05:18.499,481] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.499,481] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.549,438] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x13[0m
+[00:05:18.549,591] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x13[0m
+[00:05:18.549,743] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.549,743] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.599,700] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x0D[0m
+[00:05:18.599,822] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x0D[0m
+[00:05:18.599,975] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.600,006] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.649,932] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3B[0m
+[00:05:18.650,085] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3B[0m
+[00:05:18.650,238] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.650,238] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.700,195] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC6[0m
+[00:05:18.700,347] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC6[0m
+[00:05:18.700,500] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.700,500] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.750,457] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB5[0m
+[00:05:18.750,610] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB5[0m
+[00:05:18.750,762] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.750,762] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.800,720] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF7[0m
+[00:05:18.800,872] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF7[0m
+[00:05:18.801,025] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.801,025] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.850,952] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x21[0m
+[00:05:18.851,104] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x21[0m
+[00:05:18.851,257] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.851,287] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.901,214] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA6[0m
+[00:05:18.901,367] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA6[0m
+[00:05:18.901,519] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.901,550] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:18.951,477] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x68[0m
+[00:05:18.951,629] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x68[0m
+[00:05:18.951,782] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:18.951,782] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.001,739] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x09[0m
+[00:05:19.001,892] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x09[0m
+[00:05:19.002,044] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.002,044] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.052,001] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x63[0m
+[00:05:19.052,154] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x63[0m
+[00:05:19.052,307] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.052,307] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.102,264] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5B[0m
+[00:05:19.102,416] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5B[0m
+[00:05:19.102,569] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.102,569] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.152,526] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAF[0m
+[00:05:19.152,648] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAF[0m
+[00:05:19.152,801] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.152,801] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.202,758] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x25[0m
+[00:05:19.202,911] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x25[0m
+[00:05:19.203,033] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.203,063] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.252,990] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7D[0m
+[00:05:19.253,143] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7D[0m
+[00:05:19.253,265] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.253,295] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.303,222] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3E[0m
+[00:05:19.303,375] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3E[0m
+[00:05:19.303,527] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.303,527] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.353,485] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x54[0m
+[00:05:19.353,637] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x54[0m
+[00:05:19.353,790] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.353,790] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.403,717] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5F[0m
+[00:05:19.403,869] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5F[0m
+[00:05:19.404,022] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.404,022] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.453,979] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4A[0m
+[00:05:19.454,132] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4A[0m
+[00:05:19.454,284] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.454,284] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.504,241] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x11[0m
+[00:05:19.504,394] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x11[0m
+[00:05:19.504,547] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.504,547] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.554,504] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB8[0m
+[00:05:19.554,626] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB8[0m
+[00:05:19.554,779] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.554,809] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.604,736] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6F[0m
+[00:05:19.604,888] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6F[0m
+[00:05:19.605,041] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.605,041] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.654,998] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:19.655,151] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:19.655,303] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.655,303] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.705,261] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9C[0m
+[00:05:19.705,383] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9C[0m
+[00:05:19.705,535] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.705,566] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.755,493] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:19.755,645] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:19.755,798] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.755,798] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.805,755] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB1[0m
+[00:05:19.805,877] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB1[0m
+[00:05:19.806,030] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.806,060] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.855,987] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x74[0m
+[00:05:19.856,140] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x74[0m
+[00:05:19.856,292] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.856,292] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.906,280] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9E[0m
+[00:05:19.906,402] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9E[0m
+[00:05:19.906,555] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.906,585] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:19.956,542] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA6[0m
+[00:05:19.956,665] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA6[0m
+[00:05:19.956,817] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:19.956,848] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.006,774] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7C[0m
+[00:05:20.006,927] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7C[0m
+[00:05:20.007,080] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.007,080] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.057,037] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF1[0m
+[00:05:20.057,189] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF1[0m
+[00:05:20.057,342] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.057,342] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.107,299] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB6[0m
+[00:05:20.107,452] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB6[0m
+[00:05:20.107,574] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.107,604] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.157,531] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA7[0m
+[00:05:20.157,684] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA7[0m
+[00:05:20.157,836] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.157,836] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.207,763] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x3A[0m
+[00:05:20.207,916] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x3A[0m
+[00:05:20.208,068] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.208,068] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.258,056] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6F[0m
+[00:05:20.258,178] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6F[0m
+[00:05:20.258,331] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.258,361] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.308,288] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x51[0m
+[00:05:20.308,441] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x51[0m
+[00:05:20.308,593] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.308,593] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.358,551] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xFA[0m
+[00:05:20.358,673] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xFA[0m
+[00:05:20.358,825] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.358,856] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.408,782] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x06[0m
+[00:05:20.408,935] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x06[0m
+[00:05:20.409,088] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.409,088] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.459,045] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x53[0m
+[00:05:20.459,197] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x53[0m
+[00:05:20.459,350] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.459,350] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.509,307] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x78[0m
+[00:05:20.509,429] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x78[0m
+[00:05:20.509,582] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.509,613] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.559,539] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD2[0m
+[00:05:20.559,692] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD2[0m
+[00:05:20.559,844] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.559,844] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.609,802] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x77[0m
+[00:05:20.609,954] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x77[0m
+[00:05:20.610,107] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.610,107] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.660,064] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x42[0m
+[00:05:20.660,186] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x42[0m
+[00:05:20.660,339] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.660,369] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.710,296] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD8[0m
+[00:05:20.710,449] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD8[0m
+[00:05:20.710,601] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.710,601] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.760,559] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x73[0m
+[00:05:20.760,711] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x73[0m
+[00:05:20.760,864] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.760,864] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.810,821] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF6[0m
+[00:05:20.810,943] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF6[0m
+[00:05:20.811,096] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.811,126] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.861,053] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x53[0m
+[00:05:20.861,206] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x53[0m
+[00:05:20.861,358] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.861,358] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.911,315] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xCE[0m
+[00:05:20.911,468] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xCE[0m
+[00:05:20.911,590] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.911,621] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:20.961,547] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x70[0m
+[00:05:20.961,700] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x70[0m
+[00:05:20.961,853] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:20.961,853] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.011,810] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x39[0m
+[00:05:21.011,962] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x39[0m
+[00:05:21.012,115] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.012,115] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.062,103] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x09[0m
+[00:05:21.062,225] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x09[0m
+[00:05:21.062,377] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.062,377] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.112,335] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x46[0m
+[00:05:21.112,487] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x46[0m
+[00:05:21.112,609] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.112,640] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.162,567] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x22[0m
+[00:05:21.162,719] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x22[0m
+[00:05:21.162,841] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.162,872] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.212,799] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x83[0m
+[00:05:21.212,951] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x83[0m
+[00:05:21.213,104] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.213,104] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.263,061] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x85[0m
+[00:05:21.263,214] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x85[0m
+[00:05:21.263,366] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.263,366] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.313,323] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBA[0m
+[00:05:21.313,446] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBA[0m
+[00:05:21.313,598] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.313,629] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.363,555] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF7[0m
+[00:05:21.363,708] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF7[0m
+[00:05:21.363,861] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.363,861] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.413,848] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x69[0m
+[00:05:21.413,970] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x69[0m
+[00:05:21.414,123] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.414,154] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.464,080] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA2[0m
+[00:05:21.464,233] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA2[0m
+[00:05:21.464,385] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.464,385] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.514,343] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE6[0m
+[00:05:21.514,465] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE6[0m
+[00:05:21.514,617] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.514,648] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.564,575] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x67[0m
+[00:05:21.564,727] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x67[0m
+[00:05:21.564,880] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.564,880] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.614,837] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA6[0m
+[00:05:21.614,990] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA6[0m
+[00:05:21.615,142] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.615,142] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.665,100] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4F[0m
+[00:05:21.665,222] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4F[0m
+[00:05:21.665,374] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.665,405] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.715,332] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF2[0m
+[00:05:21.715,484] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF2[0m
+[00:05:21.715,637] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.715,637] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.765,594] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x86[0m
+[00:05:21.765,747] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x86[0m
+[00:05:21.765,899] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.765,899] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.815,856] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAF[0m
+[00:05:21.815,979] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAF[0m
+[00:05:21.816,131] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.816,162] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.866,119] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1C[0m
+[00:05:21.866,241] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1C[0m
+[00:05:21.866,394] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.866,424] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.916,351] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE3[0m
+[00:05:21.916,503] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE3[0m
+[00:05:21.916,656] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.916,656] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:21.966,613] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4D[0m
+[00:05:21.966,735] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4D[0m
+[00:05:21.966,888] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:21.966,918] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.016,845] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5C[0m
+[00:05:22.016,998] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5C[0m
+[00:05:22.017,150] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.017,150] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.067,108] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC3[0m
+[00:05:22.067,260] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC3[0m
+[00:05:22.067,382] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.067,413] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.117,340] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xA6[0m
+[00:05:22.117,492] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xA6[0m
+[00:05:22.117,614] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.117,645] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.167,572] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x01[0m
+[00:05:22.167,724] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x01[0m
+[00:05:22.167,877] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.167,877] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.217,834] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9B[0m
+[00:05:22.217,987] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9B[0m
+[00:05:22.218,139] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.218,139] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.268,096] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x41[0m
+[00:05:22.268,218] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x41[0m
+[00:05:22.268,371] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.268,402] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.318,328] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7C[0m
+[00:05:22.318,481] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7C[0m
+[00:05:22.318,634] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.318,634] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.368,591] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x97[0m
+[00:05:22.368,774] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x97[0m
+[00:05:22.368,927] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.368,927] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.418,884] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x60[0m
+[00:05:22.419,006] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x60[0m
+[00:05:22.419,158] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.419,189] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.469,116] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xE6[0m
+[00:05:22.469,268] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xE6[0m
+[00:05:22.469,421] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.469,421] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.519,378] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2B[0m
+[00:05:22.519,531] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2B[0m
+[00:05:22.519,683] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.519,683] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.569,641] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB7[0m
+[00:05:22.569,763] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB7[0m
+[00:05:22.569,915] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.569,946] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.619,873] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD0[0m
+[00:05:22.620,025] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD0[0m
+[00:05:22.620,178] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.620,178] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.670,135] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x6C[0m
+[00:05:22.670,288] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x6C[0m
+[00:05:22.670,440] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.670,440] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.720,397] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4D[0m
+[00:05:22.720,520] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4D[0m
+[00:05:22.720,672] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.720,703] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.770,629] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x5A[0m
+[00:05:22.770,782] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x5A[0m
+[00:05:22.770,935] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.770,935] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.820,892] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x47[0m
+[00:05:22.821,044] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x47[0m
+[00:05:22.821,197] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.821,197] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.871,124] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x51[0m
+[00:05:22.871,276] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x51[0m
+[00:05:22.871,429] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.871,429] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.921,386] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2E[0m
+[00:05:22.921,539] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2E[0m
+[00:05:22.921,691] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.921,691] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:22.971,649] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x78[0m
+[00:05:22.971,771] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x78[0m
+[00:05:22.971,923] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:22.971,954] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.021,911] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xB5[0m
+[00:05:23.022,033] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xB5[0m
+[00:05:23.022,186] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.022,216] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.072,143] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x42[0m
+[00:05:23.072,296] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x42[0m
+[00:05:23.072,448] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.072,448] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.122,375] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAB[0m
+[00:05:23.122,528] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAB[0m
+[00:05:23.122,680] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.122,680] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.172,637] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x68[0m
+[00:05:23.172,760] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x68[0m
+[00:05:23.172,912] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.172,912] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.222,869] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xDD[0m
+[00:05:23.222,991] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xDD[0m
+[00:05:23.223,144] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.223,144] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.273,101] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xCF[0m
+[00:05:23.273,254] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xCF[0m
+[00:05:23.273,406] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.273,406] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.323,364] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x61[0m
+[00:05:23.323,486] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x61[0m
+[00:05:23.323,638] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.323,669] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.373,626] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x31[0m
+[00:05:23.373,779] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x31[0m
+[00:05:23.373,931] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.373,931] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.423,889] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAC[0m
+[00:05:23.424,041] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAC[0m
+[00:05:23.424,194] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.424,194] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.474,151] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x2C[0m
+[00:05:23.474,304] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x2C[0m
+[00:05:23.474,456] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.474,456] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.524,414] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9F[0m
+[00:05:23.524,536] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9F[0m
+[00:05:23.524,688] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.524,688] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.574,645] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xFC[0m
+[00:05:23.574,798] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xFC[0m
+[00:05:23.574,951] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.574,951] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.624,908] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x57[0m
+[00:05:23.625,061] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x57[0m
+[00:05:23.625,213] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.625,213] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.675,170] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xD4[0m
+[00:05:23.675,292] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xD4[0m
+[00:05:23.675,445] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.675,476] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.725,402] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x53[0m
+[00:05:23.725,555] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x53[0m
+[00:05:23.725,708] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.725,708] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.775,665] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xED[0m
+[00:05:23.775,817] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xED[0m
+[00:05:23.775,970] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.775,970] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.825,927] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x67[0m
+[00:05:23.826,049] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x67[0m
+[00:05:23.826,202] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.826,232] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.876,159] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xEF[0m
+[00:05:23.876,312] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xEF[0m
+[00:05:23.876,464] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.876,464] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.926,422] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x90[0m
+[00:05:23.926,574] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x90[0m
+[00:05:23.926,727] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.926,727] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:23.976,684] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7D[0m
+[00:05:23.976,806] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7D[0m
+[00:05:23.976,959] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:23.976,989] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.026,916] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xAE[0m
+[00:05:24.027,069] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xAE[0m
+[00:05:24.027,221] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.027,221] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.077,178] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7F[0m
+[00:05:24.077,331] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7F[0m
+[00:05:24.077,453] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.077,484] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.127,410] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xED[0m
+[00:05:24.127,563] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xED[0m
+[00:05:24.127,685] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.127,716] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.177,642] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x79[0m
+[00:05:24.177,795] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x79[0m
+[00:05:24.177,947] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.177,947] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.227,905] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xBF[0m
+[00:05:24.228,027] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xBF[0m
+[00:05:24.228,179] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.228,179] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.278,137] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x83[0m
+[00:05:24.278,289] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x83[0m
+[00:05:24.278,442] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.278,442] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.328,399] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x78[0m
+[00:05:24.328,521] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x78[0m
+[00:05:24.328,674] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.328,704] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.378,631] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x97[0m
+[00:05:24.378,784] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x97[0m
+[00:05:24.378,936] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.378,936] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.428,894] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xC4[0m
+[00:05:24.429,046] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xC4[0m
+[00:05:24.429,199] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.429,199] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.479,156] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x9F[0m
+[00:05:24.479,278] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x9F[0m
+[00:05:24.479,431] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.479,461] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.529,418] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0xF0[0m
+[00:05:24.529,541] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0xF0[0m
+[00:05:24.529,693] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.529,724] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.579,650] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7F[0m
+[00:05:24.579,803] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7F[0m
+[00:05:24.579,956] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.579,956] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.629,913] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x1F[0m
+[00:05:24.630,065] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x1F[0m
+[00:05:24.630,218] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.630,218] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.680,175] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7B[0m
+[00:05:24.680,328] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7B[0m
+[00:05:24.680,480] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.680,480] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.730,438] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x4E[0m
+[00:05:24.730,560] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x4E[0m
+[00:05:24.730,712] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.730,743] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.780,670] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x7A[0m
+[00:05:24.780,822] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x7A[0m
+[00:05:24.780,975] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.780,975] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.830,932] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x86[0m
+[00:05:24.831,085] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x86[0m
+[00:05:24.831,237] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.831,237] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+[00:05:24.881,195] [1;31m<err> ads1220: config2 mismatch! 0x10 != 0x8E[0m
+[00:05:24.881,317] [1;31m<err> ads1220: config2 mismatch! 0x15 != 0x8E[0m
+[00:05:24.881,469] [1;31m<err> ads1220: config0 mismatch! 0x3C != 0x1C[0m
+[00:05:24.881,500] [1;31m<err> analog_axis_hires: Could not setup channel #1 (-5)[0m
+
+# end=2026-10-01T18:21:38.9463556+03:00

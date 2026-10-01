@@ -15,7 +15,7 @@ perfboard layout, diagrams) is in the parent project.
 | DOUT/DRDY (15, MISO) | P0.20 | |
 | DIN (16, MOSI) | P0.17 | |
 | DRDY (14) | P0.06 | active low, pull-up |
-| CS (2) | GND | **tied low, no `cs-gpios`** |
+| CS (2) | P0.10 | `cs-gpios`, active low (EXP03; was tied to GND in D6) |
 | CLK (3) | GND | internal oscillator |
 | REFP0 (9) | TrackPoint `[a]` | IDAC1 exits here |
 | REFN0 (8) | TrackPoint `[b]` + GND | |

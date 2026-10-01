@@ -3,7 +3,8 @@
  *
  * Wiring = README "2 (design of record):
  *   SCLK  P0.08 | MISO P0.20 | MOSI P0.17 | DRDY P0.06
- *   CS tied to GND (D6) -> no cs-gpios; CLK tied to GND (D7, internal osc).
+ *   CS P0.10 (cs-gpios; EXP03 - was tied to GND in D6); CLK tied to GND (D7,
+ *   internal osc).
  *
  * Divider is 2.2 kOhm per leg (one resistor + a bridge), not 2.4 kOhm:
  *   R1 = R2 = 2.2k, C3 = 100nF at AIN2 -> AIN2 source impedance 1.1k,
@@ -36,7 +37,11 @@
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    /* no cs-gpios: CS is tied to GND (D6) */
+    /* CS on a GPIO (EXP03): CS tied to GND (D6) cannot work with this driver -
+     * the ADS1220 only commits a WREG at a CS edge or after the ~55 ms SPI
+     * timeout, so the driver's immediate write-then-readback always reads the
+     * previous value. */
+    cs-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
     adc_ads1220: adc_ads1220@0 {
         compatible = "ti,ads1220";
