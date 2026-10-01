@@ -69,4 +69,29 @@ capture where x and y are no longer 0.97-correlated.
 _Pending._
 
 ## Learnings
-- (none yet)
+- **`tpoint raw [mode] [n] [khz] [cmd] [split]` is the read-path probe.** It
+  re-reads the ADC in its own SPI transaction and hexdumps every byte, so it
+  bypasses `sys_get_be24()` entirely — run it before believing any statistic
+  computed from logged values. (`experiments/EXP08/`.)
+- **The duplication is in the SPI receive buffer, not downstream.** At the
+  driver's exact setup (mode 1, 3 bytes, 1 MHz) `rx[0] == rx[1]` in 40/40, so
+  `be24` = `(b0<<16)|(b0<<8)|b1` — the low byte `b2` is never read at all.
+- **Mechanism: the ADS1220 is already streaming when the command is clocked in.**
+  A 3-byte transfer is one byte short (8 clocks of command + only 16 left for
+  data), so `rx = [b0, b0, b1]` and a 4-byte read gives `[b0, b0, b1, b2]`.
+  Datasheet: *"the device starts to output the requested data on DOUT/DRDY at
+  the first SCLK rising edge after the command byte."* Fix: read 4 bytes and use
+  **bytes 1, 2, 3** (`rx[0]` is the ambiguous pre-command byte — ignore it).
+  Verified: `hi==mid` falls from 40/40 to **0/40**.
+- **`RREG` is the operator-free ground truth for the SPI phase.** At mode 1 the
+  register byte (`rx[1]`) is stable across reads (`0x84`, `0xA0`, `0x10/0x30`)
+  while `rx[0]` carries live conversion data. So **mode 1 (CPOL=0/CPHA=1) is
+  correct** and the fault is the *read length*, not the clock phase. Modes 0/2/3
+  only looked promising because garbage also tends to have `hi != mid`.
+- **Bootloader entry needs a quiet console.** `devmem 0x4000051C 32 0x57` +
+  `kernel reboot cold` does work, but only with the `XY`/HID log flood off.
+  Always verify first: `devmem 0x4000051C 32` must answer `Read value 0x57`
+  *before* the reboot is sent.
+- **`gh run download` fails with "file exists" and silently leaves the OLD UF2
+  in place** — `Remove-Item -Recurse artifacts\EXP0N` first, or you flash the
+  previous build and debug the wrong firmware.
