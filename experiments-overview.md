@@ -5,4 +5,4 @@
 | EXP01 | success | Minimal ZMK shield for the ADS1220 TrackPoint, built on GitHub Actions |
 | EXP02 | success | Full-path ADS1220 logging: handshake to readings and errors |
 | EXP03 | success | ADS1220 no-read root cause: CS must not be tied to GND |
-| EXP04 | inProg | Circle-motion capture: is the raw X/Y signal good enough for pointer motion? |
+| EXP04 | failed | Circle-motion capture: is the raw X/Y signal good enough for pointer motion? |
