@@ -1,6 +1,6 @@
 # TrackPoint → ADS1220 → nice!nano (ZMK)
 
-Status: **design frozen (bench bring-up pending `R(a↔b)` measurement).**
+Status: **SPI bring-up done (EXP03); analog front-end bring-up pending (§7).**
 Scope: wiring + firmware for reading a 4-wire TrackPoint strain-gauge sensor
 directly with an ADS1220, using the `badjeff/ads1220-zephyr-module`.
 
@@ -19,11 +19,11 @@ Parts: 1× ADS1220, 1× 4-wire TrackPoint (controller removed), 1× nice!nano,
 | D3 | Bridge excitation | **IDAC1 → REFP0**, 250–500 µA (tune per §7.2) | No extra parts; matches `example-tpoint_idac.dtsi` |
 | D4 | ADC reference | `REFP0/REFN0` (`ADC_REF_EXTERNAL0`) = bridge excitation | Ratiometric: IDAC tolerance cancels |
 | D5 | Mid-bias | R1 = R2 = **2.2 kΩ** (one per branch) → AIN2 (= a/2), + **C3 = 100 nF** AIN2↔GND | 0 V differential at rest; low AIN2 source impedance (1.1 kΩ) keeps the ADC's input-current error small (§4) |
-| D6 | CS | Tied to GND; **no `cs-gpios` in DTS** | Datasheet-allowed; single SPI device; saves a pin |
+| D6 | CS | **Driven from P0.10** (`cs-gpios`); revised by EXP03 | Tied to GND is datasheet-legal, but the driver writes then immediately reads a register back - which needs a CS edge (or a >55 ms gap) to commit |
 | D7 | CLK | Tied to GND | Selects internal oscillator |
 | D8 | AIN3 / REFN1 | Floating | Internal low-side switch lives on this pin |
 | D9 | SPI | `&spi2`, 1 MHz, mode 1 (driver sets CPHA itself) | Matches module example |
-| D10 | DRDY | P1.06 (`gpio1 6`) | Needed: DOUT cannot signal DRDY when CS is low |
+| D10 | DRDY | P0.06 (`gpio0 6`); revised by EXP03 | Board wiring; needed: DOUT cannot signal DRDY when CS is low |
 | D11 | Channel config | AIN0−AIN2 (X), AIN1−AIN2 (Y); gain 64 @ 330 SPS | Matches `example-tpoint_idac.dtsi` |
 | D12 | Power strategy | IDAC gated per conversion; poll downshift 8 → 100 → 1300 ms | Lowest average draw without a external wake hook (§6) |
 
@@ -41,7 +41,7 @@ Sensor is two half-bridges sharing [a] (top) and [b] (bottom):
 | ADS1220 (TSSOP-16 pin) | Connect to | Note |
 |---|------------|------|
 | SCLK (1) | nice!nano **P0.08** | |
-| CS (2) | **GND** | tied low permanently |
+| CS (2) | nice!nano **P0.10** | `cs-gpios`, active low (EXP03; must not be tied to GND) |
 | CLK (3) | **GND** | internal oscillator |
 | DGND (4) | GND | |
 | AVSS / AGND (5) | GND | |
@@ -53,7 +53,7 @@ Sensor is two half-bridges sharing [a] (top) and [b] (bottom):
 | AIN0 / REFP1 (11) | TrackPoint **[x]** | X channel |
 | AVDD (12) | nice!nano VCC + 100 nF to GND | |
 | DVDD (13) | nice!nano VCC + 100 nF to GND | |
-| DRDY (14) | nice!nano **P1.06** | active low |
+| DRDY (14) | nice!nano **P0.06** | active low (EXP03) |
 | DOUT/DRDY (15) | nice!nano **P0.20** (MISO) | |
 | DIN (16) | nice!nano **P0.17** (MOSI) | |
 | — | R1: **AIN2 ↔ GND** ([b]) | 2.2 kΩ (spare position bridged), matched to R2 |
@@ -180,7 +180,8 @@ Overlay (adapt node names to the target shield):
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    /* no cs-gpios: CS is tied to GND */
+    /* CS on a GPIO (EXP03): CS tied to GND does not work with this driver */
+    cs-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
     adc_ads1220: adc_ads1220@0 {
         compatible = "ti,ads1220";
@@ -190,7 +191,7 @@ Overlay (adapt node names to the target shield):
         #io-channel-cells = <1>;
         #address-cells = <1>;
         #size-cells = <0>;
-        drdy-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        drdy-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         idac-ua = <500>;   /* tune so V(a) >= 0.75 V, see README §7.2 */
 
         adc_ads1220_ch0: channel@0 {
@@ -338,19 +339,23 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
 
 ## 8. Open items
 
-- [ ] AliExpress ADS1220 board: does it carry its own 3.3 V regulator?
-      If yes → feed its regulator input, not DVDD/AVDD from VCC.
-      If chip + caps only → wiring as in §2.
+- [x] AliExpress ADS1220 board: does it carry its own 3.3 V regulator?
+      **No (EXP03)** - no VIN pin; it is a plain chip + passives breakout, so the
+      §2 wiring (AVDD/DVDD from the nice!nano 3V3) is correct.
 - [ ] Measured `R_ab` → final `idac-ua` (see §7.2).
 - [ ] Sensor pad order confirmation `[x][y][a][b]` (bottom view).
 - [ ] Optional later: EN pin + final period 0 for true POWERDOWN
       (needs an external `ANALOG_AXIS_HIRES_ATTR_RESUME` caller)
-- [ ] **D6 (CS tied to GND, no `cs-gpios`)** — EXP01 confirmed the *build / DT*
-      half: the generated devicetree carries zero `cs-gpios` and
-      `spi_nrfx_spim.c`'s `configure()` never drives `ss_pin`, so nothing toggles
-      CS at all. Still to confirm on the bench that a SPI read actually completes;
-      if not, rework D6 to drive CS from a GPIO (`cs-gpios = <&gpio0 6 …>`, the
-      pin the module's own examples use).
+- [x] **D6 (CS tied to GND, no `cs-gpios`)** - **resolved by EXP03: it does not
+      work.** With CS low the ADS1220 commits a WREG only at a CS edge or after
+      its ~55 ms SPI timeout, so the driver's immediate write-then-read-back
+      always returned the previous value and `channel_setup` failed forever. CS
+      is now driven from **P0.10** (`cs-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW |
+      GPIO_PULL_UP)>` + `CONFIG_NFCT_PINS_AS_GPIOS=y`); DRDY moved to **P0.06**
+      to match the board. Setup, calibration and sampling now work.
+- [ ] **Analog front-end is railed** (EXP03 finding): both channels read a
+      constant `-8355840` (`0x808000`), deadzone 0. Measure `R_ab` and, with the
+      driver polling, `V(a)-V(b)` and `V(x) ~= V(y) ~= V(a)/2` (§7).
 - [ ] `layout/gen.py` + `layout/board.md` still describe **4× 1.2 kΩ** in
       R2a/R2b/R1a/R1b. Regenerate for the 2.2 kΩ build (one resistor per leg,
       spare position bridged): edit the `RESISTORS`/`NODES` data and run

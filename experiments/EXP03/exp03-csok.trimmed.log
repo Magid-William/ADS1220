@@ -1,0 +1,12 @@
+[00:00:00.405,487] <inf> analog_axis_hires: Setting up channel 0, ADC channel 0
+[00:00:00.406,005] <inf> analog_axis_hires: Channel 0 setup done
+[00:00:00.406,005] <inf> analog_axis_hires: Setting up channel 1, ADC channel 1
+[00:00:00.406,127] <inf> analog_axis_hires: Channel 1 setup done
+[00:00:00.406,158] <inf> analog_axis_hires: All channels setup complete, entering poll loop
+[00:00:00.256,286] <inf> analog_axis_hires: Setting up channel 0, ADC channel 0
+[00:00:00.256,805] <inf> analog_axis_hires: Channel 0 setup done
+[00:00:00.256,805] <inf> analog_axis_hires: Setting up channel 1, ADC channel 1
+[00:00:00.256,958] <inf> analog_axis_hires: Channel 1 setup done
+[00:00:00.256,958] <inf> analog_axis_hires: All channels setup complete, entering poll loop
+[00:00:01.057,769] <inf> analog_axis_hires: ch 0 calibrated: avg:-8355840 dt_range:1310600 deadzone:0 min:-9011140 max:-7700540
+[00:00:01.057,830] <inf> analog_axis_hires: ch 1 calibrated: avg:-8355840 dt_range:1310600 deadzone:0 min:-9011140 max:-7700540

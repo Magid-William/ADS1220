@@ -63,7 +63,7 @@ connect with a serial terminal on the CDC-ACM port.
 
 ```
 device list                       # is adc_ads1220 / gpio_ads1220 ready?
-spi conf adc_ads1220 1000000 h    # mode 1 (CPHA)
+spi conf spi@40023000 1000000 h   # SPI controller, mode 1 (CPHA)
 spi transceive 06                 # RESET
 spi transceive 20 00              # read CONFIG0
 spi transceive 23 00 00 00 00     # read CONFIG0..3
