@@ -84,19 +84,28 @@ _Provisional - awaiting the operator's status declaration._
 the read length, not the SPI phase - the plan's leading candidate (wrong mode)
 is refuted.
 
-**The neutral check and the noise comparison are WITHDRAWN as invalid.** The
-operator confirmed they were moving the nub during the first "hands-off"
-capture, so its numbers (mean -3.2e6, sd 2.1e6) are a *motion* capture, not a
-rest baseline - every statistic derived from it is void. In particular the
-"neutral prediction was falsified" claim does **not** stand: prediction 2b is
-**untested**, not falsified. The gain-64 reading (exactly -8388608, sd 0) was
-taken under the same unverified conditions and needs re-confirming.
+**The first rest capture was invalid** (the operator was moving the nub), so it
+was re-taken: 23.4 s, with the operator told to keep both hands off.
 
-**The circle capture is valid as a motion capture:** r(x,y) = +0.48,
-PCA minor/major = 0.59, sd ~1.1e6. But it cannot be scored against noise, or
-called usable/unusable, until a genuine rest baseline exists. Note the
-contaminated "hands-off" run had a *larger* sd (2.1e6) than the circle (1.1e6),
-which is consistent with the operator's hand having been on the nub.
+| | rest (23.4 s) | circle (27.0 s) |
+|---|---|---|
+| x sd | 7.6e5 | 1.11e6 |
+| y sd | 7.1e5 | 1.08e6 |
+| r(x,y) | +0.24 | +0.48 |
+| `hi==mid` | 0.35 % | 0.32 % |
+
+- **Prediction 2b is falsified** (pending the operator's confirmation that the
+  rest run really was hands-off): the nub sits at mean x -4.40e6 / y -4.47e6,
+  about 52 % of full scale below neutral, and never approaches the documented
+  131622 / -21.
+- SNR (circle sd / rest sd) = 1.45 (x), 1.53 (y): the circle is only ~1.5x the
+  rest noise, so it stays marginal.
+- `hi==mid` 0.35 % / 0.32 % on real captures - the read fix holds through the
+  driver.
+
+The gain-64 reading (exactly -8388608, sd 0) came from the earlier,
+unverified-conditions probe and should be re-confirmed on a clean run before it
+is relied on.
 
 ## Learnings
 - **`tpoint raw [mode] [n] [khz] [cmd] [split]` is the read-path probe.** It
