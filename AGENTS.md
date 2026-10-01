@@ -42,6 +42,15 @@ The driver module this build depends on (Apache-2.0).
    `cs-gpios = <&gpio0 6 …>`; D6 ties CS to GND and omits `cs-gpios`, a case the
    module does not demonstrate. Tracked in README §8.
 
+## Bench notes
+- **COM8 is the likely nice!nano USB serial port** (the default in
+  `flash-nicenano.ps1`). COM numbers are assigned per USB port, so confirm before
+  use: `Get-PnpDevice -Class Ports -Status OK`. A stale-but-listed COM8 is
+  normal — in EXP01 the board enumerated as COM22 while COM8 sat unused.
+- ZMK's USB IDs (`VID_1D50&PID_615E`) only say "a ZMK device"; a XIAO running
+  ZMK presents identically. The UF2 drive volume name (`NICENANO`) is the
+  reliable identifier. Leave the XIAO alone.
+
 ## Experiment workflow
 Experiments are numbered EXP01, EXP02, ... One git branch per experiment,
 one `experiments/EXP0N/README.md` per experiment. No change lands without an
