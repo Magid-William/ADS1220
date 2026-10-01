@@ -39,7 +39,46 @@ position-independent - which would point at the excitation voltage / bridge
 - [ ] Analyzer - reuse `experiments/EXP04/analyze_xy.py`.
 
 ## Conclusion (findings)
-_Pending._
+_(Provisional - awaiting the operator's status declaration. The hypothesis is
+falsified, so this is a candidate for **failed**.)_
+
+**Gain is not the lever. At gain 16 the hands-off reading is the exact same
+code as at gain 64 (`-8355840`), and the circle capture is unchanged.**
+
+- Hands-off baseline, gain 16: `0%` off-plateau, one value (`-8355840`) for 8 s -
+  byte-identical to gain 64 (EXP05).
+- Hands-free `tpoint idac` sweep (gain 16): the reading **does** respond to the
+  excitation - `idac 0` gives 51 distinct values, `idac 100` 2, `idac 500` and
+  `1500` exactly 1 (railed). So the SPI/ADC path is alive and the reading is
+  excitation-linked; it is simply pinned.
+- Circle capture, gain 16 (20 s): off-plateau fraction flat at 39-55% in every
+  0.5 s bin, rest and motion alike; rest std (3.24 M) >= motion std (2.78 M);
+  plateau 54%; no position dependence. Identical in character to EXP04/EXP05.
+- The off-plateau values cluster about every ~65600 counts (about `2^16`, i.e.
+  `full-scale/127`) with fine noise on top, at both gains.
+
+Reading: the **normalised** bridge imbalance (or bias error) is very large -
+still railed at gain 16 means the differential exceeds roughly 6% of the bridge
+excitation, which no healthy strain-gauge neutral should do - and it does not
+scale the way a normal conversion would. That points at the analog front-end /
+wiring (wrong pad order, a/b polarity, or the AIN2 bias), not at the firmware.
+The `[x][y][a][b]` pad order and `V(a)`, `V(x)`, `V(AIN2)` are still unverified
+(README §7, §8).
+
+Artifacts: `exp06-hands-off.log`, `exp06-idac-sweep.log`, `exp06-circle.log`,
+`exp06-circle.trimmed.log` (+ csv/svg via the EXP04 analyzer).
+
+**Next experiment must be measurement, not firmware** - a meter on:
+`R_ab` (unpowered), then with the driver polling `V(a)`, `V(b)`, `V(a)-V(b)`,
+`V(x)`, `V(y)`, `V(AIN2)`, and continuity of each pad to the ADS1220 pin.
 
 ## Learnings
-- (pending)
+- **Hands-off at gain 16 and gain 64 give the identical code**, so the rail is
+  not an input-window problem and lowering gain is not a fix.
+- **`tpoint idac <ua>` is a hands-free liveness test.** `0` -> many values,
+  `500`/`1500` -> railed: proves the ADC and SPI work and the reading follows the
+  excitation, without needing the operator or a rebuild.
+- **Per-bin off-plateau fraction** (via `logcheck`-style bucketing) is the fast
+  "is the nub doing anything?" test; it was flat at ~45% here.
+- A `capture-serial.ps1` run needs no operator, so baselines and IDAC sweeps can
+  be done before asking the operator to touch anything.
