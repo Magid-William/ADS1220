@@ -79,17 +79,27 @@ Observed:
    `r(x,y) = -0.52` and PCA minor/major `0.56`; the X-Y cloud is a filled
    diagonal blob, not a ring (ASCII density + `exp04-circle.trimmed-xy-live.svg`).
 5. Rest "noise" std (2.37 M) >= motion signal std (2.22 M): SNR ~1.
+6. **The off-plateau samples are a poll-rate charge transient, not the circle.**
+   In a raw stretch the values climb smoothly out of the plateau over ~15-25
+   samples then reset (few live samples per burst, median 2, ~16 ms) - the
+   classic "IDAC switched on, node RC charges" curve. And the rest and motion
+   windows are **statistically indistinguishable**: ~1/3 of samples are
+   off-plateau *everywhere* (13-33 of 62 per 0.5 s bin, in rest and motion
+   alike), and the per-bin peak has no slow period (best autocorrelation only
+   `r = +0.2`). The nub motion does not visibly modulate the capture - which is
+   exactly why the scatter looks random.
 
 Interpretation (hypotheses for the next experiment, not yet tested):
-- **H1 - neutral outside the input window.** At gain 64 the full-scale
+- **H1 - read-path settling (primary).** Every poll switches the IDAC on, reads
+  immediately, then off; the driver's own settle delay is commented out
+  (`// k_usleep(150)`), so each conversion samples a still-charging
+  bridge/reference. The sawtooth in (6) is that charge curve. Cheap test: drop
+  `avdd-gpios` from the axis nodes so the IDAC stays on continuously (settled)
+  and re-run the circle capture.
+- **H2 - front-end offset/bias (may compound H1).** At gain 64 the full-scale
   differential is only `Vref/64` (~16 mV for Vref~1 V), so a static offset of
-  that size rails the reading. The nub then only pushes it back toward 0.
-  Fix candidates: measure the statics (README §7), lower gain 64 -> 16, and/or
-  correct the AIN2 bias.
-- **H2 - read-path settling.** The driver starts each conversion immediately
-  after the MUX/IDAC change (the upstream `k_usleep(150)` is commented out), so
-  most conversions may sample an unsettled reference/input; the periodic plateau
-  is then an artefact, not the bridge. Needs a settling test.
+  that size rails the reading. Measure the statics (README §7) and lower gain
+  64 -> 16.
 
 Artifacts: `exp04-circle.trimmed.log` (XY + phase lines), `exp04-circle.trimmed-xy.csv`
 (t, x, y, phase), `exp04-circle.trimmed-{xy-scatter,xy-live,x,y}.svg`.
@@ -114,6 +124,11 @@ the circle capture at a lower gain (16).
 - **The nub at rest rails the ADC** (`-8355840`, `0x808000`) on both channels;
   touching moves it only toward 0. Treat the exact rail value as "saturated",
   not as a valid sample, when analysing.
+- **A random-looking X-Y scatter can be a *read* artefact, not noise.** Here the
+  off-plateau samples form a repeating charge curve on the poll cadence (median
+  2 live samples/burst, ~16 ms) and their statistics are identical in the rest
+  and motion windows. Check rest-vs-motion before calling a cloud "the signal" -
+  pooling the whole capture hides this.
 - **`flash-nicenano.ps1` must run under pwsh, not Windows PowerShell 5.1**
   (5.1 fails to parse `($size bytes)` inside the string). Use `& .\flash-nicenano.ps1`.
 - **The nice!nano is COM8** (VID_1D50&PID_615E, sole MI_00); COM22/COM21 are a
