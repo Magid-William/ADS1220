@@ -80,7 +80,8 @@
 #include <zephyr/dt-bindings/gpio/gpio_ads1220.h>
 
 / {
-    /* IDAC as a GPIO: gated high only while a channel is being sampled. */
+    /* IDAC as a GPIO: gated high only while a channel is being sampled.
+     * EXP05: unused - the axes no longer reference it, so the IDAC stays on. */
     gpio_ads1220: gpio_ads1220 {
         compatible = "ti,ads1220-gpio";
         status = "okay";
@@ -114,7 +115,11 @@
 
         axis-x {
             io-channels = <&adc_ads1220 0>;
-            avdd-gpios = <&gpio_ads1220 ADS1220_GPIO_PIN_IDAC GPIO_ACTIVE_HIGH>;
+            /* EXP05: avdd-gpios intentionally removed so the IDAC is NOT gated
+             * on/off around every read (EXP04 saw a poll-rate charge transient).
+             * With no avdd-gpios, has_gpio_avdd == false and the driver leaves
+             * the IDAC at idac-ua = <500> (the ADC node value, reprogrammed by
+             * each channel setup). Test-time only; restore for shipping. */
             in-min = <( 131622 - 655300 )>;
             in-max = <( 131622 + 655300 )>;
             in-calib-cycle = <100>;
@@ -126,7 +131,7 @@
         };
         axis-y {
             io-channels = <&adc_ads1220 1>;
-            avdd-gpios = <&gpio_ads1220 ADS1220_GPIO_PIN_IDAC GPIO_ACTIVE_HIGH>;
+            /* EXP05: avdd-gpios removed - see axis-x. */
             in-min = <( -21 - 655300 )>;
             in-max = <( -21 + 655300 )>;
             in-calib-cycle = <100>;
