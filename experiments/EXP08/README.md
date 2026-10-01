@@ -66,7 +66,36 @@ Success criterion: `hi==mid <= 1%`, neutral near 130k / -21, and a circle
 capture where x and y are no longer 0.97-correlated.
 
 ## Conclusion (findings)
-_Pending._
+_Provisional - awaiting the operator's status declaration._
+
+**The read fault is fixed and validated.** The fix is a 4-byte RDATA read
+(bytes 1..3) in the module fork `Magid-William/ads1220-zephyr-module` @
+`eae64bf` (branch `exp08-read-fix`), pinned in `config/west.yml`.
+
+| read | `hi==mid` |
+|---|---|
+| driver before the fix (3 B) | 40/40 |
+| raw probe, 4 B, bytes 1..3 | 0/40 |
+| raw probe, split CS-held | 0/8 |
+| **driver after the fix, gain 1** | **6/864 = 0.7 %** |
+| driver after the fix, gain 64 | 0/211 |
+
+`RREG` readback proved mode 1 (CPOL=0/CPHA=1) is *correct*, so the fault was
+the read length, not the SPI phase - the plan's leading candidate (wrong mode)
+is refuted.
+
+**The neutral prediction was falsified.** Hands-off at gain 1 the mean sits at
+-3.2e6 with sd 2.1e6 and swings over nearly the whole 8.4e6 range; the driver's
+documented 131622 / -21 is nowhere in sight. At gain 64, now read correctly,
+both channels read *exactly* -8388608 (`0x800000`) with sd 0 - a true
+negative-full-scale rail (EXP07's `-8355840` = `0x808000` was the malformed
+rendering of it, and its railed verdict turns out to have been sound).
+
+**The circle is still not usable.** 25 s capture at gain 1: r(x,y) = +0.48,
+PCA minor/major = 0.59, motion sd ~1.1e6 against a hands-off sd of ~2.1e6
+(SNR < 1). Same verdict as EXP04-EXP07, but now read through a trustworthy
+sample path - so the blocker is the front-end (offset + ~2.1e6 of hands-off
+mains/noise), not the firmware.
 
 ## Learnings
 - **`tpoint raw [mode] [n] [khz] [cmd] [split]` is the read-path probe.** It
@@ -95,3 +124,18 @@ _Pending._
 - **`gh run download` fails with "file exists" and silently leaves the OLD UF2
   in place** — `Remove-Item -Recurse artifacts\EXP0N` first, or you flash the
   previous build and debug the wrong firmware.
+- **How the fix was landed:** `gh repo fork badjeff/ads1220-zephyr-module`,
+  patch `ads1220_read_sample()` to read 4 bytes and use bytes 1..3, add a
+  `magidwilliam` remote in `config/west.yml` and pin the **commit SHA** (not the
+  branch) so builds stay reproducible. CI builds the fork; `refs/` stays clean.
+- **Gain 64 with a correct read is exactly `-8388608` (`0x800000`), sd 0**, on
+  both channels — so EXP07's rail was real and only its *rendering* was
+  malformed (`0x808000`).
+- **Operator handshake that works:** put the instruction in the question text
+  and have the operator answer "yes" as they start moving — the question tool
+  returns the instant they click, so the capture starts immediately. Never rely
+  on printing a cue mid-capture: the operator does not see tool output.
+- **The circle is mains-bound, not read-bound.** At gain 1 hands-off: mean
+  -3.2e6, sd 2.1e6. Circle: r(x,y) = +0.48, PCA minor/major 0.59, sd 1.1e6 —
+  motion is below the hands-off noise (SNR < 1). With the read path now proven,
+  the remaining blocker is the analog front-end: offset + ~2.1e6 of mains.
