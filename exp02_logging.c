@@ -11,6 +11,9 @@
  *   tpoint status          device readiness + axis count
  *   tpoint calib           per-channel calibration (in_min/in_max/deadzone)
  *   tpoint idac <ua>       live IDAC excitation current (0/10/50/100/250/500/1000/1500)
+ *   tpoint raw [mode] [n] [khz]   EXP08: raw RDATA probe; hexdump n received
+ *                          bytes at SPI mode 0..3 and a chosen clock (default
+ *                          mode 1, 3 bytes, 1000 kHz - the driver's own setup)
  *
  * Nothing here touches the analog front-end directly; every sample goes
  * through the driver's normal IDAC-gated path.
@@ -30,6 +33,7 @@
 
 #include <zephyr/input/input_analog_axis_hires.h>
 #include <zephyr/drivers/adc/ads1220.h>
+#include <zephyr/drivers/spi.h>
 
 LOG_MODULE_REGISTER(exp02_logging, CONFIG_LOG_DEFAULT_LEVEL);
 
@@ -216,6 +220,101 @@ static int cmd_tpoint_idac(const struct shell *sh, size_t argc, char **argv)
 	return ret;
 }
 
+/*
+ * EXP08: raw RDATA probe. Re-reads the ADS1220 over the ADC's own SPI bus with
+ * a caller-chosen SPI mode / byte count / clock and hexdumps every byte that
+ * comes back - independent of the driver's hardcoded read. Used to locate the
+ * (H,H,L) duplication: if rx[0] == rx[1] here too, the fault is the transfer,
+ * not sys_get_be24(). Stop the XY logger first ('tpoint xy off').
+ */
+static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
+{
+	int mode = 1;   /* the driver's mode: CPOL = 0, CPHA = 1 */
+	int nbytes = 3; /* the driver reads 3 bytes */
+	int khz = 1000; /* spi-max-frequency in ads1220_tpoint.dtsi */
+
+	if (argc >= 2) {
+		mode = (int)strtol(argv[1], NULL, 10);
+	}
+	if (argc >= 3) {
+		nbytes = (int)strtol(argv[2], NULL, 10);
+	}
+	if (argc >= 4) {
+		khz = (int)strtol(argv[3], NULL, 10);
+	}
+	if (mode < 0 || mode > 3) {
+		shell_error(sh, "mode must be 0..3");
+		return -EINVAL;
+	}
+	if (nbytes < 2) {
+		nbytes = 2;
+	}
+	if (nbytes > 6) {
+		nbytes = 6;
+	}
+	if (khz < 10) {
+		khz = 10;
+	}
+
+	struct spi_dt_spec spec = SPI_DT_SPEC_GET(EXP02_ADC_NODE, 0, 0);
+
+	if (!device_is_ready(spec.bus)) {
+		shell_error(sh, "SPI bus not ready");
+		return -ENODEV;
+	}
+
+	uint32_t op = SPI_OP_MODE_MASTER | SPI_WORD_SET(8);
+
+	if (mode & 1) {
+		op |= SPI_MODE_CPHA;
+	}
+	if (mode & 2) {
+		op |= SPI_MODE_CPOL;
+	}
+	spec.config.operation = op;
+	spec.config.frequency = (uint32_t)khz * 1000U;
+
+	uint8_t tx[6] = { 0x10, 0, 0, 0, 0, 0 }; /* RDATA, then padding */
+	uint8_t rx[6] = { 0 };
+	struct spi_buf txb = { .buf = tx, .len = (size_t)nbytes };
+	struct spi_buf rxb = { .buf = rx, .len = (size_t)nbytes };
+	struct spi_buf_set txs = { .buffers = &txb, .count = 1 };
+	struct spi_buf_set rxs = { .buffers = &rxb, .count = 1 };
+
+	shell_print(sh, "raw RDATA: mode %d (CPOL=%d CPHA=%d), %d byte(s), %d kHz",
+		    mode, (mode >> 1) & 1, mode & 1, nbytes, khz);
+
+	for (int i = 0; i < 4; i++) {
+		int ret = spi_transceive_dt(&spec, &txs, &rxs);
+
+		if (ret != 0) {
+			shell_error(sh, "[%d] spi_transceive ret %d", i, ret);
+			return ret;
+		}
+
+		shell_fprintf(sh, SHELL_NORMAL, "[%d] rx:", i);
+		for (int b = 0; b < nbytes; b++) {
+			shell_fprintf(sh, SHELL_NORMAL, " %02X", rx[b]);
+		}
+
+		if (nbytes >= 3) {
+			int32_t v = (int32_t)(((uint32_t)rx[0] << 16) |
+					      ((uint32_t)rx[1] << 8) | rx[2]);
+
+			if (v & 0x00800000) {
+				v |= (int32_t)0xFF000000;
+			}
+			shell_fprintf(sh, SHELL_NORMAL,
+				      "   be24=%d hi==mid=%s", v,
+				      (rx[0] == rx[1]) ? "yes" : "no");
+		}
+		shell_fprintf(sh, SHELL_NORMAL, "\n");
+		k_msleep(10);
+	}
+
+	return 0;
+}
+
 SHELL_STATIC_SUBCMD_SET_CREATE(
 	sub_tpoint_cmds,
 	SHELL_CMD_ARG(stream, NULL, "Log every raw sample: tpoint stream on|off",
@@ -230,6 +329,8 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 		      cmd_tpoint_calib, 1, 0),
 	SHELL_CMD_ARG(idac, NULL, "Set IDAC excitation current (uA)",
 		      cmd_tpoint_idac, 2, 0),
+	SHELL_CMD_ARG(raw, NULL, "EXP08 raw RDATA byte probe: tpoint raw [mode] [n] [khz]",
+		      cmd_tpoint_raw, 1, 3),
 	SHELL_SUBCMD_SET_END);
 
 SHELL_CMD_REGISTER(tpoint, &sub_tpoint_cmds, "ADS1220 TrackPoint bring-up (EXP02)", NULL);
