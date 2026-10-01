@@ -1,0 +1,54 @@
+# EXP02 capture  port=COM8  start=2026-10-01T17:40:35.3143616+03:00
+
+### sent: spi conf spi@40023000 1000000 h
+spi conf spi@40023000 1000000 h
+[1;32muart:~$ [m
+### sent: spi transceive 06
+spi transceive 06
+TX:
+00000000: 06                                               |.                |
+RX:
+00000000: fc                                               |.                |
+[1;32[00:16:15.242,797] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x2000b750 - rx_bufs 0x2000b758 - 1[0m
+[00:16:15.242,828] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x2000b740 (1), current_rx 0x2000b748 (1), tx buf/len 0x2000b774/1, rx buf/len 0x2000b760/1[0m
+[00:16:15.242,858] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:16:15.242,889] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:16:15.242,889] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+muart:~$ [m
+### sent: spi transceive 23 00 00 00 00
+spi transceive 23 00 00 00 00
+TX:
+00000000: 23 00 00 00 00                                   |#....            |
+RX:
+00000000: a2 3b ff ff ff                                   |.;...            |
+[1;32muart:~$ [m[00:16:18.278,686] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x2000b750 - rx_bufs 0x2000b758 - 1[0m
+[00:16:18.278,717] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x2000b740 (1), current_rx 0x2000b748 (1), tx buf/len 0x2000b774/5, rx buf/len 0x2000b760/5[0m
+[00:16:18.278,808] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:16:18.278,808] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:16:18.278,839] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+
+### sent: spi transceive 40 1C
+spi transceive 40 1C
+TX:
+00000000: 40 1c                                            |@.               |
+RX:
+00000000: ff fc                                            |..               |
+[1;32muart:~$ [[00:16:21.339,477] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x2000b750 - rx_bufs 0x2000b758 - 1[0m
+[00:16:21.339,508] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x2000b740 (1), current_rx 0x2000b748 (1), tx buf/len 0x2000b774/2, rx buf/len 0x2000b760/2[0m
+[00:16:21.339,569] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:16:21.339,599] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:16:21.339,599] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+m
+### sent: spi transceive 23 00 00 00 00
+spi transceive 23 00 00 00 00
+TX:
+00000000: 23 00 00 00 00                                   |#....            |
+RX:
+00000000: a2 3b fc a2 3b                                   |.;..;            |
+[1;32muart:~$ [m[00:16:24.398,254] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: tx_bufs 0x2000b750 - rx_bufs 0x2000b758 - 1[0m
+[00:16:24.398,284] [0m<dbg> spi_nrfx_spim: spi_context_buffers_setup: current_tx 0x2000b740 (1), current_rx 0x2000b748 (1), tx buf/len 0x2000b774/5, rx buf/len 0x2000b760/5[0m
+[00:16:24.398,376] [0m<dbg> spi_nrfx_spim: spi_context_update_tx: tx buf/len 0/0[0m
+[00:16:24.398,376] [0m<dbg> spi_nrfx_spim: spi_context_update_rx: rx buf/len 0/0[0m
+[00:16:24.398,406] [0m<dbg> spi_nrfx_spim: finish_transaction: Transaction finished with status 0[0m
+
+# end=2026-10-01T17:41:15.3214754+03:00

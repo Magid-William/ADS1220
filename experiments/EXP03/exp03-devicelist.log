@@ -1,0 +1,43 @@
+# EXP02 capture  port=COM8  start=2026-10-01T17:40:02.5085043+03:00
+
+### sent: device list
+device list
+devices:
+- clock@40000000 (READY)
+  DT node labels: clock
+- gpio@50000300 (READY)
+  DT node labels: gpio1
+- gpio@50000000 (READY)
+  DT node labels: gpio0
+- snippet_zmk_usb_logging_uart (READY)
+  DT node labels: snippet_zmk_usb_logging_uart
+- bootload (READY)
+  DT node labels: bootloader
+- sysreset (READY)
+  DT node labels: sys_reset
+- extpower (READY)
+  DT node labels: ext_power
+- key_press (READY)
+  DT node labels: kp
+- momentary_layer (READY)
+  DT node labels: mo
+- mouse_key_press (READY)
+  DT node labels: mkp
+- mouse_scroll (READY)
+  DT node labels: msc
+- mouse_move (READY)
+  DT node labels: mmv
+- gpio_ads1220 (READY)
+  DT node labels: gpio_ads1220
+- adc@40007000 (READY)
+  DT node labels: adc
+- adc_ads1220@0 (READY)
+  DT node labels: adc_ads1220
+- spi@40023000 (READY)
+  DT node labels: spi2
+- analog_axis_hires_0 (READY)
+  DT node labels: anin0
+- kscan (READY)
+  DT node labels: kscan0
+[1;32muart:~$ [m
+# end=2026-10-01T17:40:17.5551740+03:00

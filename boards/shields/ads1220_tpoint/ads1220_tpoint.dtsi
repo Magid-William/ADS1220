@@ -2,7 +2,7 @@
  * ADS1220 + 4-wire TrackPoint analog front-end (nice!nano / nRF52840).
  *
  * Wiring = README "2 (design of record):
- *   SCLK  P0.08 | MISO P0.20 | MOSI P0.17 | DRDY P1.06
+ *   SCLK  P0.08 | MISO P0.20 | MOSI P0.17 | DRDY P0.06
  *   CS tied to GND (D6) -> no cs-gpios; CLK tied to GND (D7, internal osc).
  *
  * Divider is 2.2 kOhm per leg (one resistor + a bridge), not 2.4 kOhm:
@@ -46,7 +46,7 @@
         #io-channel-cells = <1>;
         #address-cells = <1>;
         #size-cells = <0>;
-        drdy-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        drdy-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         idac-ua = <500>;   /* tune so V(a) >= 0.75 V: V(a) = I * (R_ab || 4.4k) */
 
         adc_ads1220_ch0: channel@0 {

@@ -14,7 +14,7 @@ perfboard layout, diagrams) is in the parent project.
 | SCLK (1) | P0.08 | `&spi2`, 1 MHz, mode 1 |
 | DOUT/DRDY (15, MISO) | P0.20 | |
 | DIN (16, MOSI) | P0.17 | |
-| DRDY (14) | P1.06 | active low, pull-up |
+| DRDY (14) | P0.06 | active low, pull-up |
 | CS (2) | GND | **tied low, no `cs-gpios`** |
 | CLK (3) | GND | internal oscillator |
 | REFP0 (9) | TrackPoint `[a]` | IDAC1 exits here |
@@ -67,7 +67,7 @@ spi conf adc_ads1220 1000000 h    # mode 1 (CPHA)
 spi transceive 06                 # RESET
 spi transceive 20 00              # read CONFIG0
 spi transceive 23 00 00 00 00     # read CONFIG0..3
-gpio get gpio1 6                  # DRDY level (active low)
+gpio get gpio0 6                  # DRDY level (active low)
 tpoint status
 tpoint sample 8                   # capture 8 raw samples through the driver path
 tpoint stream on                  # log EVERY raw sample (RAW chN=val); 'off' to stop
