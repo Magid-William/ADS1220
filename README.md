@@ -5,7 +5,8 @@ Scope: wiring + firmware for reading a 4-wire TrackPoint strain-gauge sensor
 directly with an ADS1220, using the `badjeff/ads1220-zephyr-module`.
 
 Parts: 1× ADS1220, 1× 4-wire TrackPoint (controller removed), 1× nice!nano,
-4× 1.2 kΩ (divider: 2 in series per branch = 2.4 kΩ), 3× 100 nF, 8×16 dotted perfboard.
+2× 2.2 kΩ (divider: one per branch, spare position bridged), 3× 100 nF,
+8×16 dotted perfboard.
 
 ---
 
@@ -17,7 +18,7 @@ Parts: 1× ADS1220, 1× 4-wire TrackPoint (controller removed), 1× nice!nano,
 | D2 | ADC | ADS1220, badjeff module (`main`) | Chosen by owner |
 | D3 | Bridge excitation | **IDAC1 → REFP0**, 250–500 µA (tune per §7.2) | No extra parts; matches `example-tpoint_idac.dtsi` |
 | D4 | ADC reference | `REFP0/REFN0` (`ADC_REF_EXTERNAL0`) = bridge excitation | Ratiometric: IDAC tolerance cancels |
-| D5 | Mid-bias | R1 = R2 = 2 × 1.2 kΩ in series (2.4 kΩ branch) → AIN2 (= a/2), + **C3 = 100 nF** AIN2↔GND | 0 V differential at rest; low AIN2 source impedance (1.2 kΩ) keeps the ADC's input-current error small (§4) |
+| D5 | Mid-bias | R1 = R2 = **2.2 kΩ** (one per branch) → AIN2 (= a/2), + **C3 = 100 nF** AIN2↔GND | 0 V differential at rest; low AIN2 source impedance (1.1 kΩ) keeps the ADC's input-current error small (§4) |
 | D6 | CS | Tied to GND; **no `cs-gpios` in DTS** | Datasheet-allowed; single SPI device; saves a pin |
 | D7 | CLK | Tied to GND | Selects internal oscillator |
 | D8 | AIN3 / REFN1 | Floating | Internal low-side switch lives on this pin |
@@ -55,8 +56,8 @@ Sensor is two half-bridges sharing [a] (top) and [b] (bottom):
 | DRDY (14) | nice!nano **P1.06** | active low |
 | DOUT/DRDY (15) | nice!nano **P0.20** (MISO) | |
 | DIN (16) | nice!nano **P0.17** (MOSI) | |
-| — | R1: **AIN2 ↔ GND** ([b]) | 2 × 1.2 kΩ in series = 2.4 kΩ, matched to R2 |
-| — | R2: **AIN2 ↔ [a]** (REFP0) | 2 × 1.2 kΩ in series = 2.4 kΩ, matched to R1 |
+| — | R1: **AIN2 ↔ GND** ([b]) | 2.2 kΩ (spare position bridged), matched to R2 |
+| — | R2: **AIN2 ↔ [a]** (REFP0) | 2.2 kΩ (spare position bridged), matched to R1 |
 | — | C3: **AIN2 ↔ GND** | 100 nF, settles the ADC's switched-cap input |
 
 Owners's original drawing is correct as-is; the IDAC needs no extra wire. Only the
@@ -122,13 +123,13 @@ module pin reachable, AIN3 left floating. Current status: 0 errors, 0 warnings.
 - **AIN3:** "Leave the AIN3/REFN1 pin floating when not used" — it connects to
   AVSS through the internal low-side switch. Corollary: never enable
   `low-side-power-switch` with this wiring.
-- **Divider value (R1 = R2 = 2.4 kΩ).** AIN2's source impedance is R1 ∥ R2. The
+- **Divider value (R1 = R2 = 2.2 kΩ).** AIN2's source impedance is R1 ∥ R2. The
   ADC inputs draw nA-level bias/sampling current and TI warns that "the input
   currents flowing into and out of the device cause a voltage drop across the
   resistors". With 47 kΩ (23.5 kΩ at AIN2) that mismatch against the ~2 kΩ x/y
   taps is worth hundreds of µV — several percent of the ±19 mV full scale at
   gain 64 — and it drifts with temperature. TI's own input-filter example uses
-  1 kΩ. 2.2–4.7 kΩ is the usable window; **2.4 kΩ chosen** (1.2 kΩ at AIN2).
+  1 kΩ. 2.2–4.7 kΩ is the usable window; **2.2 kΩ chosen** (1.1 kΩ at AIN2).
   The divider is *not* in the reference path, so its tolerance does not affect
   the scale factor — it only sets the a/2 bias.
 - **C3 = 100 nF from AIN2 to GND** settles the switched-capacitor input charge
@@ -275,9 +276,13 @@ CONFIG_GPIO=y
 CONFIG_ADC=y
 CONFIG_INPUT=y
 CONFIG_INPUT_ANALOG_AXIS_HIRES=y
-CONFIG_INPUT_ANALOG_AXIS_HIRES_SETTINGS=y
 CONFIG_MULTITHREADING=y
 ```
+
+`CONFIG_INPUT_ANALOG_AXIS_HIRES_SETTINGS` (persist calibration to settings) is
+**not** set: the module's symbol `depends on SETTINGS`, which is `n` in ZMK, so
+assigning it `y` only emits a Kconfig warning. Add `CONFIG_SETTINGS=y` first if
+persisted calibration is wanted (EXP01).
 
 Rules:
 - Do **not** set `low-side-power-switch` (D8).
@@ -308,19 +313,19 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
    `a↔b = R`, `x↔y = R`, and `a↔x = a↔y = b↔x = b↔y = 0.75 R`.
    Any near-0 Ω or open → wrong pads / 6-wire variant.
 2. **Measure `R_ab`.** Pick the IDAC step from this table
-   (`R_par = R_ab ∥ 4.8 k` for the 2.4 kΩ branches, V(a) target ≥ 0.75 V,
+   (`R_par = R_ab ∥ 4.4 k` for the 2.2 kΩ branches, V(a) target ≥ 0.75 V,
    compliance ≤ 2.4 V):
 
    | R_ab | R_par | step | resulting V(a) |
    |------|-------|------|----------------|
-   | 1 k  | 0.83 k | 1000 µA | 0.83 V |
-   | 2 k  | 1.41 k | 1000 µA | 1.41 V |
-   | 3 k  | 1.85 k | 500 µA  | 0.92 V |
-   | 4 k  | 2.18 k | 500 µA  | 1.09 V |
-   | 6 k  | 2.67 k | 500 µA  | 1.33 V |
-   | 10 k | 3.24 k | 250 µA  | 0.81 V |
-   | 15 k | 3.62 k | 250 µA  | 0.90 V |
-   | 20 k | 3.87 k | 250 µA  | 0.97 V |
+   | 1 k  | 0.82 k | 1000 µA | 0.82 V |
+   | 2 k  | 1.38 k | 1000 µA | 1.38 V |
+   | 3 k  | 1.78 k | 500 µA  | 0.89 V |
+   | 4 k  | 2.10 k | 500 µA  | 1.05 V |
+   | 6 k  | 2.54 k | 500 µA  | 1.27 V |
+   | 10 k | 3.06 k | 500 µA  | 1.53 V |
+   | 15 k | 3.40 k | 500 µA  | 1.70 V |
+   | 20 k | 3.61 k | 500 µA  | 1.80 V |
 
 3. **Power-up:** DVDD = AVDD = 3.3 V, no shorts, AIN3 untouched.
 4. **Static voltages (driver polling):** V(a)−V(b) ≥ 0.75 V and
@@ -340,10 +345,17 @@ never suspends the ADC — a 0 ms final period requires an external `RESUME` cal
 - [ ] Sensor pad order confirmation `[x][y][a][b]` (bottom view).
 - [ ] Optional later: EN pin + final period 0 for true POWERDOWN
       (needs an external `ANALOG_AXIS_HIRES_ATTR_RESUME` caller)
-- [ ] **D6 (CS tied to GND, no `cs-gpios`) is outside the module's examples** —
-      `example-tpoint_idac.dtsi` / `example-tpoint_avdd.dtsi` /
-      `example-load-cell.overlay` all drive CS from a GPIO (`cs-gpios`). Validate
-      on the bench that SPI reads work with no `cs-gpios`; if not, rework D6..
+- [ ] **D6 (CS tied to GND, no `cs-gpios`)** — EXP01 confirmed the *build / DT*
+      half: the generated devicetree carries zero `cs-gpios` and
+      `spi_nrfx_spim.c`'s `configure()` never drives `ss_pin`, so nothing toggles
+      CS at all. Still to confirm on the bench that a SPI read actually completes;
+      if not, rework D6 to drive CS from a GPIO (`cs-gpios = <&gpio0 6 …>`, the
+      pin the module's own examples use).
+- [ ] `layout/gen.py` + `layout/board.md` still describe **4× 1.2 kΩ** in
+      R2a/R2b/R1a/R1b. Regenerate for the 2.2 kΩ build (one resistor per leg,
+      spare position bridged): edit the `RESISTORS`/`NODES` data and run
+      `python layout/gen.py` (writes `board.md` + `board.tex`; compile with
+      tectonic for the PDF). Documentary only — the board is already built.
 
 ---
 
