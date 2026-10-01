@@ -9,3 +9,4 @@
 | EXP05 | failed | IDAC always-on: is the capture a poll-rate settling artefact? |
 | EXP06 | failed | Gain 16: does the neutral come into the input window? |
 | EXP07 | success | Gain ladder: how big is the neutral offset? (found the malformed-sample fault) |
+| EXP08 | todo | Read-path root cause: is the (H,H,L) duplication the SPI transfer? |
