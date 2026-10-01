@@ -8,3 +8,4 @@
 | EXP04 | inProg | Circle-motion capture: is the raw X/Y signal good enough for pointer motion? |
 | EXP05 | inProg | IDAC always-on: is the capture a poll-rate settling artefact? |
 | EXP06 | inProg | Gain 16: does the neutral come into the input window? |
+| EXP07 | inProg | Gain ladder: how big is the neutral offset? |
