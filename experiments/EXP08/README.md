@@ -84,18 +84,19 @@ _Provisional - awaiting the operator's status declaration._
 the read length, not the SPI phase - the plan's leading candidate (wrong mode)
 is refuted.
 
-**The neutral prediction was falsified.** Hands-off at gain 1 the mean sits at
--3.2e6 with sd 2.1e6 and swings over nearly the whole 8.4e6 range; the driver's
-documented 131622 / -21 is nowhere in sight. At gain 64, now read correctly,
-both channels read *exactly* -8388608 (`0x800000`) with sd 0 - a true
-negative-full-scale rail (EXP07's `-8355840` = `0x808000` was the malformed
-rendering of it, and its railed verdict turns out to have been sound).
+**The neutral check and the noise comparison are WITHDRAWN as invalid.** The
+operator confirmed they were moving the nub during the first "hands-off"
+capture, so its numbers (mean -3.2e6, sd 2.1e6) are a *motion* capture, not a
+rest baseline - every statistic derived from it is void. In particular the
+"neutral prediction was falsified" claim does **not** stand: prediction 2b is
+**untested**, not falsified. The gain-64 reading (exactly -8388608, sd 0) was
+taken under the same unverified conditions and needs re-confirming.
 
-**The circle is still not usable.** 25 s capture at gain 1: r(x,y) = +0.48,
-PCA minor/major = 0.59, motion sd ~1.1e6 against a hands-off sd of ~2.1e6
-(SNR < 1). Same verdict as EXP04-EXP07, but now read through a trustworthy
-sample path - so the blocker is the front-end (offset + ~2.1e6 of hands-off
-mains/noise), not the firmware.
+**The circle capture is valid as a motion capture:** r(x,y) = +0.48,
+PCA minor/major = 0.59, sd ~1.1e6. But it cannot be scored against noise, or
+called usable/unusable, until a genuine rest baseline exists. Note the
+contaminated "hands-off" run had a *larger* sd (2.1e6) than the circle (1.1e6),
+which is consistent with the operator's hand having been on the nub.
 
 ## Learnings
 - **`tpoint raw [mode] [n] [khz] [cmd] [split]` is the read-path probe.** It
@@ -135,7 +136,10 @@ mains/noise), not the firmware.
   and have the operator answer "yes" as they start moving — the question tool
   returns the instant they click, so the capture starts immediately. Never rely
   on printing a cue mid-capture: the operator does not see tool output.
-- **The circle is mains-bound, not read-bound.** At gain 1 hands-off: mean
-  -3.2e6, sd 2.1e6. Circle: r(x,y) = +0.48, PCA minor/major 0.59, sd 1.1e6 —
-  motion is below the hands-off noise (SNR < 1). With the read path now proven,
-  the remaining blocker is the analog front-end: offset + ~2.1e6 of mains.
+- **A "rest" capture is only rest if the operator confirms it *afterwards*.**
+  The first "hands-off" run was in fact a motion run (the operator was moving
+  the nub), so its sd (2.1e6) came out *larger* than the circle's (1.1e6) and
+  every statistic drawn from it was void. Confirm before scoring, not after.
+- **Circle capture at gain 1 (valid as a motion capture):** r(x,y) = +0.48,
+  PCA minor/major 0.59, sd 1.1e6. It cannot be called usable or unusable until
+  a genuine rest baseline exists to compare against.
