@@ -58,7 +58,7 @@
             reg = <0>;
             zephyr,resolution = <24>;
             /* EXP06/EXP07 gain ladder: 64 -> 16 -> 8 -> 4 -> 1. */
-            zephyr,gain = "ADC_GAIN_8";
+            zephyr,gain = "ADC_GAIN_4";
             zephyr,reference = "ADC_REF_EXTERNAL0";
             zephyr,acquisition-time = <330>;
             zephyr,input-positive = <0>;          /* AIN0 = x */
@@ -69,7 +69,7 @@
             reg = <1>;
             zephyr,resolution = <24>;
             /* EXP06/EXP07 gain ladder: 64 -> 16 -> 8 -> 4 -> 1. */
-            zephyr,gain = "ADC_GAIN_8";
+            zephyr,gain = "ADC_GAIN_4";
             zephyr,reference = "ADC_REF_EXTERNAL0";
             zephyr,acquisition-time = <330>;
             zephyr,input-positive = <1>;          /* AIN1 = y */
