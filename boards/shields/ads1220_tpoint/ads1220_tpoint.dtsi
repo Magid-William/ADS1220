@@ -57,7 +57,8 @@
         adc_ads1220_ch0: channel@0 {
             reg = <0>;
             zephyr,resolution = <24>;
-            zephyr,gain = "ADC_GAIN_64";
+            /* EXP06: 64 -> 16 so the neutral fits the ~Vref/16 input window. */
+            zephyr,gain = "ADC_GAIN_16";
             zephyr,reference = "ADC_REF_EXTERNAL0";
             zephyr,acquisition-time = <330>;
             zephyr,input-positive = <0>;          /* AIN0 = x */
@@ -67,7 +68,8 @@
         adc_ads1220_ch1: channel@1 {
             reg = <1>;
             zephyr,resolution = <24>;
-            zephyr,gain = "ADC_GAIN_64";
+            /* EXP06: 64 -> 16 so the neutral fits the ~Vref/16 input window. */
+            zephyr,gain = "ADC_GAIN_16";
             zephyr,reference = "ADC_REF_EXTERNAL0";
             zephyr,acquisition-time = <330>;
             zephyr,input-positive = <1>;          /* AIN1 = y */
