@@ -1,0 +1,1300 @@
+[00:00:06.482,574] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 6/0
+[00:00:06.482,574] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.482,604] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.490,509] <inf> exp02_logging: XY 6490 -4868847 -4868646
+[00:00:06.490,570] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.490,600] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.490,600] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.498,504] <inf> exp02_logging: XY 6498 -4671458 -4539806
+[00:00:06.506,530] <inf> exp02_logging: XY 6506 -4737048 -4868835
+[00:00:06.514,587] <inf> exp02_logging: XY 6514 -4803063 -4737073
+[00:00:06.522,613] <inf> exp02_logging: XY 6522 -4145039 -4803055
+[00:00:06.522,674] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 82/0
+[00:00:06.522,705] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.522,735] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.530,639] <inf> exp02_logging: XY 6530 -4868862 -4868641
+[00:00:06.530,700] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.530,731] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.530,731] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.538,604] <inf> exp02_logging: XY 6538 -4671345 -4408076
+[00:00:06.538,696] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/23
+[00:00:06.538,726] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.538,726] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.546,630] <inf> exp02_logging: XY 6546 -4737045 -4868862
+[00:00:06.546,691] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.546,722] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.546,752] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.554,718] <inf> exp02_logging: XY 6554 -4803037 -4671413
+[00:00:06.562,713] <inf> exp02_logging: XY 6562 -3947587 -4803070
+[00:00:06.562,774] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.562,805] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.562,805] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.570,770] <inf> exp02_logging: XY 6570 -4934422 -4868633
+[00:00:06.570,831] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.570,861] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.570,861] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.578,704] <inf> exp02_logging: XY 6578 -4605579 -4079109
+[00:00:06.578,796] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.578,826] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.578,826] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.586,761] <inf> exp02_logging: XY 6586 -4737028 -4934424
+[00:00:06.586,822] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.586,853] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.586,883] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.594,848] <inf> exp02_logging: XY 6594 -4803005 -4605653
+[00:00:06.602,844] <inf> exp02_logging: XY 6602 -3618758 -4868661
+[00:00:06.602,905] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.602,935] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.602,935] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.610,900] <inf> exp02_logging: XY 6610 -4934450 -4868618
+[00:00:06.610,961] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.610,992] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.610,992] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.618,835] <inf> exp02_logging: XY 6618 -4473951 -3618606
+[00:00:06.618,927] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.618,957] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.618,957] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.626,892] <inf> exp02_logging: XY 6626 -4737055 -4934461
+[00:00:06.626,953] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.626,983] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.627,014] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.634,979] <inf> exp02_logging: XY 6634 -4802962 -4474068
+[00:00:06.642,974] <inf> exp02_logging: XY 6642 -3224023 -4868671
+[00:00:06.643,035] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.643,066] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.643,066] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.651,031] <inf> exp02_logging: XY 6651 -4934489 -4803048
+[00:00:06.651,092] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.651,123] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.651,123] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.658,996] <inf> exp02_logging: XY 6658 -4079257 -2895001
+[00:00:06.659,118] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 120/127
+[00:00:06.659,149] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.659,149] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.667,022] <inf> exp02_logging: XY 6666 -4671488 -4934496
+[00:00:06.667,144] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.667,144] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.667,175] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.675,109] <inf> exp02_logging: XY 6675 -4802895 -4210848
+[00:00:06.675,201] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/91
+[00:00:06.675,201] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.675,231] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.683,074] <inf> exp02_logging: XY 6683 -2829299 -4868618
+[00:00:06.683,197] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.683,197] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.683,227] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.691,101] <inf> exp02_logging: XY 6691 -4934540 -4803018
+[00:00:06.691,162] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.691,192] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.691,192] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.699,188] <inf> exp02_logging: XY 6699 -3487160 -2302882
+[00:00:06.699,310] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.699,340] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.699,340] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.707,153] <inf> exp02_logging: XY 6707 -4737153 -4934536
+[00:00:06.707,244] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.707,275] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.707,275] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.715,179] <inf> exp02_logging: XY 6715 -4737276 -3750149
+[00:00:06.715,270] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.715,270] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.715,301] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.723,266] <inf> exp02_logging: XY 6723 -2565897 -4803006
+[00:00:06.723,388] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.723,388] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.723,419] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.731,231] <inf> exp02_logging: XY 6731 -4934592 -4802953
+[00:00:06.731,292] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.731,323] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.731,323] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.739,257] <inf> exp02_logging: XY 6739 -2763430 -1776621
+[00:00:06.739,379] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.739,410] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.739,440] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.747,344] <inf> exp02_logging: XY 6747 -4802935 -4934583
+[00:00:06.747,436] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.747,467] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.747,467] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.755,310] <inf> exp02_logging: XY 6755 -4737098 -2894884
+[00:00:06.755,371] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.755,401] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.755,401] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.763,336] <inf> exp02_logging: XY 6763 -2039727 -4802844
+[00:00:06.763,458] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.763,488] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.763,488] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.771,423] <inf> exp02_logging: XY 6771 -5000199 -4737279
+[00:00:06.771,484] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.771,514] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.771,514] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.779,388] <inf> exp02_logging: XY 6779 -1710763 -921270
+[00:00:06.779,510] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.779,541] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.779,541] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.787,414] <inf> exp02_logging: XY 6787 -4868849 -5000227
+[00:00:06.787,536] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.787,536] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.787,567] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.795,501] <inf> exp02_logging: XY 6795 -4539832 -1250124
+[00:00:06.795,593] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.795,593] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.795,623] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.803,466] <inf> exp02_logging: XY 6803 -1315861 -4737253
+[00:00:06.803,588] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.803,588] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.803,619] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.811,492] <inf> exp02_logging: XY 6811 -5000300 -4671371
+[00:00:06.811,553] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.811,584] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.811,584] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.819,580] <inf> exp02_logging: XY 6819 -197548 -723887
+[00:00:06.819,702] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.819,732] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.819,732] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.827,545] <inf> exp02_logging: XY 6827 -5000225 -5000279
+[00:00:06.827,667] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.827,667] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.827,697] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.835,571] <inf> exp02_logging: XY 6835 -4276713 -394946
+[00:00:06.835,723] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 6/127
+[00:00:06.835,723] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.835,754] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.843,658] <inf> exp02_logging: XY 6843 -1315886 -4868625
+[00:00:06.843,780] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.843,780] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.843,811] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.851,623] <inf> exp02_logging: XY 6851 -5000307 -4539767
+[00:00:06.851,715] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.851,715] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.851,745] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.859,649] <inf> exp02_logging: XY 6859 -65875 -723881
+[00:00:06.859,802] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.859,802] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.859,832] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.867,736] <inf> exp02_logging: XY 6867 -5000372 -5000285
+[00:00:06.867,828] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.867,858] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.867,858] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.875,701] <inf> exp02_logging: XY 6875 -4079223 -197524
+[00:00:06.875,823] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 120/127
+[00:00:06.875,823] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.875,854] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.883,728] <inf> exp02_logging: XY 6883 -1447512 -4868806
+[00:00:06.883,850] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.883,880] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.883,880] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.891,815] <inf> exp02_logging: XY 6891 -5000296 -4408148
+[00:00:06.891,937] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/23
+[00:00:06.891,937] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.891,967] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.899,780] <inf> exp02_logging: XY 6899 -65809 -789579
+[00:00:06.899,902] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.899,902] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.899,932] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.907,806] <inf> exp02_logging: XY 6907 -5066013 -5000331
+[00:00:06.907,928] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.907,928] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.907,958] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.915,893] <inf> exp02_logging: XY 6915 -3684428 -65807
+[00:00:06.916,015] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.916,046] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.916,046] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.923,858] <inf> exp02_logging: XY 6923 -1513312 -4934599
+[00:00:06.923,919] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.923,950] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.923,950] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.931,884] <inf> exp02_logging: XY 6931 -5000333 -4079125
+[00:00:06.932,006] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.932,037] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.932,037] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.939,971] <inf> exp02_logging: XY 6939 -81 -855399
+[00:00:06.940,063] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.940,093] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.940,093] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.947,937] <inf> exp02_logging: XY 6947 -5066142 -5000363
+[00:00:06.948,028] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.948,059] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.948,059] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.955,963] <inf> exp02_logging: XY 6955 -2894900 -72
+[00:00:06.956,115] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.956,115] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.956,146] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.964,050] <inf> exp02_logging: XY 6964 -1776463 -5000285
+[00:00:06.964,141] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.964,141] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.964,172] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.972,015] <inf> exp02_logging: XY 6971 -5000292 -3552784
+[00:00:06.972,137] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:06.972,137] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.972,167] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.980,041] <inf> exp02_logging: XY 6980 -29 -921300
+[00:00:06.980,133] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:06.980,163] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.980,163] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.988,128] <inf> exp02_logging: XY 6988 -5131778 -5000321
+[00:00:06.988,220] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.988,250] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.988,281] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:06.996,093] <inf> exp02_logging: XY 6996 -2302950 -27
+[00:00:06.996,215] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:06.996,246] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:06.996,246] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.004,119] <inf> exp02_logging: XY 7004 -1973835 -5000328
+[00:00:07.004,211] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.004,211] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.004,241] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.012,207] <inf> exp02_logging: XY 7012 -5000223 -3026451
+[00:00:07.012,329] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.012,329] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.012,359] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.020,172] <inf> exp02_logging: XY 7020 0 -1184469
+[00:00:07.020,263] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.020,263] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.020,294] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.028,198] <inf> exp02_logging: XY 7028 -5131798 -5000308
+[00:00:07.028,320] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.028,320] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.028,350] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.036,285] <inf> exp02_logging: XY 7036 -1973892 -27
+[00:00:07.036,407] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.036,437] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.036,437] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.044,250] <inf> exp02_logging: XY 7044 -2302945 -5000410
+[00:00:07.044,342] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.044,342] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.044,372] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.052,276] <inf> exp02_logging: XY 7052 -5000193 -2763495
+[00:00:07.052,398] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.052,429] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.052,429] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.060,363] <inf> exp02_logging: XY 7060 -13 -1513292
+[00:00:07.060,455] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.060,485] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.060,485] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.068,328] <inf> exp02_logging: XY 7068 -5131824 -5000268
+[00:00:07.068,420] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.068,450] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.068,450] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.076,354] <inf> exp02_logging: XY 7076 -1776432 -26
+[00:00:07.076,507] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.076,507] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.076,538] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.084,442] <inf> exp02_logging: XY 7084 -2829286 -5066011
+[00:00:07.084,533] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.084,564] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.084,564] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.092,407] <inf> exp02_logging: XY 7092 -4934560 -2631854
+[00:00:07.092,529] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.092,529] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.092,559] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.100,433] <inf> exp02_logging: XY 7100 -45 -1842404
+[00:00:07.100,524] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.100,555] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.100,555] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.108,520] <inf> exp02_logging: XY 7108 -5131806 -5000225
+[00:00:07.108,612] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.108,642] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.108,642] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.116,485] <inf> exp02_logging: XY 7116 -1776387 -94
+[00:00:07.116,607] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.116,607] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.116,638] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.124,511] <inf> exp02_logging: XY 7124 -3026669 -5066058
+[00:00:07.124,603] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.124,633] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.124,633] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.132,598] <inf> exp02_logging: XY 7132 -4934514 -2697512
+[00:00:07.132,720] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.132,720] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.132,751] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.140,563] <inf> exp02_logging: XY 7140 -74 -2171218
+[00:00:07.140,655] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.140,686] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.140,686] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.148,590] <inf> exp02_logging: XY 7148 -5131793 -4934653
+[00:00:07.148,712] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.148,712] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.148,742] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.156,677] <inf> exp02_logging: XY 7156 -1644867 -130
+[00:00:07.156,799] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.156,829] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.156,829] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.164,642] <inf> exp02_logging: XY 7164 -3421281 -5066114
+[00:00:07.164,733] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.164,764] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.164,764] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.172,668] <inf> exp02_logging: XY 7172 -4934457 -2566020
+[00:00:07.172,790] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.172,821] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.172,821] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.180,755] <inf> exp02_logging: XY 7180 -129 -2631748
+[00:00:07.180,847] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.180,877] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.180,877] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.188,690] <inf> exp02_logging: XY 7188 -5066214 -4934601
+[00:00:07.188,812] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.188,842] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.188,842] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.196,746] <inf> exp02_logging: XY 7196 -1645048 -187
+[00:00:07.196,899] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.196,899] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.196,929] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.204,833] <inf> exp02_logging: XY 7204 -3750226 -5066124
+[00:00:07.204,925] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.204,956] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.204,956] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.212,768] <inf> exp02_logging: XY 7212 -4934430 -2631696
+[00:00:07.212,890] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.212,921] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.212,951] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.220,825] <inf> exp02_logging: XY 7220 -153 -2763292
+[00:00:07.220,916] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.220,947] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.220,947] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.228,912] <inf> exp02_logging: XY 7228 -5066180 -4934545
+[00:00:07.229,003] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.229,034] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.229,064] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.236,877] <inf> exp02_logging: XY 7236 -1447590 -172
+[00:00:07.236,999] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.237,030] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.237,030] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.244,903] <inf> exp02_logging: XY 7244 -3815955 -5066148
+[00:00:07.244,995] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.245,025] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.245,025] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.252,990] <inf> exp02_logging: XY 7252 -4868819 -1973929
+[00:00:07.253,112] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.253,112] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.253,143] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.260,955] <inf> exp02_logging: XY 7260 -86 -2829269
+[00:00:07.261,047] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.261,047] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.261,077] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.268,981] <inf> exp02_logging: XY 7268 -5066206 -4934487
+[00:00:07.269,104] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.269,104] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.269,134] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.277,069] <inf> exp02_logging: XY 7277 -855301 -64
+[00:00:07.277,191] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.277,221] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.277,221] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.285,034] <inf> exp02_logging: XY 7285 -3947582 -5066220
+[00:00:07.285,125] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.285,125] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.285,156] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.293,060] <inf> exp02_logging: XY 7293 -4868657 -1447623
+[00:00:07.293,182] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.293,212] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.293,212] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.301,147] <inf> exp02_logging: XY 7301 -76 -3289682
+[00:00:07.301,239] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.301,269] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.301,269] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.309,082] <inf> exp02_logging: XY 7309 -5066190 -4934421
+[00:00:07.309,204] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.309,234] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.309,234] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.317,138] <inf> exp02_logging: XY 7317 -526540 -44
+[00:00:07.317,260] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.317,291] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.317,321] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.325,225] <inf> exp02_logging: XY 7325 -4145100 -5066234
+[00:00:07.325,347] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 82/-5
+[00:00:07.325,378] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.325,378] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.333,190] <inf> exp02_logging: XY 7333 -4803014 -1118523
+[00:00:07.333,312] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.333,312] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.333,343] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.341,217] <inf> exp02_logging: XY 7341 -77 -3487076
+[00:00:07.341,308] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.341,339] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.341,339] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.349,304] <inf> exp02_logging: XY 7349 -5066185 -4868780
+[00:00:07.349,395] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.349,426] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.349,456] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.357,269] <inf> exp02_logging: XY 7357 -329078 -34
+[00:00:07.357,391] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.357,421] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.357,421] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.365,295] <inf> exp02_logging: XY 7365 -4342366 -5066224
+[00:00:07.365,417] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.365,447] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.365,447] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.373,382] <inf> exp02_logging: XY 7373 -4737246 -789751
+[00:00:07.373,474] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.373,474] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.373,504] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.381,347] <inf> exp02_logging: XY 7381 -97 -3553017
+[00:00:07.381,439] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.381,439] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.381,469] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.389,373] <inf> exp02_logging: XY 7389 -5066184 -4868718
+[00:00:07.389,495] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.389,495] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.389,526] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.397,460] <inf> exp02_logging: XY 7397 -197586 11
+[00:00:07.397,583] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.397,613] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.397,613] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.405,426] <inf> exp02_logging: XY 7405 -3355586 -5131781
+[00:00:07.405,517] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:07.405,517] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.405,548] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.413,452] <inf> exp02_logging: XY 7413 -4868703 -1447545
+[00:00:07.413,574] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.413,604] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.413,604] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.421,539] <inf> exp02_logging: XY 7421 33 -2368694
+[00:00:07.421,630] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.421,661] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.421,661] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.429,504] <inf> exp02_logging: XY 7429 -5066216 -4934585
+[00:00:07.429,595] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.429,626] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.429,626] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.437,530] <inf> exp02_logging: XY 7437 -723879 58
+[00:00:07.437,683] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.437,683] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.437,713] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.445,617] <inf> exp02_logging: XY 7445 -3421262 -5131780
+[00:00:07.445,709] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:07.445,739] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.445,739] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.453,582] <inf> exp02_logging: XY 7453 -4934411 -3092380
+[00:00:07.453,704] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.453,704] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.453,735] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.461,608] <inf> exp02_logging: XY 7461 36 -2302874
+[00:00:07.461,700] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.461,730] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.461,730] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.469,696] <inf> exp02_logging: XY 7469 -5066235 -4934581
+[00:00:07.469,787] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.469,818] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.469,848] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.477,661] <inf> exp02_logging: XY 7477 -329083 -128
+[00:00:07.477,783] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.477,813] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.477,844] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.485,687] <inf> exp02_logging: XY 7485 -4737213 -5066147
+[00:00:07.485,809] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.485,839] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.485,839] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.493,774] <inf> exp02_logging: XY 7493 -4539816 -394978
+[00:00:07.493,865] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.493,865] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.493,896] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.501,739] <inf> exp02_logging: XY 7501 -197511 -4473943
+[00:00:07.501,861] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.501,892] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.501,892] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.509,765] <inf> exp02_logging: XY 7509 -5066090 -4802968
+[00:00:07.509,826] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.509,857] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.509,887] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.517,852] <inf> exp02_logging: XY 7517 -197442 -65825
+[00:00:07.517,974] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.518,005] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.518,005] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.525,817] <inf> exp02_logging: XY 7525 -4802969 -5066064
+[00:00:07.525,939] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.525,939] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.525,970] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.533,843] <inf> exp02_logging: XY 7533 -4671258 -789584
+[00:00:07.533,935] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.533,935] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.533,966] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.541,931] <inf> exp02_logging: XY 7541 -394804 -4605505
+[00:00:07.542,053] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.542,053] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.542,083] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.549,865] <inf> exp02_logging: XY 7549 -5066078 -4802960
+[00:00:07.549,957] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.549,957] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.549,987] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.557,922] <inf> exp02_logging: XY 7557 -197573 -65972
+[00:00:07.558,074] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.558,074] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.558,105] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.566,009] <inf> exp02_logging: XY 7565 -4868691 -5066028
+[00:00:07.566,131] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.566,131] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.566,162] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.573,974] <inf> exp02_logging: XY 7573 -4539837 -592292
+[00:00:07.574,035] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.574,066] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.574,066] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.582,000] <inf> exp02_logging: XY 7582 -460738 -4605649
+[00:00:07.582,122] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.582,153] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.582,153] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.590,087] <inf> exp02_logging: XY 7590 -5066049 -4737188
+[00:00:07.590,148] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.590,179] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.590,179] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.598,052] <inf> exp02_logging: XY 7598 -131733 -131797
+[00:00:07.598,175] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.598,205] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.598,205] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.606,079] <inf> exp02_logging: XY 7606 -4934419 -5066013
+[00:00:07.606,201] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.606,231] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.606,231] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.614,166] <inf> exp02_logging: XY 7614 -4408290 -394994
+[00:00:07.614,257] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.614,257] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.614,288] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.622,131] <inf> exp02_logging: XY 7622 -658000 -4671419
+[00:00:07.622,253] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.622,253] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.622,283] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.630,157] <inf> exp02_logging: XY 7630 -5066047 -4737071
+[00:00:07.630,218] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.630,249] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.630,279] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.638,244] <inf> exp02_logging: XY 7638 -65931 -263339
+[00:00:07.638,366] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.638,397] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.638,397] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.646,209] <inf> exp02_logging: XY 7646 -5000213 -5066004
+[00:00:07.646,331] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.646,331] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.646,362] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.654,235] <inf> exp02_logging: XY 7654 -4342467 -329132
+[00:00:07.654,327] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.654,327] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.654,357] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.662,322] <inf> exp02_logging: XY 7662 -855456 -4737206
+[00:00:07.662,445] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.662,445] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.662,475] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.670,288] <inf> exp02_logging: XY 7670 -5066041 -4671260
+[00:00:07.670,349] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.670,379] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.670,379] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.678,314] <inf> exp02_logging: XY 7678 -65836 -394774
+[00:00:07.678,466] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.678,466] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.678,497] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.686,401] <inf> exp02_logging: XY 7686 -5000392 -5065991
+[00:00:07.686,523] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.686,523] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.686,553] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.694,366] <inf> exp02_logging: XY 7694 -4210862 -197628
+[00:00:07.694,488] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 44/127
+[00:00:07.694,519] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.694,519] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.702,392] <inf> exp02_logging: XY 7702 -986995 -4802884
+[00:00:07.702,514] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.702,545] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.702,545] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.710,479] <inf> exp02_logging: XY 7710 -5066019 -4539723
+[00:00:07.710,540] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.710,571] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.710,571] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.718,444] <inf> exp02_logging: XY 7718 -65807 -526393
+[00:00:07.718,566] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.718,597] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.718,597] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.726,470] <inf> exp02_logging: XY 7726 -5000438 -5065989
+[00:00:07.726,593] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.726,623] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.726,623] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.734,558] <inf> exp02_logging: XY 7734 -4013526 -131650
+[00:00:07.734,680] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.734,710] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.734,710] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.742,523] <inf> exp02_logging: XY 7742 -1184490 -4868797
+[00:00:07.742,584] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.742,614] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.742,614] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.750,549] <inf> exp02_logging: XY 7750 -5066002 -4474014
+[00:00:07.750,640] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.750,640] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.750,671] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.758,636] <inf> exp02_logging: XY 7758 -238 -723762
+[00:00:07.758,758] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.758,789] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.758,789] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.766,601] <inf> exp02_logging: XY 7766 -5066069 -5000438
+[00:00:07.766,693] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.766,723] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.766,723] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.774,627] <inf> exp02_logging: XY 7774 -3947526 -65991
+[00:00:07.774,780] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.774,780] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.774,810] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.782,714] <inf> exp02_logging: XY 7782 -1447587 -4934534
+[00:00:07.782,806] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.782,806] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.782,836] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.790,679] <inf> exp02_logging: XY 7790 -5000445 -4342353
+[00:00:07.790,802] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/46
+[00:00:07.790,802] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.790,832] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.798,706] <inf> exp02_logging: XY 7798 -212 -789704
+[00:00:07.798,858] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.798,858] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.798,889] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.806,793] <inf> exp02_logging: XY 7806 -5066123 -5000430
+[00:00:07.806,884] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.806,915] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.806,945] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.814,758] <inf> exp02_logging: XY 7814 -3684379 -65832
+[00:00:07.814,880] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.814,910] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.814,910] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.822,784] <inf> exp02_logging: XY 7822 -1644978 -5000197
+[00:00:07.822,875] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.822,875] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.822,906] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.830,871] <inf> exp02_logging: XY 7830 -5000408 -4144994
+[00:00:07.830,993] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/114
+[00:00:07.830,993] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.831,024] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.838,836] <inf> exp02_logging: XY 7838 -198 -986916
+[00:00:07.838,958] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.838,958] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.838,989] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.846,862] <inf> exp02_logging: XY 7846 -5066185 -5000427
+[00:00:07.846,984] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.846,984] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.847,015] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.854,949] <inf> exp02_logging: XY 7854 -3355560 -65793
+[00:00:07.855,072] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.855,102] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.855,102] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.862,915] <inf> exp02_logging: XY 7862 -1908206 -5000348
+[00:00:07.862,976] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.863,006] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.863,006] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.870,941] <inf> exp02_logging: XY 7870 -5000387 -4013516
+[00:00:07.871,063] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.871,093] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.871,093] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.879,028] <inf> exp02_logging: XY 7879 -198 -1250178
+[00:00:07.879,119] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.879,150] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.879,150] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.886,993] <inf> exp02_logging: XY 7886 -5066236 -5000413
+[00:00:07.887,084] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.887,115] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.887,115] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.895,019] <inf> exp02_logging: XY 7895 -3158250 -65805
+[00:00:07.895,172] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.895,172] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.895,202] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.903,106] <inf> exp02_logging: XY 7903 -2302821 -5000393
+[00:00:07.903,198] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.903,198] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.903,228] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.911,041] <inf> exp02_logging: XY 7911 -5000343 -3881804
+[00:00:07.911,193] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.911,193] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.911,224] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.919,097] <inf> exp02_logging: XY 7919 -193 -1381870
+[00:00:07.919,189] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.919,219] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.919,219] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.927,185] <inf> exp02_logging: XY 7927 -5131816 -5000371
+[00:00:07.927,276] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.927,307] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.927,307] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.935,150] <inf> exp02_logging: XY 7935 -2960659 -251
+[00:00:07.935,272] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.935,272] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.935,302] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.943,176] <inf> exp02_logging: XY 7943 -2434333 -5066012
+[00:00:07.943,267] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.943,298] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.943,298] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.951,263] <inf> exp02_logging: XY 7951 -5000302 -3487213
+[00:00:07.951,385] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.951,385] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.951,416] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.959,228] <inf> exp02_logging: XY 7959 -104 -1513277
+[00:00:07.959,320] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.959,320] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.959,350] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.967,254] <inf> exp02_logging: XY 7967 -5131871 -5000394
+[00:00:07.967,376] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.967,376] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.967,407] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.975,341] <inf> exp02_logging: XY 7975 -2171381 -108
+[00:00:07.975,463] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:07.975,494] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.975,494] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.983,306] <inf> exp02_logging: XY 7983 -2697675 -5066095
+[00:00:07.983,398] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:07.983,398] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.983,428] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.991,333] <inf> exp02_logging: XY 7991 -5000226 -3026651
+[00:00:07.991,455] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:07.991,485] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.991,485] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:07.999,420] <inf> exp02_logging: XY 7999 -138 -2171161
+[00:00:07.999,511] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:07.999,542] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:07.999,542] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.007,354] <inf> exp02_logging: XY 8007 -5131837 -5000323
+[00:00:08.007,476] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.007,507] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.007,507] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.015,411] <inf> exp02_logging: XY 8015 -2368587 -243
+[00:00:08.015,563] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.015,563] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.015,594] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.023,498] <inf> exp02_logging: XY 8023 -3355439 -5066145
+[00:00:08.023,590] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.023,620] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.023,620] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.031,463] <inf> exp02_logging: XY 8031 -4934638 -3289742
+[00:00:08.031,585] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.031,585] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.031,616] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.039,489] <inf> exp02_logging: XY 8039 -193 -2237140
+[00:00:08.039,581] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.039,611] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.039,611] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.047,576] <inf> exp02_logging: XY 8047 -5131811 -5000269
+[00:00:08.047,668] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.047,698] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.047,698] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.055,541] <inf> exp02_logging: XY 8055 -2237018 -256
+[00:00:08.055,664] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.055,694] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.055,694] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.063,568] <inf> exp02_logging: XY 8063 -3487140 -5066161
+[00:00:08.063,659] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.063,690] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.063,690] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.071,655] <inf> exp02_logging: XY 8071 -4934586 -3026516
+[00:00:08.071,777] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.071,777] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.071,807] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.079,620] <inf> exp02_logging: XY 8079 -188 -2565978
+[00:00:08.079,711] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.079,711] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.079,742] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.087,646] <inf> exp02_logging: XY 8087 -5131805 -5000245
+[00:00:08.087,768] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.087,768] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.087,799] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.095,733] <inf> exp02_logging: XY 8095 -1842423 -234
+[00:00:08.095,855] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.095,886] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.095,886] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.103,698] <inf> exp02_logging: XY 8103 -3684506 -5066211
+[00:00:08.103,790] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.103,820] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.103,820] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.111,724] <inf> exp02_logging: XY 8111 -4934515 -2697571
+[00:00:08.111,846] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.111,877] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.111,877] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.119,812] <inf> exp02_logging: XY 8119 -168 -2895065
+[00:00:08.119,903] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.119,934] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.119,934] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.127,777] <inf> exp02_logging: XY 8127 -5131805 -4934651
+[00:00:08.127,868] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.127,899] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.127,899] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.135,803] <inf> exp02_logging: XY 8135 -1513417 -198
+[00:00:08.135,955] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.135,955] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.135,986] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.143,890] <inf> exp02_logging: XY 8143 -3881916 -5066237
+[00:00:08.143,981] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.144,012] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.144,012] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.151,824] <inf> exp02_logging: XY 8151 -4934464 -2237024
+[00:00:08.151,977] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.151,977] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.152,008] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.159,881] <inf> exp02_logging: XY 8159 -144 -3026524
+[00:00:08.159,973] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.160,003] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.160,003] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.167,968] <inf> exp02_logging: XY 8167 -5131794 -4934599
+[00:00:08.168,060] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.168,090] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.168,121] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.175,933] <inf> exp02_logging: XY 8175 -1052891 -95
+[00:00:08.176,055] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.176,086] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.176,086] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.183,959] <inf> exp02_logging: XY 8183 -4013382 -5131822
+[00:00:08.184,051] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.184,082] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.184,082] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.192,047] <inf> exp02_logging: XY 8192 -4868821 -1579236
+[00:00:08.192,169] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.192,169] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.192,199] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.200,012] <inf> exp02_logging: XY 8200 -103 -3289786
+[00:00:08.200,103] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.200,103] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.200,134] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.208,038] <inf> exp02_logging: XY 8208 -5131824 -4934531
+[00:00:08.208,160] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.208,160] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.208,190] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.216,125] <inf> exp02_logging: XY 8216 -657997 -67
+[00:00:08.216,247] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.216,278] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.216,278] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.224,090] <inf> exp02_logging: XY 8224 -4145090 -5131840
+[00:00:08.224,212] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 82/-27
+[00:00:08.224,243] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.224,243] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.232,116] <inf> exp02_logging: XY 8232 -4868667 -1315852
+[00:00:08.232,238] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.232,269] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.232,269] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.240,203] <inf> exp02_logging: XY 8240 101 -263213
+[00:00:08.240,295] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.240,325] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.240,325] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.248,138] <inf> exp02_logging: XY 8248 -5065999 -1513241
+[00:00:08.248,229] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.248,260] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.248,260] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.256,195] <inf> exp02_logging: XY 8256 -16 165
+[00:00:08.256,286] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.256,317] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.256,317] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.264,282] <inf> exp02_logging: XY 8264 -2302852 -1579111
+[00:00:08.272,277] <inf> exp02_logging: XY 8272 -2434413 -395007
+[00:00:08.280,334] <inf> exp02_logging: XY 8280 166 -1513350
+[00:00:08.288,360] <inf> exp02_logging: XY 8288 -2368604 -4868706
+[00:00:08.288,421] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.288,452] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.288,482] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.296,386] <inf> exp02_logging: XY 8296 -986940 -53
+[00:00:08.296,478] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.296,508] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.296,508] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.304,351] <inf> exp02_logging: XY 8304 -4539702 -5131935
+[00:00:08.304,473] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.304,504] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.304,504] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.312,377] <inf> exp02_logging: XY 8312 -4802951 -723873
+[00:00:08.312,469] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.312,469] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.312,500] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.320,465] <inf> exp02_logging: XY 8320 -184 -3881917
+[00:00:08.320,556] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.320,587] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.320,587] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.328,430] <inf> exp02_logging: XY 8328 -5131914 -4868854
+[00:00:08.328,521] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.328,552] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.328,552] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.336,456] <inf> exp02_logging: XY 8336 -131707 -46
+[00:00:08.336,608] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.336,608] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.336,639] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.344,543] <inf> exp02_logging: XY 8344 -4671318 -5131903
+[00:00:08.344,665] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.344,665] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.344,696] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.352,478] <inf> exp02_logging: XY 8352 -4737116 -526403
+[00:00:08.352,569] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.352,600] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.352,600] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.360,534] <inf> exp02_logging: XY 8360 -65904 -4079294
+[00:00:08.360,626] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.360,656] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.360,656] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.368,621] <inf> exp02_logging: XY 8368 -5131887 -4868767
+[00:00:08.368,713] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.368,743] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.368,743] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.376,647] <inf> exp02_logging: XY 8376 -65929 -116
+[00:00:08.376,770] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.376,770] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.376,800] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.384,613] <inf> exp02_logging: XY 8384 -4737224 -5131877
+[00:00:08.384,735] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.384,765] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.384,765] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.392,700] <inf> exp02_logging: XY 8392 -4671280 -460555
+[00:00:08.392,791] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.392,791] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.392,822] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.400,665] <inf> exp02_logging: XY 8400 -131800 -4342393
+[00:00:08.400,787] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/46
+[00:00:08.400,817] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.400,817] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.408,691] <inf> exp02_logging: XY 8408 -5131874 -4868691
+[00:00:08.408,813] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.408,813] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.408,843] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.416,778] <inf> exp02_logging: XY 8416 -256 -164
+[00:00:08.416,900] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.416,931] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.416,931] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.424,713] <inf> exp02_logging: XY 8424 -4802967 -5131842
+[00:00:08.424,835] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.424,865] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.424,896] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.432,769] <inf> exp02_logging: XY 8432 -4539802 -329043
+[00:00:08.432,861] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.432,861] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.432,891] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.440,856] <inf> exp02_logging: XY 8440 -263379 -4539821
+[00:00:08.440,979] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.440,979] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.441,009] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.448,791] <inf> exp02_logging: XY 8448 -5131845 -4802919
+[00:00:08.448,883] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.448,883] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.448,913] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.456,848] <inf> exp02_logging: XY 8456 -123 -246
+[00:00:08.457,000] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.457,000] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.457,031] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.464,935] <inf> exp02_logging: XY 8464 -4868772 -5131802
+[00:00:08.465,057] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.465,057] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.465,087] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.472,900] <inf> exp02_logging: XY 8472 -4408264 -197608
+[00:00:08.472,961] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.472,991] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.472,991] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.480,926] <inf> exp02_logging: XY 8480 -394934 -4671275
+[00:00:08.481,048] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.481,079] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.481,079] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.489,013] <inf> exp02_logging: XY 8488 -5131811 -4737151
+[00:00:08.489,074] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.489,105] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.489,105] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.496,978] <inf> exp02_logging: XY 8496 -126 -131606
+[00:00:08.497,100] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.497,100] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.497,131] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.505,004] <inf> exp02_logging: XY 8504 -4934582 -5066235
+[00:00:08.505,126] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.505,157] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.505,157] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.513,092] <inf> exp02_logging: XY 8513 -4342329 -197454
+[00:00:08.513,183] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.513,183] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.513,214] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.521,057] <inf> exp02_logging: XY 8521 -592315 -4737080
+[00:00:08.521,179] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.521,179] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.521,209] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.529,083] <inf> exp02_logging: XY 8529 -5131787 -4737030
+[00:00:08.529,144] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.529,174] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.529,174] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.537,170] <inf> exp02_logging: XY 8537 -211 -263282
+[00:00:08.537,292] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.537,322] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.537,322] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.545,104] <inf> exp02_logging: XY 8545 -5000379 -5066199
+[00:00:08.545,257] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.545,257] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.545,288] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.553,161] <inf> exp02_logging: XY 8553 -4276714 -263226
+[00:00:08.553,314] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 6/127
+[00:00:08.553,314] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.553,344] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.561,248] <inf> exp02_logging: XY 8561 -855400 -4802935
+[00:00:08.561,370] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.561,370] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.561,401] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.569,244] <inf> exp02_logging: XY 8569 -5066224 -4671351
+[00:00:08.569,305] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.569,335] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.569,335] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.577,239] <inf> exp02_logging: XY 8577 -65813 -394755
+[00:00:08.577,392] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.577,392] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.577,423] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.585,327] <inf> exp02_logging: XY 8585 -5066060 -5066185
+[00:00:08.585,449] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.585,449] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.585,479] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.593,322] <inf> exp02_logging: XY 8593 -4210942 -197576
+[00:00:08.593,444] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 44/127
+[00:00:08.593,475] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.593,475] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.601,318] <inf> exp02_logging: XY 8601 -986956 -4803023
+[00:00:08.601,440] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.601,470] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.601,470] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.609,405] <inf> exp02_logging: XY 8609 -5066207 -4605467
+[00:00:08.609,466] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.609,497] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.609,497] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.617,370] <inf> exp02_logging: XY 8617 -256 -526362
+[00:00:08.617,492] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.617,523] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.617,523] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.625,396] <inf> exp02_logging: XY 8625 -5066126 -5066178
+[00:00:08.625,518] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.625,549] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.625,549] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.633,483] <inf> exp02_logging: XY 8633 -4079241 -131673
+[00:00:08.633,605] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 120/127
+[00:00:08.633,636] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.633,636] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.641,448] <inf> exp02_logging: XY 8641 -1184381 -4868854
+[00:00:08.641,540] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.641,571] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.641,601] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.649,475] <inf> exp02_logging: XY 8649 -5066189 -4474098
+[00:00:08.649,566] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.649,566] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.649,597] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.657,562] <inf> exp02_logging: XY 8657 -252 -723738
+[00:00:08.657,684] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.657,714] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.657,714] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.665,496] <inf> exp02_logging: XY 8665 -5066180 -5066169
+[00:00:08.665,649] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.665,649] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.665,679] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.673,553] <inf> exp02_logging: XY 8673 -3947684 -66008
+[00:00:08.673,675] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.673,706] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.673,736] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.681,640] <inf> exp02_logging: XY 8681 -1447555 -5000224
+[00:00:08.681,732] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.681,732] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.681,762] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.689,605] <inf> exp02_logging: XY 8689 -5066171 -4408145
+[00:00:08.689,727] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/23
+[00:00:08.689,727] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.689,758] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.697,631] <inf> exp02_logging: XY 8697 -227 -789661
+[00:00:08.697,784] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.697,784] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.697,814] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.705,718] <inf> exp02_logging: XY 8705 -5131812 -5066163
+[00:00:08.705,841] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.705,841] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.705,871] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.713,714] <inf> exp02_logging: XY 8713 -3750269 -65854
+[00:00:08.713,836] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.713,867] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.713,897] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.721,710] <inf> exp02_logging: XY 8721 -1644920 -5000354
+[00:00:08.721,801] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.721,801] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.721,832] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.729,797] <inf> exp02_logging: XY 8729 -5066129 -4210898
+[00:00:08.729,919] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/91
+[00:00:08.729,919] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.729,949] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.737,762] <inf> exp02_logging: XY 8737 -202 -986974
+[00:00:08.737,884] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.737,915] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.737,915] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.745,788] <inf> exp02_logging: XY 8745 -5131873 -5066151
+[00:00:08.745,910] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.745,941] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.745,941] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.753,875] <inf> exp02_logging: XY 8753 -3421431 -65815
+[00:00:08.753,997] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.754,028] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.754,028] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.761,840] <inf> exp02_logging: XY 8761 -1908118 -5066039
+[00:00:08.761,932] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.761,932] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.761,962] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.769,866] <inf> exp02_logging: XY 8769 -5066113 -4079278
+[00:00:08.769,989] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.770,019] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.770,019] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.777,954] <inf> exp02_logging: XY 8777 -195 -1184474
+[00:00:08.778,045] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.778,076] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.778,076] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.785,919] <inf> exp02_logging: XY 8785 -5131934 -5066150
+[00:00:08.786,041] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.786,041] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.786,071] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.793,945] <inf> exp02_logging: XY 8793 -3158025 -228
+[00:00:08.794,097] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.794,097] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.794,128] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.802,032] <inf> exp02_logging: XY 8802 -2236997 -5066132
+[00:00:08.802,124] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.802,154] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.802,154] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.809,967] <inf> exp02_logging: XY 8809 -5066076 -3750367
+[00:00:08.810,119] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.810,119] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.810,150] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.818,023] <inf> exp02_logging: XY 8818 -153 -1315990
+[00:00:08.818,115] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.818,145] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.818,145] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.826,110] <inf> exp02_logging: XY 8826 -5132010 -5066127
+[00:00:08.826,232] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.826,232] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.826,263] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.834,075] <inf> exp02_logging: XY 8834 -2697600 -183
+[00:00:08.834,197] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.834,228] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.834,228] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.842,102] <inf> exp02_logging: XY 8842 -2434505 -5066222
+[00:00:08.842,193] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.842,224] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.842,224] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.850,189] <inf> exp02_logging: XY 8850 -5066013 -3421324
+[00:00:08.850,311] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.850,311] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.850,341] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.858,154] <inf> exp02_logging: XY 8858 -114 -1644965
+[00:00:08.858,245] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.858,245] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.858,276] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.866,180] <inf> exp02_logging: XY 8866 -5197571 -5066098
+[00:00:08.866,333] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to -24/-5
+[00:00:08.866,333] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.866,363] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.874,267] <inf> exp02_logging: XY 8874 -2368726 -218
+[00:00:08.874,389] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.874,420] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.874,420] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.882,263] <inf> exp02_logging: XY 8882 -2960715 -5131805
+[00:00:08.882,354] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.882,354] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.882,385] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.890,258] <inf> exp02_logging: XY 8890 -5000423 -3487212
+[00:00:08.890,380] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.890,411] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.890,411] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.898,345] <inf> exp02_logging: XY 8898 -217 -2171377
+[00:00:08.898,437] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.898,468] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.898,468] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.906,311] <inf> exp02_logging: XY 8906 -5131979 -5066038
+[00:00:08.906,433] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.906,433] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.906,463] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.914,337] <inf> exp02_logging: XY 8914 -2829188 -65918
+[00:00:08.914,489] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.914,489] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.914,520] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.922,424] <inf> exp02_logging: XY 8922 -3750321 -5131817
+[00:00:08.922,515] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-27
+[00:00:08.922,546] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.922,546] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.930,389] <inf> exp02_logging: XY 8930 -5000326 -4079258
+[00:00:08.930,511] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.930,511] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.930,541] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.938,446] <inf> exp02_logging: XY 8938 -526479 -3421305
+[00:00:08.938,537] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:08.938,537] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.938,568] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.946,502] <inf> exp02_logging: XY 8946 -5066238 -5000322
+[00:00:08.946,594] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.946,624] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.946,655] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.954,467] <inf> exp02_logging: XY 8954 -4079197 -1908011
+[00:00:08.954,589] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 120/127
+[00:00:08.954,620] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.954,620] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.962,493] <inf> exp02_logging: XY 8962 -4342496 -5066081
+[00:00:08.962,615] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:08.962,646] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.962,646] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.970,581] <inf> exp02_logging: XY 8970 -4934656 -4671242
+[00:00:08.970,642] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.970,672] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.970,672] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.978,546] <inf> exp02_logging: XY 8978 -2105387 -4079172
+[00:00:08.978,668] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/127
+[00:00:08.978,668] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.978,698] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.986,572] <inf> exp02_logging: XY 8986 -5066091 -5000241
+[00:00:08.986,694] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.986,694] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.986,724] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:08.994,659] <inf> exp02_logging: XY 8994 -4473985 -2895026
+[00:00:08.994,750] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:08.994,750] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:08.994,781] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.002,593] <inf> exp02_logging: XY 9002 -4473934 -5065988
+[00:00:09.002,685] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/-5
+[00:00:09.002,716] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.002,716] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.010,650] <inf> exp02_logging: XY 9010 -4934618 -4737090
+[00:00:09.010,711] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.010,742] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.010,742] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.018,737] <inf> exp02_logging: XY 9018 -2763432 -4473900
+[00:00:09.018,829] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:09.018,859] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.018,859] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.026,702] <inf> exp02_logging: XY 9026 -5065997 -4934637
+[00:00:09.026,763] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.026,794] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.026,794] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.034,729] <inf> exp02_logging: XY 9034 -4605637 -3684551
+[00:00:09.034,820] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/127
+[00:00:09.034,851] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.034,851] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.042,816] <inf> exp02_logging: XY 9042 -4539795 -5000378
+[00:00:09.042,877] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.042,907] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.042,907] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.050,781] <inf> exp02_logging: XY 9050 -4934571 -4737265
+[00:00:09.058,868] <inf> exp02_logging: XY 9058 -3355598 -4737151
+[00:00:09.058,929] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:09.058,959] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.058,959] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.066,894] <inf> exp02_logging: XY 9066 -5000385 -4934582
+[00:00:09.066,955] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.066,986] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.066,986] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.074,859] <inf> exp02_logging: XY 9074 -4671488 -4210881
+[00:00:09.074,951] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/91
+[00:00:09.074,951] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.074,981] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.082,885] <inf> exp02_logging: XY 9082 -4605653 -5000324
+[00:00:09.082,946] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.082,977] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.082,977] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.090,972] <inf> exp02_logging: XY 9090 -4934534 -4802878
+[00:00:09.098,968] <inf> exp02_logging: XY 9098 -3750340 -4868643
+[00:00:09.099,029] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:09.099,060] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.099,060] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.107,025] <inf> exp02_logging: XY 9106 -5000329 -4934552
+[00:00:09.107,086] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.107,116] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.107,116] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.114,990] <inf> exp02_logging: XY 9114 -4737174 -4473920
+[00:00:09.123,046] <inf> exp02_logging: XY 9123 -4671462 -5000287
+[00:00:09.131,103] <inf> exp02_logging: XY 9131 -4934508 -4802926
+[00:00:09.139,129] <inf> exp02_logging: XY 9139 -4013492 -4868814
+[00:00:09.139,190] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 127/0
+[00:00:09.139,221] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.139,251] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.147,155] <inf> exp02_logging: XY 9147 -5000287 -4934524
+[00:00:09.147,216] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.147,247] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.147,247] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.155,120] <inf> exp02_logging: XY 9155 -4737255 -4539888
+[00:00:09.163,177] <inf> exp02_logging: XY 9163 -4737202 -5000254
+[00:00:09.171,234] <inf> exp02_logging: XY 9171 -4934480 -4802948
+[00:00:09.179,260] <inf> exp02_logging: XY 9179 -4210829 -4868864
+[00:00:09.179,321] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 44/0
+[00:00:09.179,351] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.179,382] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.187,286] <inf> exp02_logging: XY 9187 -5000262 -4934508
+[00:00:09.187,347] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0
+[00:00:09.187,377] <dbg> zmk: zmk_hid_mouse_scroll_set: Mouse scroll set to 0/0
+[00:00:09.187,377] <dbg> zmk: zmk_hid_mouse_movement_set: Mouse movement set to 0/0

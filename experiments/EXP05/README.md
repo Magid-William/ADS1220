@@ -44,11 +44,12 @@ not the read timing).
 - [ ] Analyzer - proposed default: reuse `experiments/EXP04/analyze_xy.py`.
 
 ## Conclusion (findings)
-_(Provisional - awaiting the operator's status declaration. The hypothesis is
-not confirmed, so this is a candidate for **failed**.)_
+**Status: failed** (operator-declared). The hypothesis - that leaving the IDAC on
+continuously would reveal a settled, non-railed signal - is falsified, so the
+experiment missed its goal.
 
 **H1 (read-path settling) is falsified: leaving the IDAC on continuously did not
-change the picture.** The problem is the front-end, not the IDAC gating.
+change the picture.** IDAC gating was not the cause.
 
 The decisive comparison is hands-off vs hand-on, all on the same EXP05 firmware:
 
@@ -74,6 +75,14 @@ This matches README §8 / EXP03 ("analog front-end is railed") and points at:
   (`V(a) = I_IDAC x (R_ab || 4.4k)`), and/or
 - the neutral sitting outside the +/-`Vref/64` (~16 mV) input window at gain 64.
 
+**Postscript (EXP07).** Both suspects above are now suspect in turn. EXP07 found
+the logged 24-bit samples are malformed - the top two bytes are identical in 100%
+of samples - and the "fixed ladder spaced ~`2^16`" noted below is that fault's
+signature: a word written as `(H, H, L)` can only step in `H`, i.e. about `2^16`
+per count. So the contact-not-a-sensor reading, and the rail/offset reading with
+it, were taken from corrupted samples. The hypothesis is falsified regardless
+(removing `avdd-gpios` changed nothing), but the analog conclusion does not hold.
+
 Artifacts: `exp05-circle.log`, `exp05-circle-xy.csv`, `exp05-circle-{xy-scatter,
 xy-live,x,y}.svg`. Analysis reused `experiments/EXP04/analyze_xy.py`.
 
@@ -84,16 +93,16 @@ Next experiment candidates (in order):
 3. Only then a full circle capture to test X/Y independence.
 
 ## Learnings
-- **Hands-off vs hand-on is the discriminator.** With the nub untouched the ADC
-  sits at one value forever (0% off-plateau); the moment a hand is on the nub it
-  jumps to ~40% off-plateau *regardless of position*. Capture a hands-off
-  baseline before blaming firmware or the read path.
+- **Hands-off vs hand-on is the discriminator.** Nub untouched: one value forever
+  (0% off-plateau). Hand on: ~40% off-plateau *regardless of position*. Take a
+  hands-off baseline before blaming firmware or the read path.
 - **Removing `avdd-gpios` leaves the IDAC on continuously** (`has_gpio_avdd` is
-  false; `data->idac_ua` stays at the ADC node's `idac-ua` and each channel
-  setup re-programs it). It builds and runs fine - but it did **not** change the
-  EXP04 picture, so the poll-rate sawtooth was not IDAC gating.
-- **Off-plateau values came in a fixed ladder spaced ~`2^16`** - a useful tell
-  that the reading is a saturated/quantised artefact rather than real signal.
-- **A second `capture-serial.ps1` run right after a capture is a cheap
-  hands-off baseline** and needs no operator, so ask for the baseline separately
-  from the circle run.
+  false; `data->idac_ua` stays at the ADC node's `idac-ua` and each channel setup
+  re-programs it). It builds and runs fine - and changed nothing, so the EXP04
+  sawtooth was not IDAC gating.
+- **A fixed ladder of levels spaced ~`2^16` is the duplicated-byte fault, not a
+  quantised sensor.** A 24-bit word written as `(H, H, L)` can only step in `H`,
+  i.e. by about `2^16` per count. See EXP07.
+- **A second `capture-serial.ps1` run right after a capture is a free hands-off
+  baseline** and needs no operator, so ask for the baseline separately from the
+  circle run.

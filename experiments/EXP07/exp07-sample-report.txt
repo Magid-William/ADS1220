@@ -1,0 +1,29 @@
+# EXP07 sample capture report - exp07-sample.log
+samples: 337
+firmware uptime window: 6490 .. 9187 ms (2.70 s), log clock window 2.70 s
+interval: median 8 ms, min 7, max 9 ms  (~125 Hz); log dt median 8 ms
+non-increasing uptime steps: 0
+
+## per-channel range
+  x: min=-5197571  max=166  range=5197737  mean=-3279969  sd=1963801  distinct=326
+  y: min=-5131935  max=165  range=5132100  mean=-3269813  sd=1986851  distinct=331
+
+## sample-format smoke test  (24-bit word written as hi,mid,lo)
+   a real conversion has hi==mid ~0.4% of the time
+  x: hi==mid in 337/337 = 100.0%
+  y: hi==mid in 337/337 = 100.0%
+  examples (value -> hi,mid,lo):
+      -4868847 -> B5 B5 11
+      -4671458 -> B8 B8 1E
+      -4737048 -> B7 B7 E8
+  hi==mid means the word only ever encodes 256 coarse levels; the
+  low byte merely subdivides them, so the 24-bit range is not real.
+  most common x values: -4671488 x2, -5066013 x2, -5131824 x2, -153 x2
+
+## x/y relationship
+  pearson r(x,y) = +0.475
+  |x-y| mean = 1480615
+
+## dynamics
+  x: |step| median=3157998 max=5197457  total range=5197737
+  y: |step| median=3454054 max=5131882  total range=5132100

@@ -58,9 +58,8 @@ correlated (crosstalk / shared node - EXP03 had ch0 == ch1 *identical*).
 - [x] Start trigger: the operator was asked via a question before the capture.
 
 ## Conclusion (findings)
-_(Provisional - awaiting the operator's status declaration. The goal was
-"is the capture sufficient to read X/Y and drive the mouse?"; the finding
-contradicts it, so this is a candidate for **failed**.)_
+**Status: failed** (operator-declared). The goal was "is the capture sufficient to
+read X/Y and drive the mouse?"; the answer is no, so the experiment missed its goal.
 
 **No - the raw X/Y signal is not yet usable.** 48 s captured at 124.6 Hz
 (5979 samples, no dropped lines); 4243 in the motion window.
@@ -101,6 +100,14 @@ Interpretation (hypotheses for the next experiment, not yet tested):
   that size rails the reading. Measure the statics (README §7) and lower gain
   64 -> 16.
 
+**Postscript (EXP07).** EXP07 later found the logged 24-bit samples are malformed:
+the top two bytes are identical in 100% of samples, so the word only ever encodes
+`(H, H, L)` - and the "rail" `-8355840` = `0x808000` = bytes `80 80 00` is the
+same shape. The specific numbers above (the plateau, the ~`2^16` ladder, the
+charge transient) are read off those malformed words and should not be quoted as
+bridge behaviour. The headline - no usable X/Y, rest and motion indistinguishable -
+stands, and EXP05/06/07 failed for the same underlying reason.
+
 Artifacts: `exp04-circle.trimmed.log` (XY + phase lines), `exp04-circle.trimmed-xy.csv`
 (t, x, y, phase), `exp04-circle.trimmed-{xy-scatter,xy-live,x,y}.svg`.
 The untrimmed 1.9 MB console log stays local (untracked).
@@ -110,26 +117,23 @@ Next experiment candidates: bench-measure `R_ab`, `V(a)-V(b)`, `V(x)`, `V(y)`,
 the circle capture at a lower gain (16).
 
 ## Learnings
-- **`capture-serial.ps1` can hand you a stale USB pre-buffer.** The first ~215
-  XY lines of the capture were from a console session ~46 min earlier (uptime
-  ~29 s), then the clock jumped to ~2.8 M ms. Drop any inter-sample gap
-  `> 1000 ms` and keep the longest contiguous segment (in `analyze_xy.py`).
-- **Pin the poll rate for a capture with a single-level
-  `poll-period-downshift-ms = <N>`.** `num_downshift_levels` becomes 0, so the
-  driver never downshifts; measured 124.6 Hz with zero dropped lines over 48 s.
+- **`capture-serial.ps1` can hand you a stale USB pre-buffer.** The first ~215 XY
+  lines came from a console session ~46 min earlier (uptime ~29 s), then the clock
+  jumped to ~2.8 M ms. Drop any inter-sample gap `> 1000 ms` and keep the longest
+  contiguous segment.
+- **Pin the poll rate with a single-level `poll-period-downshift-ms = <N>`.**
+  `num_downshift_levels` becomes 0, so the driver never downshifts; measured
+  124.6 Hz with zero dropped lines over 48 s.
 - **`CONFIG_{ZMK,ADC,GPIO,INPUT}_LOG_LEVEL_ERR` + `CONFIG_EXP04_XY_LOG` leaves
   exactly one line per poll** (`<inf> exp02_logging: XY <ms> <x> <y>`); everything
-  else in the ADS1220 path goes quiet. A lone `<dbg> zmk: kscan_matrix_init...`
-  still appears at boot (different module level) - harmless.
-- **The nub at rest rails the ADC** (`-8355840`, `0x808000`) on both channels;
-  touching moves it only toward 0. Treat the exact rail value as "saturated",
-  not as a valid sample, when analysing.
-- **A random-looking X-Y scatter can be a *read* artefact, not noise.** Here the
-  off-plateau samples form a repeating charge curve on the poll cadence (median
-  2 live samples/burst, ~16 ms) and their statistics are identical in the rest
-  and motion windows. Check rest-vs-motion before calling a cloud "the signal" -
-  pooling the whole capture hides this.
+  else in the ADS1220 path goes quiet.
+- **Always compare the rest and motion windows separately.** A random-looking X-Y
+  scatter here was a *read* artefact - its statistics were identical in rest and
+  motion. Pooling the whole capture hides this.
+- **Superseded - do not reuse:** "the nub at rest rails the ADC (`-8355840`)" was
+  read as analog saturation. EXP07 showed that value is a malformed SPI word
+  (`0x808000` = bytes `80 80 00`), not a saturated conversion.
 - **`flash-nicenano.ps1` must run under pwsh, not Windows PowerShell 5.1**
-  (5.1 fails to parse `($size bytes)` inside the string). Use `& .\flash-nicenano.ps1`.
-- **The nice!nano is COM8** (VID_1D50&PID_615E, sole MI_00); COM22/COM21 are a
-  different ZMK device (has a shell but no `tpoint`) - leave it alone.
+  (5.1 fails to parse `($size bytes)` inside the string).
+- **The nice!nano enumerates as COM8** (VID_1D50&PID_615E, sole MI_00);
+  COM22/COM21 are a different ZMK device (has a shell but no `tpoint`).

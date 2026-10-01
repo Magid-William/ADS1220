@@ -36,9 +36,11 @@ exceeds 100%, which is a wiring/pad fault, not an offset.
 - [ ] Analyzer - reuse `experiments/EXP04/analyze_xy.py`.
 
 ## Conclusion (findings)
-_(Provisional - awaiting the operator's status declaration. The ladder
-hypothesis is falsified, and the experiment turned up a sample-format fault that
-matters more than the gain.)_
+**Status: success** (operator-declared). The stated hypothesis - a gain step that
+brings the neutral into the input window - is falsified. The experiment still
+qualifies because it delivered the decisive, reproducible fault that redirects the
+build: the gain ladder is answered (no gain fixes it) and the sample format is
+proven bad.
 
 **Gain ladder, hands-off (no operator), one value logged per step:**
 
@@ -84,24 +86,32 @@ unknown until the read is fixed, and the gain should be put back to the design
 value (64) for any re-test.
 
 Artifacts: `exp07-gain8-hands-off.log`, `exp07-gain4-hands-off.log`,
-`exp07-gain1-hands-off.log`, `exp07-gain1-circle.log`,
-`exp07-gain1-circle.trimmed.log`; builds in `artifacts/EXP07*`.
+`exp07-gain1-hands-off.log`, `exp07-gain1-circle.log` (+ trimmed `.log`/`.csv`/
+`.svg` from the EXP04 analyzer), and `exp07-sample.log` with
+`exp07-sample-report.txt` / `exp07-sample-timeseries.svg` produced by
+`plot_sample.py` (the console-capture analyzer that reports the `hi == mid` smoke
+test); builds in `artifacts/EXP07*`.
+
+Follow-on: **EXP08 - fix the sample read before anything else.** Log the three raw
+bytes, try the clock phase the ADS1220 asks for (CPHA=1) and a much slower SCLK,
+and restore `zephyr,gain` to 64 (the design value). Re-test the bridge only once
+`hi == mid` is back to ~0.4%.
 
 ## Learnings
-- **`hi == mid` is the sample-format smoke test.** For each logged 24-bit `v`,
-  check `((v>>16)&0xFF) == ((v>>8)&0xFF)`. It should hold ~0.4% of the time; it
-  held 100% in EXP05/06/07. Run this on every future capture before believing any
-  statistic computed from the raw values.
-- **Flash loop, reliable order:** push -> `gh run watch <id> --exit-status` ->
-  `gh run download <id> -D <dir>` -> if the serial bootloader entry fails, wait
-  and `Get-CimInstance Win32_LogicalDisk | ? VolumeName -eq NICENANO`; the
-  `G: NICENANO` drive often appears 30-90 s later, and copying the UF2 to it is
-  the whole flash.
-- The serial `devmem 0x4000051C 32 0x57` + `kernel reboot cold` bootloader entry
-  is unreliable while the 125 Hz `XY` log floods the console. Stop the log first
-  (`tpoint xy off`) or just wait for the drive.
-- The COM port moves across a reboot (`COM8` -> `COM15` -> `COM8`); re-probe
-  ports after every flash instead of assuming `COM8`.
-- `tpoint idac <ua>` remains the cheapest hands-free liveness test: `0` -> many
-  distinct values, `500`/`1500` -> one. It proves the ADC and SPI answer without
-  the operator or a rebuild.
+- **`hi == mid` is the sample-format smoke test. Run it first, always.** For each
+  logged 24-bit `v`: `((v>>16)&0xFF) == ((v>>8)&0xFF)`. A real conversion passes
+  ~0.4% of the time; it held 100% in EXP05/06/07.
+  `python experiments/EXP07/plot_sample.py <console capture>` prints it (plus a
+  two-panel SVG of the values and of the three bytes).
+- **Flash loop that actually works:** push -> `gh run watch <id> --exit-status` ->
+  `gh run download <id> -D <dir>` -> bootloader. The serial
+  `devmem 0x4000051C 32 0x57` + `kernel reboot cold` entry is unreliable while the
+  125 Hz `XY` log floods the console - stop the log first (`tpoint xy off`) or just
+  poll `Get-CimInstance Win32_LogicalDisk | ? VolumeName -eq NICENANO`. The
+  `G: NICENANO` drive often appears 30-90 s later, and copying the UF2 to it is the
+  whole flash.
+- **The COM port moves across a reboot** (`COM8` -> `COM15` -> `COM8`). Re-probe
+  the ports after every flash; never assume `COM8`.
+- **`tpoint idac <ua>` is the cheapest hands-free liveness test:** `0` -> many
+  distinct values, `500`/`1500` -> one. It proves the ADC and SPI answer with no
+  operator and no rebuild.
