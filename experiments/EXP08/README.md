@@ -94,8 +94,8 @@ was re-taken: 23.4 s, with the operator told to keep both hands off.
 | r(x,y) | +0.24 | +0.48 |
 | `hi==mid` | 0.35 % | 0.32 % |
 
-- **Prediction 2b is falsified** (pending the operator's confirmation that the
-  rest run really was hands-off): the nub sits at mean x -4.40e6 / y -4.47e6,
+- **Prediction 2b is falsified** (rest run confirmed hands-off by the operator):
+  the nub sits at mean x -4.40e6 / y -4.47e6,
   about 52 % of full scale below neutral, and never approaches the documented
   131622 / -21.
 - SNR (circle sd / rest sd) = 1.45 (x), 1.53 (y): the circle is only ~1.5x the
