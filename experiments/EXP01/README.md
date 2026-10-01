@@ -84,6 +84,8 @@ _Pending._
 ## Learnings
 - `gh search code "<symbol>" --repo <owner>/<repo>` — use to confirm an upstream
   Kconfig/API exists before committing to a ZMK/Zephyr revision.
+- Build is **green on the first push** (two runs, both success). The build
+  hypothesis is met; only the bench half of EXP01 remains.
 - ZMK module at the *repo root*: the reusable `build-user-config.yml` detects
   `zephyr/module.yml` and then (a) runs the build in a temp dir with `config/`
   copied there and (b) adds the workspace via `-DZMK_EXTRA_MODULES`. So a repo can
@@ -92,6 +94,16 @@ _Pending._
   `.github/workflows/` starts no run, which avoids a red build on the base branch.
 - `gh auth status` printed the account as `Maged-William` but the real login is
   `Magid-William`; `gh api user --jq .login` is authoritative.
+- Exact flow that produced a green build (run ~4.5 min cold):
+  ```
+  gh repo create Magid-William/ADS1220 --public --description "..."
+  git remote add origin https://github.com/Magid-William/ADS1220.git
+  git push -u origin master      # base commit has no .github/ -> no run
+  git push -u origin EXP01       # triggers the build
+  gh run watch <id> --repo Magid-William/ADS1220 --exit-status
+  gh run download <id> --repo Magid-William/ADS1220 -D <dir>
+  ```
+  Artifact: `firmware/ads1220_tpoint-nice_nano@2.0.0-zmk.uf2` (240 KiB).
 - Board string `nice_nano@2.0.0` resolves fine for `zmkfirmware/zmk@main`
   (its `zephyr` export is `v4.1.0+zmk-fixes`); no `//zmk` qualifier needed.
 - **`CONFIG_INPUT_ANALOG_AXIS_HIRES_SETTINGS` is inert unless `CONFIG_SETTINGS=y`**
