@@ -39,8 +39,8 @@ position-independent - which would point at the excitation voltage / bridge
 - [ ] Analyzer - reuse `experiments/EXP04/analyze_xy.py`.
 
 ## Conclusion (findings)
-_(Provisional - awaiting the operator's status declaration. The hypothesis is
-falsified, so this is a candidate for **failed**.)_
+**Status: failed** (operator-declared). The hypothesis - that gain 16 would bring
+the neutral into the input window - is falsified, so the experiment missed its goal.
 
 **Gain is not the lever. At gain 16 the hands-off reading is the exact same
 code as at gain 64 (`-8355840`), and the circle capture is unchanged.**
@@ -57,13 +57,19 @@ code as at gain 64 (`-8355840`), and the circle capture is unchanged.**
 - The off-plateau values cluster about every ~65600 counts (about `2^16`, i.e.
   `full-scale/127`) with fine noise on top, at both gains.
 
-Reading: the **normalised** bridge imbalance (or bias error) is very large -
+Reading: the **normalised** bridge imbalance (or bias error) looks very large -
 still railed at gain 16 means the differential exceeds roughly 6% of the bridge
 excitation, which no healthy strain-gauge neutral should do - and it does not
-scale the way a normal conversion would. That points at the analog front-end /
-wiring (wrong pad order, a/b polarity, or the AIN2 bias), not at the firmware.
-The `[x][y][a][b]` pad order and `V(a)`, `V(x)`, `V(AIN2)` are still unverified
-(README §7, §8).
+scale the way a normal conversion would. That pointed at the analog front-end /
+wiring, not at the firmware.
+
+**Postscript (EXP07) - that reading was wrong.** EXP07 found the logged 24-bit
+samples are malformed: the top two bytes are identical in 100% of samples, at
+every gain, on both axes. A malformed word (`H, H, L`) cannot be inverted into a
+bridge voltage, so no "imbalance" can be inferred from it at all. What the
+identical rail at gain 16 and 64 actually shows is that the corrupted word is the
+same regardless of gain, i.e. it was never a conversion of the bridge in the first
+place. The real fault is in the SPI transfer, not the front-end; see EXP07.
 
 Artifacts: `exp06-hands-off.log`, `exp06-idac-sweep.log`, `exp06-circle.log`,
 `exp06-circle.trimmed.log` (+ csv/svg via the EXP04 analyzer).
@@ -73,12 +79,12 @@ Artifacts: `exp06-hands-off.log`, `exp06-idac-sweep.log`, `exp06-circle.log`,
 `V(x)`, `V(y)`, `V(AIN2)`, and continuity of each pad to the ADS1220 pin.
 
 ## Learnings
-- **Hands-off at gain 16 and gain 64 give the identical code**, so the rail is
-  not an input-window problem and lowering gain is not a fix.
-- **`tpoint idac <ua>` is a hands-free liveness test.** `0` -> many values,
-  `500`/`1500` -> railed: proves the ADC and SPI work and the reading follows the
-  excitation, without needing the operator or a rebuild.
-- **Per-bin off-plateau fraction** (via `logcheck`-style bucketing) is the fast
-  "is the nub doing anything?" test; it was flat at ~45% here.
-- A `capture-serial.ps1` run needs no operator, so baselines and IDAC sweeps can
-  be done before asking the operator to touch anything.
+- **Hands-off at gain 16 and gain 64 give the identical code**, so the rail is not
+  an input-window problem and lowering the gain is not a fix.
+- **`tpoint idac <ua>` is a hands-free liveness test.** `0` -> many distinct
+  values, `500`/`1500` -> one. Proves the ADC and SPI answer, and that the reading
+  follows the excitation, with no operator and no rebuild.
+- **Per-bin off-plateau fraction** is the fast "is the nub doing anything?" test;
+  it was flat at ~45% here.
+- **Do the hands-free work first.** Baselines and IDAC sweeps need no operator, so
+  they can settle a question before ever asking someone to touch the nub.
