@@ -4,13 +4,19 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: magidwilliam
+      url-base: https://github.com/Magid-William
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    # EXP08: fork of badjeff/ads1220-zephyr-module carrying the 4-byte RDATA
+    # read fix (branch exp08-read-fix, see experiments/EXP08/README.md).
+    # Pinned to the commit, not the branch, so builds stay reproducible;
+    # refs/ upstream stays unpatched.
     - name: ads1220-zephyr-module
-      remote: badjeff
-      revision: main
+      remote: magidwilliam
+      revision: eae64bfcbf0efdc14c54f34a6f7c67933965c3db
   self:
     path: config
