@@ -44,6 +44,10 @@ The build uses the `zmk-usb-logging` snippet, which routes the Zephyr console an
   every driver SPI transaction (the wire-level handshake)
 - `CONFIG_SHELL` + `CONFIG_SHELL_BACKEND_SERIAL` (init priority 51) + `CONFIG_LOG_CMDS`
 - `CONFIG_GPIO_SHELL`, `CONFIG_KERNEL_SHELL`, `CONFIG_DEVICE_SHELL`, `CONFIG_SPI_SHELL`
+- `CONFIG_LOG_BACKEND_UART=y` with `CONFIG_SHELL_LOG_BACKEND=n`: enabling
+  `CONFIG_SHELL_BACKEND_SERIAL` makes Zephyr default `LOG_BACKEND_UART` to **n**
+  (`default y if !SHELL_BACKEND_SERIAL`), so without this override the only log
+  output is the shell backend and the console looks dead
 - Deferred logging with `CONFIG_LOG_BUFFER_SIZE=32768`
 - `CONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=3000`
 - `CONFIG_EXP02_LOGGING` — the `tpoint` command and a raw-sample callback

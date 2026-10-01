@@ -61,6 +61,12 @@ are dropped/overflowed.
 _Pending._
 
 ## Learnings
+- **Enabling the serial shell kills the log backend.** Zephyr's
+  `LOG_BACKEND_UART` is `default y if !SHELL_BACKEND_SERIAL`, so with
+  `CONFIG_SHELL_BACKEND_SERIAL=y` the only backend left is the shell backend and
+  the console shows just the boot banner + `uart:~$` (this is also why EXP01 never
+  captured runtime logs). Fix: force `CONFIG_LOG_BACKEND_UART=y` and set
+  `CONFIG_SHELL_LOG_BACKEND=n` (otherwise every line prints twice).
 - **`analog_axis_hires_0` is the node *name*, not a label.** In the shield dtsi
   it is `anin0: analog_axis_hires_0 { ... }`, so `DT_NODELABEL(analog_axis_hires_0)`
   fails to compile (`__device_dts_ord_DT_N_NODELABEL_..._ORD undeclared`); use
