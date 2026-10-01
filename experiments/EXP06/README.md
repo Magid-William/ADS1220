@@ -74,9 +74,11 @@ place. The real fault is in the SPI transfer, not the front-end; see EXP07.
 Artifacts: `exp06-hands-off.log`, `exp06-idac-sweep.log`, `exp06-circle.log`,
 `exp06-circle.trimmed.log` (+ csv/svg via the EXP04 analyzer).
 
-**Next experiment must be measurement, not firmware** - a meter on:
-`R_ab` (unpowered), then with the driver polling `V(a)`, `V(b)`, `V(a)-V(b)`,
-`V(x)`, `V(y)`, `V(AIN2)`, and continuity of each pad to the ADS1220 pin.
+**Next experiment - superseded by EXP07.** This pointed at a meter session
+(`R_ab` unpowered; then `V(a)`, `V(b)`, `V(x)`, `V(y)`, `V(AIN2)` with the driver
+polling). Still worth doing eventually, but EXP07's malformed-sample finding has
+to be settled first: there is no point measuring a bridge whose samples cannot be
+read correctly.
 
 ## Learnings
 - **Hands-off at gain 16 and gain 64 give the identical code**, so the rail is not
