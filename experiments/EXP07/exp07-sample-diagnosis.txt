@@ -1,0 +1,8 @@
+# EXP07 diagnosis - exp07-sample.log
+samples 337, 8 ms poll -> fs=125 Hz, span 2.70 s
+  x strongest components: 50.07 Hz (amp 1256588), 50.45 Hz (amp 1105802), 24.48 Hz (amp 326798)
+  y strongest components: 50.07 Hz (amp 1236888), 50.45 Hz (amp 1093358), 49.70 Hz (amp 314275)
+  -> 50.0 Hz = mains hum; at fs=125 Hz it repeats exactly every 5 samples (2 cycles per 5 samples = 40 ms)
+  x: |v[i]-v[i+5]| < 200k in 263/332 samples (79%) -> the 40 ms repeat
+  y: |v[i]-v[i+5]| < 200k in 263/332 samples (79%) -> the 40 ms repeat
+  after the 40 ms boxcar: r(x,y) = +0.97 (the two axes move together at low frequency)

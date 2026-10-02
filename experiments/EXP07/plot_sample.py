@@ -88,10 +88,12 @@ def _fmt(v):
 
 def line_panel(parts, x0, x1, top, height, pad_l, plot_w, title,
                series, y_label, y_lo=None, y_hi=None, markers=None,
-               draw_zero=True, legend_note=None):
+               draw_zero=True, legend_note=None, xticks=None, xfmt=None,
+               x_label="t (s from first sample)", vgrid=None):
     """Append SVG for one line-chart panel.
 
     series = [(color, label, pts, width, opacity)].
+    xticks/xfmt/vgrid let a caller relabel the x axis (e.g. a spectrum).
     """
     pts_all = [p for _, _, data, *_ in series for p in data]
     ys = [p[1] for p in pts_all]
@@ -133,18 +135,28 @@ def line_panel(parts, x0, x1, top, height, pad_l, plot_w, title,
         parts.append(f'<line x1="{pad_l}" y1="{py(0):.1f}" x2="{pad_l+plot_w}" '
                      f'y2="{py(0):.1f}" stroke="#bbb" stroke-width="1"/>')
     # x gridlines
-    for t in _ticks(x0, x1):
+    if xticks is None:
+        xticks = _ticks(x0, x1)
+    for t in xticks:
         g = px(t)
         parts.append(f'<line x1="{g:.1f}" y1="{top}" x2="{g:.1f}" '
                      f'y2="{top+height}" stroke="#f2f2f2" stroke-width="1"/>')
+        lab = xfmt(t) if xfmt else f"{(t-x0)/1000:.2f}"
         parts.append(f'<text x="{g:.1f}" y="{top+height+14}" text-anchor="middle" '
                      f'font-family="sans-serif" font-size="10" fill="#888">'
-                     f'{(t-x0)/1000:.2f}</text>')
+                     f'{lab}</text>')
+    if vgrid:
+        for t in vgrid:
+            if x0 <= t <= x1:
+                g = px(t)
+                parts.append(f'<line x1="{g:.1f}" y1="{top}" x2="{g:.1f}" '
+                             f'y2="{top+height}" stroke="#ffca28" '
+                             f'stroke-width="1" stroke-dasharray="2 3"/>')
     parts.append(f'<rect x="{pad_l}" y="{top}" width="{plot_w}" height="{height}" '
                  f'fill="none" stroke="#ccc"/>')
     parts.append(f'<text x="{pad_l+plot_w}" y="{top+height+28}" text-anchor="end" '
                  f'font-family="sans-serif" font-size="10" fill="#666">'
-                 f't (s from first sample)</text>')
+                 f'{x_label}</text>')
     parts.append(f'<text x="{pad_l-32}" y="{top+height/2}" font-family="sans-serif" '
                  f'font-size="10" fill="#666" transform="rotate(-90 {pad_l-32} '
                  f'{top+height/2})" text-anchor="middle">{y_label}</text>')
