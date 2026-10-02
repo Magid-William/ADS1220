@@ -79,4 +79,11 @@ reference) and the unpowered pad table is the follow-up.
 _Pending._
 
 ## Learnings
-- (none yet)
+- **VID_1D50&PID_615E does not identify the board.** The XIAO (a ZMK trackball build) enumerates
+  identically and is the one on this machine right now: its `device list` shows `xiao_adc`,
+  `xiao_i2c`, `trackball_split`, `mock_kscan`. Only the **NICENANO UF2 volume** is the nice!nano;
+  if `tpoint` answers "command not found", you are talking to the XIAO. Leave it alone.
+- **The nice!nano was not on USB at the start of EXP09** (only the XIAO was): there was no NICENANO
+  volume and no second VID_1D50 device. Flashing needs the operator to plug it in and double-tap RESET.
+- `git push -u origin EXP09` -> `gh run watch` -> `gh run download` still works on this machine
+  (run 36999637805 built clean on the first try).
