@@ -66,11 +66,13 @@ Success criterion: `hi==mid <= 1%`, neutral near 130k / -21, and a circle
 capture where x and y are no longer 0.97-correlated.
 
 ## Conclusion (findings)
-_Provisional - awaiting the operator's status declaration._
+**success** - the read-path question is answered and the fix is landed and
+validated. The falsified neutral prediction is itself the useful finding: it
+proves the remaining blocker is analog, not firmware.
 
-**The read fault is fixed and validated.** The fix is a 4-byte RDATA read
-(bytes 1..3) in the module fork `Magid-William/ads1220-zephyr-module` @
-`eae64bf` (branch `exp08-read-fix`), pinned in `config/west.yml`.
+**The read fault is fixed.** A 4-byte RDATA read (bytes 1..3) in the module fork
+`Magid-William/ads1220-zephyr-module` @ `eae64bf` (branch `exp08-read-fix`),
+pinned in `config/west.yml`.
 
 | read | `hi==mid` |
 |---|---|
@@ -80,75 +82,55 @@ _Provisional - awaiting the operator's status declaration._
 | **driver after the fix, gain 1** | **6/864 = 0.7 %** |
 | driver after the fix, gain 64 | 0/211 |
 
-`RREG` readback proved mode 1 (CPOL=0/CPHA=1) is *correct*, so the fault was
-the read length, not the SPI phase - the plan's leading candidate (wrong mode)
-is refuted.
+`RREG` readback proved mode 1 (CPOL=0/CPHA=1) is *correct*, so the fault was the
+read length, not the SPI phase - the plan's leading candidate is refuted.
 
-**The first rest capture was invalid** (the operator was moving the nub), so it
-was re-taken: 23.4 s, with the operator told to keep both hands off.
+**Prediction 2b is falsified.** On a confirmed hands-off run the nub sits at
+mean x -4.40e6 / y -4.47e6, about 52 % of full scale below neutral, and never
+approaches the documented 131622 / -21. At gain 64, now read correctly, both
+channels pin at exactly -8388608 (`0x800000`, sd 0) - a true rail, so EXP07's
+railed verdict was sound and only its *rendering* (`0x808000`) was malformed.
+
+**The signal is not usable as a pointer.** With the read fixed and the 50/25 Hz
+mains nulled (40 ms boxcar) on a confirmed hands-off rest run:
 
 | | rest (23.4 s) | circle (27.0 s) |
 |---|---|---|
-| x sd | 7.6e5 | 1.11e6 |
-| y sd | 7.1e5 | 1.08e6 |
-| r(x,y) | +0.24 | +0.48 |
-| `hi==mid` | 0.35 % | 0.32 % |
+| x sd / y sd | 9.5e4 / 9.6e4 | 1.43e5 / 1.56e5 |
+| r(x,y) | +0.905 | +0.958 |
+| PCA minor/major | 0.22 | 0.15 |
 
-- **Prediction 2b is falsified** (rest run confirmed hands-off by the operator):
-  the nub sits at mean x -4.40e6 / y -4.47e6,
-  about 52 % of full scale below neutral, and never approaches the documented
-  131622 / -21.
-- SNR (circle sd / rest sd) = 1.45 (x), 1.53 (y): the circle is only ~1.5x the
-  rest noise, so it stays marginal.
-- `hi==mid` 0.35 % / 0.32 % on real captures - the read fix holds through the
-  driver.
-
-The gain-64 reading (exactly -8388608, sd 0) came from the earlier,
-unverified-conditions probe and should be re-confirmed on a clean run before it
-is relied on.
+The motion is real - ~1.5x the rest floor, and visible in
+`exp08-circle-motion.svg` - but it is **common-mode**: x and y move together, so
+only ~15 % of the signal is an independent axis, giving an SNR of ~1.1 on the
+axis that carries direction. A circle in the hand comes out as a straight line.
+Both channels measure against the same AIN2 node, so a wander there moves x and
+y together - the leading suspect for the next experiment.
 
 ## Learnings
 - **`tpoint raw [mode] [n] [khz] [cmd] [split]` is the read-path probe.** It
-  re-reads the ADC in its own SPI transaction and hexdumps every byte, so it
-  bypasses `sys_get_be24()` entirely — run it before believing any statistic
-  computed from logged values. (`experiments/EXP08/`.)
-- **The duplication is in the SPI receive buffer, not downstream.** At the
-  driver's exact setup (mode 1, 3 bytes, 1 MHz) `rx[0] == rx[1]` in 40/40, so
-  `be24` = `(b0<<16)|(b0<<8)|b1` — the low byte `b2` is never read at all.
-- **Mechanism: the ADS1220 is already streaming when the command is clocked in.**
-  A 3-byte transfer is one byte short (8 clocks of command + only 16 left for
-  data), so `rx = [b0, b0, b1]` and a 4-byte read gives `[b0, b0, b1, b2]`.
-  Datasheet: *"the device starts to output the requested data on DOUT/DRDY at
-  the first SCLK rising edge after the command byte."* Fix: read 4 bytes and use
-  **bytes 1, 2, 3** (`rx[0]` is the ambiguous pre-command byte — ignore it).
-  Verified: `hi==mid` falls from 40/40 to **0/40**.
-- **`RREG` is the operator-free ground truth for the SPI phase.** At mode 1 the
-  register byte (`rx[1]`) is stable across reads (`0x84`, `0xA0`, `0x10/0x30`)
-  while `rx[0]` carries live conversion data. So **mode 1 (CPOL=0/CPHA=1) is
-  correct** and the fault is the *read length*, not the clock phase. Modes 0/2/3
-  only looked promising because garbage also tends to have `hi != mid`.
-- **Bootloader entry needs a quiet console.** `devmem 0x4000051C 32 0x57` +
-  `kernel reboot cold` does work, but only with the `XY`/HID log flood off.
-  Always verify first: `devmem 0x4000051C 32` must answer `Read value 0x57`
-  *before* the reboot is sent.
-- **`gh run download` fails with "file exists" and silently leaves the OLD UF2
-  in place** — `Remove-Item -Recurse artifacts\EXP0N` first, or you flash the
-  previous build and debug the wrong firmware.
-- **How the fix was landed:** `gh repo fork badjeff/ads1220-zephyr-module`,
-  patch `ads1220_read_sample()` to read 4 bytes and use bytes 1..3, add a
-  `magidwilliam` remote in `config/west.yml` and pin the **commit SHA** (not the
-  branch) so builds stay reproducible. CI builds the fork; `refs/` stays clean.
-- **Gain 64 with a correct read is exactly `-8388608` (`0x800000`), sd 0**, on
-  both channels — so EXP07's rail was real and only its *rendering* was
-  malformed (`0x808000`).
-- **Operator handshake that works:** put the instruction in the question text
-  and have the operator answer "yes" as they start moving — the question tool
-  returns the instant they click, so the capture starts immediately. Never rely
-  on printing a cue mid-capture: the operator does not see tool output.
-- **A "rest" capture is only rest if the operator confirms it *afterwards*.**
-  The first "hands-off" run was in fact a motion run (the operator was moving
-  the nub), so its sd (2.1e6) came out *larger* than the circle's (1.1e6) and
-  every statistic drawn from it was void. Confirm before scoring, not after.
-- **Circle capture at gain 1 (valid as a motion capture):** r(x,y) = +0.48,
-  PCA minor/major 0.59, sd 1.1e6. It cannot be called usable or unusable until
-  a genuine rest baseline exists to compare against.
+  re-reads the ADC in its own SPI transaction and hexdumps every byte, bypassing
+  `sys_get_be24()` entirely - run it before trusting any logged value.
+- **A 3-byte `RDATA` read is one byte short.** The ADS1220 streams while the
+  command byte is clocked in and restarts after it, so `rx = [b0, b0, b1]`:
+  `b0` lands in both top bytes and `b2` is never read. Fix: read **4 bytes and
+  use bytes 1..3** (`rx[0]` is the ambiguous pre-command byte). `hi==mid` goes
+  from 40/40 to 0/40. Datasheet: *"the device starts to output the requested
+  data on DOUT/DRDY at the first SCLK rising edge after the command byte."*
+- **`RREG` readback is the operator-free ground truth for the SPI phase.** Mode 1
+  returns stable config bytes (`0x84`, `0xA0`) while `rx[0]` carries live data,
+  so mode 1 is correct; modes 0/2/3 only looked clean because garbage also tends
+  to have `hi != mid`. Use a known register to settle any future phase doubt.
+- **Landing a driver fix:** `gh repo fork badjeff/ads1220-zephyr-module`, patch,
+  add a `magidwilliam` remote in `config/west.yml` and pin the **commit SHA**
+  (not the branch). CI builds the fork; `refs/` stays clean.
+- **Flash loop gotchas:** bootloader entry (`devmem 0x4000051C 32 0x57` +
+  `kernel reboot cold`) only works with the log flood off - verify with a
+  `devmem 0x4000051C 32` read-back *before* rebooting. And `gh run download`
+  fails with "file exists" while silently leaving the OLD UF2 in place:
+  `Remove-Item -Recurse artifacts\EXP0N` first.
+- **Operator handshake:** put the instruction in the question text and have the
+  operator answer "yes" as they start moving - the question tool returns the
+  instant they click, so the capture starts immediately (they never see tool
+  output, so a printed cue is useless). **Confirm a "rest" run afterwards**: the
+  first one was actually a motion run, and every statistic from it was void.
