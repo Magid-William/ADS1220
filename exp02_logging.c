@@ -383,13 +383,15 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
  * This bypasses the driver's channel setup on purpose: the point is to measure
  * the analog nodes, not the two axis channels.
  *
- * The axis driver rewrites CONFIG0 every poll (8 ms; 'adc_channel_setup_dt' per
- * channel per poll), so a sample taken while it runs fails the CONFIG0 MUX
- * readback and is retried - in the first try only the two axis MUX values (which
- * the driver itself sets) ever passed, everything else was starved. So the sweep
- * suspends the axis driver first. With the pinned single-level poll
- * (downshift_level == resume_level == 0), 'analog_axis_hires_resume()' does NOT
- * restart the timer, so a **reboot is required afterwards** to resume polling.
+ * The axis driver rewrites CONFIG0 every poll ('adc_channel_setup_dt' per channel
+ * per poll), so a sample taken while it runs fails the CONFIG0 MUX readback and
+ * is retried - with the normal 8 ms poll only the two axis MUX values (which the
+ * driver itself sets) ever passed, everything else was starved. `analog_axis_
+ * hires_suspend()` does NOT fix that here: it only stops the timer, and without
+ * CONFIG_PM_DEVICE the driver thread then busy-loops on k_timer_status_sync, so
+ * polling gets faster. Instead the shield's poll period is pinned to 100000 ms
+ * for this experiment (one poll at boot, then quiet), and the CONFIG0 readback
+ * below guards a stray poll.
  *
  * The bridge picks up mains (see the raw XY stream), so each pair averages
  * EXP09_N samples (spanning many 20 ms mains periods) and reports min/max too.
@@ -546,10 +548,9 @@ static int cmd_tpoint_nodes(const struct shell *sh, size_t argc, char **argv)
 	shell_print(sh, "nodes: CONFIG0=0x%02X (gain is the axis setup's); %%FS of Vref=V(a)-V(b)",
 		    cfg0);
 
-	/* Stop the axis driver: it rewrites CONFIG0 every 8 ms. */
-	analog_axis_hires_suspend(exp02_axh);
-	k_msleep(30); /* let an in-flight poll finish */
-
+	/* The axis poll period is pinned to 100000 ms for this experiment
+	 * (ads1220_tpoint.dtsi), so the ADC stays quiet for the whole sweep;
+	 * exp09_sample() still verifies CONFIG0 to catch a stray poll. */
 	for (size_t i = 0; i < ARRAY_SIZE(pairs); i++) {
 		int32_t vals[EXP09_N];
 		int n = 0;
@@ -572,9 +573,7 @@ static int cmd_tpoint_nodes(const struct shell *sh, size_t argc, char **argv)
 		exp09_print_stats(sh, pairs[i].name, vals, n);
 	}
 
-	analog_axis_hires_resume(exp02_axh);
 	shell_print(sh, "checks: REFP-REFN monitor +0.250 FS, shorted ~0, Vref = 0.825 V / AVDD-FS");
-	shell_print(sh, "note: axis polling is NOT restarted by resume() (pinned single-level poll) - reboot to resume");
 	return 0;
 }
 

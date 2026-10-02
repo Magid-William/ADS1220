@@ -117,7 +117,10 @@
         compatible = "analog-axis-hires";
         status = "okay";
 
-        poll-period-downshift-ms = <8>;
+        /* EXP09 test-time: one axis poll at boot, then quiet for ~100 s, so the
+         * `tpoint nodes` mux sweep is not raced by the axis rewriting CONFIG0.
+         * Shipping value: <8 5000 100 7000 1300> (or <8> for a capture). */
+        poll-period-downshift-ms = <100000>;
 
         axis-x {
             io-channels = <&adc_ads1220 0>;
