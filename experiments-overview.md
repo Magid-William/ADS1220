@@ -10,4 +10,4 @@
 | EXP06 | failed | Gain 16: does the neutral come into the input window? |
 | EXP07 | success | Gain ladder: how big is the neutral offset? (found the malformed-sample fault) |
 | EXP08 | success | Read-path root cause: the (H,H,L) duplication was a 1-byte-short RDATA read - fixed with a 4-byte read |
-| EXP09 | todo | Node sweep: is the -4.4M common-mode the AIN2 mid-bias? |
+| EXP09 | inProg | Node sweep: is the -4.4M common-mode the AIN2 mid-bias? |

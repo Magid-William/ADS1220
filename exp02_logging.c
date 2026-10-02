@@ -18,9 +18,12 @@
  *                          (command alone with CS held, then the data bytes).
  *                          Defaults are the driver's own setup: mode 1, 3
  *                          bytes, 1000 kHz, RDATA, single transaction.
+ *   tpoint nodes           EXP09: sweep the front-end nodes with the ADC's own
+ *                          mux (AIN2/x/y vs AVSS, monitors) as a voltmeter.
  *
- * Nothing here touches the analog front-end directly; every sample goes
- * through the driver's normal IDAC-gated path.
+ * Nothing here touches the analog front-end directly except `tpoint nodes`,
+ * which reprograms CONFIG0's MUX (EXP09); every other sample goes through the
+ * driver's normal IDAC-gated path.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -371,6 +374,197 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
 	return 0;
 }
 
+/*
+ * EXP09: node sweep - use the ADC as its own voltmeter. Program CONFIG0's MUX
+ * directly (RREG -> change the MUX bits -> WREG) and take one single-shot
+ * reading per pair, so the ADC measures its own front-end nodes (AIN0-AIN2,
+ * AIN1-AIN2, AIN0-AIN1, AIN0/1/2-AVSS, and the internal AVDD / REFP monitors).
+ *
+ * This bypasses the driver's channel setup on purpose: the point is to measure
+ * the analog nodes, not the two axis channels. Every sample is verified by
+ * reading CONFIG0 back after RDATA and discarding it if an axis poll (8 ms,
+ * 'adc_channel_setup_dt' on every poll) rewrote the MUX in between. The axis
+ * driver is left running, so nothing is stuck stopped afterwards; the cost is a
+ * few 'config0 mismatch' ERR logs from the driver while the sweep runs.
+ */
+#define EXP09_RDATA_CMD   0x10
+#define EXP09_RREG_CMD    0x20
+#define EXP09_WREG_CMD    0x40
+#define EXP09_START_CMD   0x08
+#define EXP09_FS          8388608 /* 2^23: full scale of the 24-bit word */
+#define EXP09_N           5       /* accepted samples per pair */
+#define EXP09_MAX_TRIES   40
+
+static int exp09_xfer(const struct spi_dt_spec *spec, uint8_t *tx, uint8_t *rx, size_t len)
+{
+	struct spi_buf txb = { .buf = tx, .len = len };
+	struct spi_buf rxb = { .buf = rx, .len = len };
+	struct spi_buf_set txs = { .buffers = &txb, .count = 1 };
+	struct spi_buf_set rxs = { .buffers = &rxb, .count = 1 };
+
+	return spi_transceive_dt(spec, &txs, &rxs);
+}
+
+static int exp09_read_cfg0(const struct spi_dt_spec *spec, uint8_t *cfg0)
+{
+	uint8_t tx[2] = { EXP09_RREG_CMD, 0x00 }; /* RREG addr 0, 1 byte */
+	uint8_t rx[2] = { 0 };
+	int ret = exp09_xfer(spec, tx, rx, 2);
+
+	if (ret == 0) {
+		*cfg0 = rx[1];
+	}
+	return ret;
+}
+
+static int exp09_write_cfg0(const struct spi_dt_spec *spec, uint8_t cfg0)
+{
+	uint8_t tx[2] = { EXP09_WREG_CMD, cfg0 }; /* WREG addr 0, 1 byte */
+	uint8_t rx[2] = { 0 };
+
+	return exp09_xfer(spec, tx, rx, 2);
+}
+
+static int exp09_sample(const struct spi_dt_spec *spec, uint8_t mux, int32_t *val)
+{
+	uint8_t cfg0, back, start = EXP09_START_CMD, dummy;
+	uint8_t tx[4] = { EXP09_RDATA_CMD, 0, 0, 0 };
+	uint8_t rx[4] = { 0 };
+	int32_t v;
+	int ret;
+
+	ret = exp09_read_cfg0(spec, &cfg0);
+	if (ret != 0) {
+		return ret;
+	}
+
+	/* Keep gain / other CONFIG0 bits, change only the MUX (bits 7:4). */
+	ret = exp09_write_cfg0(spec, (uint8_t)((cfg0 & 0x0F) | (mux << 4)));
+	if (ret != 0) {
+		return ret;
+	}
+
+	ret = exp09_xfer(spec, &start, &dummy, 1);
+	if (ret != 0) {
+		return ret;
+	}
+
+	k_msleep(6); /* 330 SPS = 3.03 ms per single-shot conversion */
+
+	/* 4-byte RDATA: the word is in bytes 1..3 (EXP08 read fix). */
+	ret = exp09_xfer(spec, tx, rx, 4);
+	if (ret != 0) {
+		return ret;
+	}
+
+	ret = exp09_read_cfg0(spec, &back);
+	if (ret != 0) {
+		return ret;
+	}
+	if ((back & 0xF0) != (mux << 4)) {
+		return -EAGAIN; /* an axis poll changed the MUX mid-sample */
+	}
+
+	v = (int32_t)(((uint32_t)rx[1] << 16) | ((uint32_t)rx[2] << 8) | rx[3]);
+	if (v & 0x00800000) {
+		v |= (int32_t)0xFF000000;
+	}
+	*val = v;
+	return 0;
+}
+
+static void exp09_sort(int32_t *a, int n)
+{
+	for (int i = 1; i < n; i++) {
+		int32_t v = a[i];
+		int j = i - 1;
+
+		while (j >= 0 && a[j] > v) {
+			a[j + 1] = a[j];
+			j--;
+		}
+		a[j + 1] = v;
+	}
+}
+
+static void exp09_print_line(const struct shell *sh, const char *name, int32_t v, int n)
+{
+	/* thousandths of percent of full scale (v / 2^23 * 100000) */
+	int32_t mpct = (int32_t)(((int64_t)v * 100000) / EXP09_FS);
+	int32_t amp = mpct < 0 ? -mpct : mpct;
+
+	shell_print(sh, "%s: %d (%s%d.%03d %%FS, n=%d)", name, v,
+		    mpct < 0 ? "-" : "+", amp / 1000, amp % 1000, n);
+}
+
+struct exp09_pair {
+	uint8_t mux;
+	const char *name;
+};
+
+static int cmd_tpoint_nodes(const struct shell *sh, size_t argc, char **argv)
+{
+	static const struct exp09_pair pairs[] = {
+		{ 0x01, "AIN0-AIN2 x-bias" },
+		{ 0x03, "AIN1-AIN2 y-bias" },
+		{ 0x00, "AIN0-AIN1 x-y" },
+		{ 0x08, "AIN0-AVSS x-gnd" },
+		{ 0x09, "AIN1-AVSS y-gnd" },
+		{ 0x0A, "AIN2-AVSS bias-gnd" },
+		{ 0x0D, "AVDD monitor" },
+		{ 0x0C, "REFP-REFN monitor" },
+		{ 0x0E, "shorted" },
+	};
+	struct spi_dt_spec spec = SPI_DT_SPEC_GET(EXP02_ADC_NODE, 0, 0);
+	uint8_t cfg0;
+
+	ARG_UNUSED(argc);
+	ARG_UNUSED(argv);
+
+	if (!device_is_ready(spec.bus)) {
+		shell_error(sh, "SPI bus not ready");
+		return -ENODEV;
+	}
+
+	/* The driver's own setup: mode 1 (CPOL=0, CPHA=1), 1 MHz, CS on P0.10. */
+	spec.config.operation = SPI_OP_MODE_MASTER | SPI_WORD_SET(8) | SPI_MODE_CPHA;
+	spec.config.frequency = 1000000U;
+
+	if (exp09_read_cfg0(&spec, &cfg0) != 0) {
+		shell_error(sh, "RREG CONFIG0 failed");
+		return -EIO;
+	}
+
+	shell_print(sh, "nodes: CONFIG0=0x%02X (gain is the axis setup's); %%FS of Vref=V(a)-V(b)",
+		    cfg0);
+
+	for (size_t i = 0; i < ARRAY_SIZE(pairs); i++) {
+		int32_t vals[EXP09_N];
+		int n = 0;
+		int tries = 0;
+
+		while (n < EXP09_N && tries < EXP09_MAX_TRIES) {
+			int32_t v;
+
+			tries++;
+			if (exp09_sample(&spec, pairs[i].mux, &v) == 0) {
+				vals[n++] = v;
+			}
+		}
+
+		if (n == 0) {
+			shell_print(sh, "%s: no clean sample in %d tries", pairs[i].name, tries);
+			continue;
+		}
+
+		exp09_sort(vals, n);
+		exp09_print_line(sh, pairs[i].name, vals[n / 2], n);
+	}
+
+	shell_print(sh, "checks: REFP-REFN monitor must read +0.250 FS, shorted ~0, Vref = 0.825 V / AVDD-FS");
+	return 0;
+}
+
 SHELL_STATIC_SUBCMD_SET_CREATE(
 	sub_tpoint_cmds,
 	SHELL_CMD_ARG(stream, NULL, "Log every raw sample: tpoint stream on|off",
@@ -387,6 +581,8 @@ SHELL_STATIC_SUBCMD_SET_CREATE(
 		      cmd_tpoint_idac, 2, 0),
 	SHELL_CMD_ARG(raw, NULL, "EXP08 raw byte probe: tpoint raw [mode] [n] [khz] [cmd] [split]",
 		      cmd_tpoint_raw, 1, 5),
+	SHELL_CMD_ARG(nodes, NULL, "EXP09 node sweep: ADC-as-voltmeter mux table",
+		      cmd_tpoint_nodes, 1, 0),
 	SHELL_SUBCMD_SET_END);
 
 SHELL_CMD_REGISTER(tpoint, &sub_tpoint_cmds, "ADS1220 TrackPoint bring-up (EXP02)", NULL);
