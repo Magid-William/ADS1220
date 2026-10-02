@@ -32,10 +32,13 @@ reference) and the unpowered pad table is the follow-up.
   2. Add `tpoint nodes` to `exp02_logging.c`: program CONFIG0's MUX directly
      (RREG CONFIG0 -> change MUX bits -> WREG) and take a single-shot reading
      (`START` 0x08, wait, 4-byte `RDATA` using bytes 1..3 - the EXP08 fix
-     pattern). After each sample, RREG CONFIG0 again and discard the sample if
-     an axis poll rewrote the MUX mid-read; repeat to 5 accepted samples and
-     print the median (plus n, min, max) as raw and %FS. The axis driver keeps
-     running (no suspend), so nothing is left stopped after the command.
+     pattern). Every sample is verified by reading CONFIG0 back and retried if
+     the MUX does not match. The axis driver rewrites CONFIG0 every 8 ms poll,
+     which starved every non-axis MUX on the first try (only the two axis MUXes
+     ever passed), so the sweep suspends the axis driver first and **needs a
+     reboot afterwards** (`resume()` does not restart the pinned single-level
+     poll). The bridge picks up mains, so each pair averages 33 samples
+     (spanning many 20 ms periods) and prints mean/min/max as raw and %FS.
   3. Pairs: AIN0-AIN2, AIN1-AIN2, AIN0-AIN1, AIN0-AVSS, AIN1-AVSS, AIN2-AVSS,
      AVDD monitor, (REFP0-REFN0)/4 monitor, shorted. Self-checks: the monitor
      must read +0.250 FS and the shorted pair ~0; the AVDD monitor gives
@@ -87,3 +90,14 @@ _Pending._
   volume and no second VID_1D50 device. Flashing needs the operator to plug it in and double-tap RESET.
 - `git push -u origin EXP09` -> `gh run watch` -> `gh run download` still works on this machine
   (run 36999637805 built clean on the first try).
+- **A MUX sweep must stop the axis driver.** `analog_axis_hires` calls `adc_channel_setup_dt` for
+  every channel on every 8 ms poll (`use_same_adc_ch_cfg` is false when the two axes use different
+  `input-positive`), so it rewrites CONFIG0's MUX constantly and every non-axis sweep pair failed the
+  CONFIG0 readback 40/40. `analog_axis_hires_suspend()` fixes it. **`resume()` does not restart the
+  poll for the pinned single-level config** (`downshift_level == resume_level == 0`): reboot after.
+- **The raw bridge carries big mains.** The un-filtered `XY` stream swings ~±1.5e6 on x and y, so the
+  sweep averages 33 samples per node (many 20 ms periods) and reports min/max to show the spread.
+- **Serial bootloader entry works on the nice!nano:** open the CDC port at 115200, `tpoint xy off`
+  (stop the flood), `devmem 0x4000051C 32 0x57`, read back (`devmem 0x4000051C 32` -> `0x57`), then
+  `kernel reboot cold`; the NICENANO drive then appears and the UF2 copy is the flash.
+

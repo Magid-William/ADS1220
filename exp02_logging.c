@@ -381,19 +381,26 @@ static int cmd_tpoint_raw(const struct shell *sh, size_t argc, char **argv)
  * AIN1-AIN2, AIN0-AIN1, AIN0/1/2-AVSS, and the internal AVDD / REFP monitors).
  *
  * This bypasses the driver's channel setup on purpose: the point is to measure
- * the analog nodes, not the two axis channels. Every sample is verified by
- * reading CONFIG0 back after RDATA and discarding it if an axis poll (8 ms,
- * 'adc_channel_setup_dt' on every poll) rewrote the MUX in between. The axis
- * driver is left running, so nothing is stuck stopped afterwards; the cost is a
- * few 'config0 mismatch' ERR logs from the driver while the sweep runs.
+ * the analog nodes, not the two axis channels.
+ *
+ * The axis driver rewrites CONFIG0 every poll (8 ms; 'adc_channel_setup_dt' per
+ * channel per poll), so a sample taken while it runs fails the CONFIG0 MUX
+ * readback and is retried - in the first try only the two axis MUX values (which
+ * the driver itself sets) ever passed, everything else was starved. So the sweep
+ * suspends the axis driver first. With the pinned single-level poll
+ * (downshift_level == resume_level == 0), 'analog_axis_hires_resume()' does NOT
+ * restart the timer, so a **reboot is required afterwards** to resume polling.
+ *
+ * The bridge picks up mains (see the raw XY stream), so each pair averages
+ * EXP09_N samples (spanning many 20 ms mains periods) and reports min/max too.
  */
 #define EXP09_RDATA_CMD   0x10
 #define EXP09_RREG_CMD    0x20
 #define EXP09_WREG_CMD    0x40
 #define EXP09_START_CMD   0x08
 #define EXP09_FS          8388608 /* 2^23: full scale of the 24-bit word */
-#define EXP09_N           5       /* accepted samples per pair */
-#define EXP09_MAX_TRIES   40
+#define EXP09_N           33      /* samples averaged per pair */
+#define EXP09_MAX_TRIES   120
 
 static int exp09_xfer(const struct spi_dt_spec *spec, uint8_t *tx, uint8_t *rx, size_t len)
 {
@@ -473,28 +480,29 @@ static int exp09_sample(const struct spi_dt_spec *spec, uint8_t mux, int32_t *va
 	return 0;
 }
 
-static void exp09_sort(int32_t *a, int n)
+static void exp09_print_stats(const struct shell *sh, const char *name, const int32_t *v, int n)
 {
-	for (int i = 1; i < n; i++) {
-		int32_t v = a[i];
-		int j = i - 1;
+	int64_t sum = 0;
+	int32_t mn = v[0], mx = v[0];
+	int32_t mean, mpct, amp;
 
-		while (j >= 0 && a[j] > v) {
-			a[j + 1] = a[j];
-			j--;
+	for (int i = 0; i < n; i++) {
+		sum += v[i];
+		if (v[i] < mn) {
+			mn = v[i];
 		}
-		a[j + 1] = v;
+		if (v[i] > mx) {
+			mx = v[i];
+		}
 	}
-}
+	mean = (int32_t)(sum / n);
 
-static void exp09_print_line(const struct shell *sh, const char *name, int32_t v, int n)
-{
-	/* thousandths of percent of full scale (v / 2^23 * 100000) */
-	int32_t mpct = (int32_t)(((int64_t)v * 100000) / EXP09_FS);
-	int32_t amp = mpct < 0 ? -mpct : mpct;
+	/* thousandths of percent of full scale (mean / 2^23 * 100000) */
+	mpct = (int32_t)(((int64_t)mean * 100000) / EXP09_FS);
+	amp = mpct < 0 ? -mpct : mpct;
 
-	shell_print(sh, "%s: %d (%s%d.%03d %%FS, n=%d)", name, v,
-		    mpct < 0 ? "-" : "+", amp / 1000, amp % 1000, n);
+	shell_print(sh, "%s: mean %d (%s%d.%03d %%FS) min %d max %d n=%d",
+		    name, mean, mpct < 0 ? "-" : "+", amp / 1000, amp % 1000, mn, mx, n);
 }
 
 struct exp09_pair {
@@ -538,6 +546,10 @@ static int cmd_tpoint_nodes(const struct shell *sh, size_t argc, char **argv)
 	shell_print(sh, "nodes: CONFIG0=0x%02X (gain is the axis setup's); %%FS of Vref=V(a)-V(b)",
 		    cfg0);
 
+	/* Stop the axis driver: it rewrites CONFIG0 every 8 ms. */
+	analog_axis_hires_suspend(exp02_axh);
+	k_msleep(30); /* let an in-flight poll finish */
+
 	for (size_t i = 0; i < ARRAY_SIZE(pairs); i++) {
 		int32_t vals[EXP09_N];
 		int n = 0;
@@ -557,11 +569,12 @@ static int cmd_tpoint_nodes(const struct shell *sh, size_t argc, char **argv)
 			continue;
 		}
 
-		exp09_sort(vals, n);
-		exp09_print_line(sh, pairs[i].name, vals[n / 2], n);
+		exp09_print_stats(sh, pairs[i].name, vals, n);
 	}
 
-	shell_print(sh, "checks: REFP-REFN monitor must read +0.250 FS, shorted ~0, Vref = 0.825 V / AVDD-FS");
+	analog_axis_hires_resume(exp02_axh);
+	shell_print(sh, "checks: REFP-REFN monitor +0.250 FS, shorted ~0, Vref = 0.825 V / AVDD-FS");
+	shell_print(sh, "note: axis polling is NOT restarted by resume() (pinned single-level poll) - reboot to resume");
 	return 0;
 }
 
