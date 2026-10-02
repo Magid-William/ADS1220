@@ -100,6 +100,10 @@ _Pending._
   the ADC stays quiet.
 - **The raw bridge carries big mains.** The un-filtered `XY` stream swings ~±1.5e6 on x and y, so the
   sweep averages 33 samples per node (many 20 ms periods) and reports min/max to show the spread.
+- **Single-ended/monitor MUX reads need the PGA bypassed.** The driver leaves CONFIG0 bit0 = 0 (PGA
+  enabled), and the datasheet only allows AINx-AVSS and the (REFP-REFN)/4, (AVDD-AVSS)/4 monitor
+  modes with the PGA bypassed. So the first full sweep's absolute rows are invalid; the differential
+  rows (x-AIN2, y-AIN2, x-y) are the real ones. `tpoint nodes` now forces bit0 = 1, keeping the gain.
 - **Serial bootloader entry works on the nice!nano:** open the CDC port at 115200, `tpoint xy off`
   (stop the flood), `devmem 0x4000051C 32 0x57`, read back (`devmem 0x4000051C 32` -> `0x57`), then
   `kernel reboot cold`; the NICENANO drive then appears and the UF2 copy is the flash.

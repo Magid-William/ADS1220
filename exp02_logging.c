@@ -447,8 +447,10 @@ static int exp09_sample(const struct spi_dt_spec *spec, uint8_t mux, int32_t *va
 		return ret;
 	}
 
-	/* Keep gain / other CONFIG0 bits, change only the MUX (bits 7:4). */
-	ret = exp09_write_cfg0(spec, (uint8_t)((cfg0 & 0x0F) | (mux << 4)));
+	/* Keep the gain bits; force PGA bypass (bit 0) so the single-ended
+	 * (AINx-AVSS) and monitor MUX modes are valid - the datasheet requires
+	 * the PGA bypassed for those, and the driver leaves it enabled. */
+	ret = exp09_write_cfg0(spec, (uint8_t)((cfg0 & 0x0E) | 0x01 | (mux << 4)));
 	if (ret != 0) {
 		return ret;
 	}
