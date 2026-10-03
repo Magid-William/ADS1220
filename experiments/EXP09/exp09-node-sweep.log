@@ -1,0 +1,14 @@
+# EXP09 node sweep, port COM8, 2026-10-02T14:37:50.4521187+03:00
+tpoint nodes
+nodes: CONFIG0=0x30 (gain is the axis setup's); %FS of Vref=V(a)-V(b)
+AIN0-AIN2 x-bias: mean -4475806 (-53.355 %FS) min -5033683 max -3055119 n=33
+AIN1-AIN2 y-bias: mean -4646164 (-55.386 %FS) min -5012423 max -3647404 n=33
+AIN0-AIN1 x-y: mean -4540 (-0.054 %FS) min -35272 max 207849 n=33
+AIN0-AVSS x-gnd: mean 8248206 (+98.326 %FS) min 8196596 max 8307486 n=33
+AIN1-AVSS y-gnd: mean 8241784 (+98.249 %FS) min 8199148 max 8290647 n=33
+AIN2-AVSS bias-gnd: mean 8388607 (+99.999 %FS) min 8388607 max 8388607 n=33
+AVDD monitor: mean 3393605 (+40.454 %FS) min 3393517 max 3393773 n=33
+REFP-REFN monitor: mean -113378 (-1.351 %FS) min -113933 max -112912 n=33
+shorted: mean 128 (+0.001 %FS) min 18 max 188 n=33
+checks: REFP-REFN monitor +0.250 FS, shorted ~0, Vref = 0.825 V / AVDD-FS
+[1;32muart:~$ [m

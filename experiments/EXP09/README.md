@@ -79,9 +79,21 @@ reference) and the unpowered pad table is the follow-up.
       with the operator, then conclude with the localized finding.
 
 ## Conclusion (findings)
-_Pending._
+_Pending._ **Current status:** the `tpoint nodes` tooling works (after pinning the axis poll to
+100000 ms and forcing PGA bypass), but the DMM shows the analog bridge has **no ground return**
+([b] = 3.3 V), so Vref ~ 0 V and every reading is invalid. The experiment is blocked on that
+hardware fault; the AIN2 mid-bias question is on hold until the ground is restored.
 
 ## Learnings
+- **DMM ground truth (powered, hands-off, black probe on the nice!nano GND pin): REFP0 [a] = REFN0 [b]
+  = AIN2 = AIN3 = 3.3 V, and x = y ~ 2.35 V.** So [b] sits on the supply rail instead of 0 V: the
+  bridge's ground return is missing, the IDAC has nowhere to sink and the whole analog island clamps
+  at AVDD, and **Vref = V(a)-V(b) ~ 0 V - below the ADS1220's 0.75 V minimum.** Every ADC reading,
+  including the -4.4e6 "offset", is therefore invalid. This supersedes the AIN2 mid-bias geometry as
+  the primary suspect and must be fixed before any further analog measurement.
+- **Measure continuity in ohms, never volts, with the board off.** With the nice!nano unplugged the
+  AIN pins read ~1.4 V - that is a floating-pin artefact, not a voltage. Use ohms (and disconnect the
+  battery too: unplugging USB does not power off a battery-backed nice!nano).
 - **VID_1D50&PID_615E does not identify the board.** The XIAO (a ZMK trackball build) enumerates
   identically and is the one on this machine right now: its `device list` shows `xiao_adc`,
   `xiao_i2c`, `trackball_split`, `mock_kscan`. Only the **NICENANO UF2 volume** is the nice!nano;
